@@ -217,7 +217,8 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
                             <div className="flex flex-wrap gap-2 mb-2 p-3 bg-surface border-2 border-text-main rounded-xl">
                                {selectedIngredients.map(ing => (
                                   <div key={ing.name} className="flex items-center gap-1 bg-[#fde047] text-text-main px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)]">
-                                     {ing.name}
+                                     <span className="font-bold opacity-80">{ing.qty}</span>
+                                     <span>{ing.name}</span>
                                      <button onClick={() => handleRemoveIngredient(ing.name)} className="hover:text-red-600 transition-colors ml-1"><X size={14} /></button>
                                   </div>
                                ))}

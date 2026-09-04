@@ -46,7 +46,7 @@ export default function App() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-6 relative">
       <div 
-        className="fixed inset-0 z-[0] bg-fixed pointer-events-none transition-all duration-1000 ease-out"
+        className="fixed inset-0 z-[0] pointer-events-none transition-all duration-1000 ease-out"
         style={{ backgroundImage: "url('/fondo.jpg')", backgroundSize: 'cover', backgroundPosition: '50% center' }}
       />
       <div className="relative z-10 w-full flex justify-center">
@@ -72,7 +72,7 @@ export default function App() {
     <AppDataProvider>
     <div className="flex flex-col min-h-screen bg-background md:pl-[300px] overflow-x-hidden relative">
       <div 
-        className="fixed inset-0 z-[0] bg-fixed pointer-events-none transition-all duration-1000 ease-out"
+        className="fixed inset-0 z-[0] pointer-events-none transition-all duration-1000 ease-out"
         style={{ 
           backgroundImage: "url('/fondo.jpg')", 
           backgroundSize: 'cover', 
