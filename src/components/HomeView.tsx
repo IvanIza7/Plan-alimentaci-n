@@ -11,6 +11,27 @@ import EquivalenceSwapModal from './EquivalenceSwapModal';
 
 export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) => void }) {
     const { menus, activeMenus, seedData, updateMenu, inventory } = useAppData();
+    
+  const getMenuColors = (themeColor: string = 'amarillo') => {
+    switch (themeColor) {
+      case 'azul': return { bg: 'bg-blue-400', lightBg: 'bg-blue-100', text: 'text-text-main' };
+      case 'verde': return { bg: 'bg-green-400', lightBg: 'bg-green-100', text: 'text-text-main' };
+      case 'naranja': return { bg: 'bg-orange-500', lightBg: 'bg-orange-100', text: 'text-text-main' };
+      case 'amarillo':
+      default: return { bg: 'bg-[#fde047]', lightBg: 'bg-yellow-100', text: 'text-text-main' };
+    }
+  };
+
+  const getTextColor = (themeColor: string = 'amarillo') => {
+    switch (themeColor) {
+      case 'azul': return 'text-blue-400';
+      case 'verde': return 'text-green-400';
+      case 'naranja': return 'text-orange-500';
+      case 'amarillo':
+      default: return 'text-[#fde047]';
+    }
+  };
+
   const d = new Date();
   const tzOffset = d.getTimezoneOffset() * 60000;
   const localD = new Date(d.getTime() - tzOffset);
@@ -132,10 +153,10 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
                      </div>
                   );
                }
-               const nextMeal = todayMenu.meals.find(m => !logs.includes(m.id)) || todayMenu.meals[0];
-               const ingredientSummary = (nextMeal.ingredients || []).map(i => i.name).join(' - ') || 'Ver detalles';
+               const nextMeal = todayMenu.meals.find((m: any) => !logs.includes(m.id)) || todayMenu.meals[0];
+               const ingredientSummary = (nextMeal.ingredients || []).map((i: any) => i.name).join(' - ') || 'Ver detalles';
                return (
-                  <div className="bg-[#fde047] text-text-main rounded-[24px] p-4 flex gap-4 items-center border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] cursor-pointer hover:-translate-y-1 hover:shadow-[6px_6px_0_0_var(--color-text-main)] transition-all" onClick={() => onNavigate?.('plan')}>
+                  <div className={`${getMenuColors(todayMenu.themeColor).bg} ${getMenuColors(todayMenu.themeColor).text} rounded-[24px] p-4 flex gap-4 items-center border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] cursor-pointer hover:-translate-y-1 hover:shadow-[6px_6px_0_0_var(--color-text-main)] transition-all`} onClick={() => onNavigate?.('plan')}>
                      <div className="flex-1">
                         <p className="text-[9px] font-black uppercase tracking-widest text-text-secondary mb-1">Próxima Comida ({nextMeal.time})</p>
                         <h3 className="font-display font-black text-xl uppercase mb-1">{nextMeal.type}</h3>
@@ -158,10 +179,10 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
             {/* Progress */}
             <div className="mt-8 flex justify-between items-center text-[10px] font-black uppercase tracking-widest mb-2.5">
                <span className="text-primary-100">Progreso del día</span>
-               <span className="text-[#fde047]">0/5 comidas</span>
+               <span className={getTextColor(todayMenu?.themeColor)}>0/5 comidas</span>
             </div>
             <div className="h-4 w-full bg-primary-900/50 rounded-full overflow-hidden border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] p-0.5">
-               <div className="h-full bg-[#fde047] rounded-full w-[20%] border-r-2 border-text-main"></div>
+               <div className={`h-full ${getMenuColors(todayMenu?.themeColor).bg} rounded-full w-[20%] border-r-2 border-text-main`}></div>
             </div>
          </div>
       </section>
@@ -245,27 +266,27 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
                const isPartial = meal.status === 'partial';
                return (
                <div key={meal.id} className="bg-surface rounded-[24px] border-2 border-text-main shadow-[6px_6px_0_0_var(--color-text-main)] transition-all overflow-hidden flex flex-col mb-2">
-                  <button onClick={() => toggleMeal(meal.id)} className="p-4 flex items-center justify-between w-full hover:bg-slate-50 transition-colors text-left">
+                  <button onClick={() => toggleMeal(meal.id)} className={`p-4 flex items-center justify-between w-full transition-colors text-left ${getMenuColors(todayMenu?.themeColor).bg} ${getMenuColors(todayMenu?.themeColor).text} border-b-2 border-text-main`}>
                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-full bg-background flex items-center justify-center text-xl shrink-0 border border-border-subtle">
+                        <div className="w-12 h-12 rounded-full bg-surface border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] flex items-center justify-center text-xl shrink-0">
                            {meal.icon}
                         </div>
                         <div className="flex-1 min-w-0">
                            <div className="flex items-center gap-2 mb-1">
-                              <p className="text-[11px] font-black text-text-main uppercase tracking-widest">{meal.type}</p>
-                              <span className="text-[9px] font-bold text-text-secondary bg-background px-1.5 py-0.5 rounded-full border border-border-subtle">{meal.time}</span>
+                              <p className="text-[11px] font-black uppercase tracking-widest">{meal.type}</p>
+                              <span className="text-[9px] font-black uppercase tracking-widest text-text-main bg-surface px-2 py-0.5 rounded-full border-2 border-text-main">{meal.time}</span>
                            </div>
                            <div className="flex items-center gap-2">
-                              <h4 className="font-bold text-sm text-text-main truncate">{meal.name}</h4>
-                              <div className={`w-2 h-2 rounded-full shrink-0 ${isAvailable ? 'bg-green-500' : isPartial ? 'bg-yellow-500' : 'bg-red-500'}`}></div>
+                              <h4 className="font-bold text-sm truncate">{meal.name}</h4>
+                              <div className={`w-2 h-2 rounded-full shrink-0 border border-text-main ${isAvailable ? 'bg-green-500' : isPartial ? 'bg-yellow-500' : 'bg-red-500'}`}></div>
                            </div>
                         </div>
                      </div>
-                     <ChevronDown size={20} className={`text-text-secondary transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                     <ChevronDown size={20} className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
                   </button>
                   
                   {isExpanded && (
-                     <div className="p-4 border-t-2 border-text-main bg-background transition-all duration-300">
+                     <div className={`p-4 border-t-2 border-text-main transition-all duration-300 ${getMenuColors(todayMenu?.themeColor).lightBg}`}>
                         <h5 className="text-[9px] font-black uppercase tracking-widest text-text-secondary mb-3">Alimentos</h5>
                         <div className="space-y-3 mb-4">
                            {meal.ingredients?.map((ing: any, i: number) => (
@@ -277,7 +298,7 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
                                      <span className="text-xs font-black text-text-main">{ing.name}</span>
                                  </div>
                                  <div className="flex items-center gap-2">
-                                     <span className="text-[9px] font-black uppercase tracking-widest text-text-secondary bg-background px-2 py-1 rounded-full border border-border-subtle">{ing.qty}</span>
+                                     <span className="text-[9px] font-black uppercase tracking-widest text-text-main bg-[#fde047] px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)]">{ing.qty}</span>
                                      <div className="w-6 h-6 rounded-full bg-accent-100 flex items-center justify-center text-accent-700">
                                          <RefreshCcw size={12} />
                                      </div>
@@ -300,10 +321,10 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
       <section className="mt-2">
          <h3 className="text-[10px] font-black text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.65)] uppercase tracking-widest mb-4 px-2">Acciones Rápidas</h3>
          <div className="grid grid-cols-2 gap-3 md:gap-4">
-            <QuickAction icon={<Calendar />} label="Planear" color="bg-background" onClick={() => onNavigate?.('plan')} />
-            <QuickAction icon={<RefreshCcw />} label="Inventario" color="bg-accent-100" onClick={() => onNavigate?.('inventario')} />
-            <QuickAction icon={<ShoppingCart />} label="Compras" color="bg-accent-100" onClick={() => onNavigate?.('compras')} />
-            <QuickAction icon={<LayoutGrid />} label="Equivalencias" color="bg-background" onClick={() => onNavigate?.('equivalencias')} />
+            <QuickAction icon={<Calendar />} label="Planear" color="bg-accent-500" onClick={() => onNavigate?.('plan')} />
+            <QuickAction icon={<RefreshCcw />} label="Inventario" color="bg-accent-500" onClick={() => onNavigate?.('inventario')} />
+            <QuickAction icon={<ShoppingCart />} label="Compras" color="bg-accent-500" onClick={() => onNavigate?.('compras')} />
+            <QuickAction icon={<LayoutGrid />} label="Equivalencias" color="bg-accent-500" onClick={() => onNavigate?.('equivalencias')} />
          </div>
       </section>
       {/* Equivalences Swap Modal */}

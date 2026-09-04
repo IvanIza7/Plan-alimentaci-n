@@ -40,11 +40,11 @@ export default function EquivalencesView() {
       
       {tab === 'sugerencias' ? (
          <>
-            <div className="bg-accent-100 rounded-[28px] p-6 border-2 border-text-main shadow-[6px_6px_0_0_var(--color-text-main)] flex flex-col gap-2">
+            <div className="bg-orange-500 text-surface rounded-[28px] p-6 border-2 border-text-main shadow-[6px_6px_0_0_var(--color-text-main)] flex flex-col gap-2">
                <h3 className="font-black text-sm uppercase tracking-widest flex items-center gap-2 mb-2">
                   <span className="text-lg">💡</span> Cambia sin romper tu plan
                </h3>
-               <p className="text-xs font-bold text-text-secondary leading-relaxed">
+               <p className="text-xs font-bold text-surface leading-relaxed">
                   Selecciona un alimento faltante de tu menú para ver por qué otros puedes intercambiarlo respetando las porciones de su categoría.
                </p>
             </div>
@@ -69,16 +69,16 @@ export default function EquivalencesView() {
          </>
       ) : (
          <>
-            <div className="bg-accent-100 rounded-[28px] p-6 border-2 border-text-main shadow-[6px_6px_0_0_var(--color-text-main)] flex flex-col gap-2">
+            <div className="bg-orange-500 text-surface rounded-[28px] p-6 border-2 border-text-main shadow-[6px_6px_0_0_var(--color-text-main)] flex flex-col gap-2">
                <h3 className="font-black text-sm uppercase tracking-widest flex items-center gap-2 mb-2">
                   <span className="text-lg">📏</span> Indicaciones de Medida
                </h3>
-               <ul className="text-xs font-bold text-text-secondary leading-relaxed space-y-1">
-                  <li>• <strong className="text-text-main">Cucharada:</strong> Cucharada sopera</li>
-                  <li>• <strong className="text-text-main">Cucharadita:</strong> Cucharada cafetera</li>
-                  <li>• <strong className="text-text-main">Taza:</strong> Taza medidora (240 ml)</li>
+               <ul className="text-xs font-bold text-surface leading-relaxed space-y-1">
+                  <li>• <strong className="text-surface font-black">Cucharada:</strong> Cucharada sopera</li>
+                  <li>• <strong className="text-surface font-black">Cucharadita:</strong> Cucharada cafetera</li>
+                  <li>• <strong className="text-surface font-black">Taza:</strong> Taza medidora (240 ml)</li>
                </ul>
-               <p className="text-xs font-black text-primary-900 mt-2 p-3 bg-primary-100 border border-primary-500 rounded-xl">
+               <p className="text-xs font-black text-text-main mt-2 p-3 bg-surface border-2 border-text-main rounded-xl">
                  ⚠️ Por cada equivalente se puede elegir solo un alimento de la lista a la que correspondan.
                </p>
             </div>
@@ -98,36 +98,36 @@ export default function EquivalencesView() {
                {filteredData.map((cat: EquivalentCategory) => {
                   const isExpanded = expandedCat === cat.id || searchTerm.length > 0;
                   return (
-                     <div key={cat.id} className="bg-surface border-2 border-text-main rounded-[24px] overflow-hidden flex flex-col transition-all">
+                     <div key={cat.id} className="bg-surface border-2 border-text-main rounded-[24px] overflow-hidden flex flex-col transition-all shadow-[6px_6px_0_0_var(--color-text-main)] mb-4">
                         <button 
                            onClick={() => setExpandedCat(isExpanded && !searchTerm ? null : cat.id)} 
-                           className="w-full p-4 flex items-center justify-between hover:bg-slate-50 transition-colors text-left"
+                           className="w-full p-4 flex items-center justify-between bg-orange-500 hover:bg-orange-600 transition-colors text-left"
                         >
                            <div>
-                              <h3 className="font-black text-sm uppercase tracking-widest text-text-main">{cat.name}</h3>
-                              <p className="text-[10px] font-bold text-text-secondary mt-1 uppercase tracking-widest">
+                              <h3 className="font-black text-sm uppercase tracking-widest text-surface">{cat.name}</h3>
+                              <p className="text-[10px] font-bold text-surface/90 mt-1 uppercase tracking-widest">
                                  {cat.kcal} kcal {cat.kcal > 0 && `| P: ${cat.macros.p}g C: ${cat.macros.c}g G: ${cat.macros.f}g`}
                               </p>
                            </div>
                            {!searchTerm && (
-                              <ChevronDown size={20} className={`text-text-secondary transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                              <ChevronDown size={20} className={`text-surface transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
                            )}
                         </button>
                         
                         {isExpanded && (
-                           <div className="p-4 border-t-2 border-border-subtle bg-background">
-                              <div className="space-y-2">
+                           <div className="p-4 border-t-2 border-text-main bg-[#e6ebc5]">
+                              <div className="space-y-3">
                                  {cat.items.map((item, idx) => (
-                                    <div key={idx} className="flex justify-between items-center bg-surface p-3 rounded-[16px] border border-border-subtle">
+                                    <div key={idx} className="flex justify-between items-center bg-white p-3 rounded-[16px] border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)]">
                                        <div>
-                                          <p className="text-xs font-bold text-text-main">{item.name}</p>
+                                          <p className="text-xs font-black text-text-main">{item.name}</p>
                                           {item.notes && (
                                              <p className="text-[9px] font-black text-primary-600 mt-1 uppercase tracking-widest flex items-center gap-1">
                                                 <Info size={10} /> {item.notes}
                                              </p>
                                           )}
                                        </div>
-                                       <span className="text-[10px] font-black text-text-secondary bg-background px-3 py-1.5 rounded-full border border-border-subtle shrink-0 ml-4 text-center">
+                                       <span className="text-[10px] font-black text-text-main bg-[#fde047] px-4 py-1.5 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] shrink-0 ml-4 text-center uppercase tracking-widest">
                                           {item.amount}
                                        </span>
                                     </div>

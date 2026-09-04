@@ -26,6 +26,10 @@ export default function App() {
   const [activeTab, setActiveTab] = useState('inicio');
   const { user, loading, signIn, error } = useAuth();
   const isOnline = useNetworkStatus();
+  
+  const handleLogin = () => {
+    signIn();
+  };
 
   if (error) {
     return <div className="min-h-screen bg-background flex flex-col items-center justify-center font-display text-text-main p-8 text-center">

@@ -1,44 +1,75 @@
 export const mockInventory = [
   // 1. Frutas y Verduras
-  { id: 'v1', category: 'Frutas y Verduras', name: 'Jitomates', amount: 0, unit: 'piezas', lowThreshold: 3, kcal: 22, icon: '🍅' },
-  { id: 'v2', category: 'Frutas y Verduras', name: 'Cebollas', amount: 0, unit: 'piezas', lowThreshold: 2, kcal: 40, icon: '🧅' },
-  { id: 'v3', category: 'Frutas y Verduras', name: 'Chiles verdes', amount: 0, unit: 'g', lowThreshold: 100, kcal: 40, icon: '🌶️' },
-  { id: 'v4', category: 'Frutas y Verduras', name: 'Zanahorias', amount: 0, unit: 'piezas', lowThreshold: 3, kcal: 41, icon: '🥕' },
-  { id: 'v5', category: 'Frutas y Verduras', name: 'Espinacas', amount: 0, unit: 'g', lowThreshold: 200, kcal: 23, icon: '🥬' },
-  { id: 'v6', category: 'Frutas y Verduras', name: 'Brócoli', amount: 0, unit: 'piezas', lowThreshold: 1, kcal: 34, icon: '🥦' },
-  { id: 'f1', category: 'Frutas y Verduras', name: 'Melón', amount: 0, unit: 'piezas', lowThreshold: 1, kcal: 34, icon: '🍈' },
-  { id: 'f2', category: 'Frutas y Verduras', name: 'Fresas', amount: 0, unit: 'g', lowThreshold: 200, kcal: 32, icon: '🍓' },
-  { id: 'f3', category: 'Frutas y Verduras', name: 'Manzanas', amount: 0, unit: 'piezas', lowThreshold: 3, kcal: 52, icon: '🍎' },
-  { id: 'f4', category: 'Frutas y Verduras', name: 'Plátanos', amount: 0, unit: 'piezas', lowThreshold: 3, kcal: 89, icon: '🍌' },
+  { id: 'v1', category: 'Frutas y Verduras', name: 'Zanahoria rallada', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🥕' },
+  { id: 'v2', category: 'Frutas y Verduras', name: 'Melón', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🍈' },
+  { id: 'v3', category: 'Frutas y Verduras', name: 'Durazno', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍑' },
+  { id: 'v4', category: 'Frutas y Verduras', name: 'Kiwi', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🥝' },
+  { id: 'v5', category: 'Frutas y Verduras', name: 'Piña', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🍍' },
+  { id: 'v6', category: 'Frutas y Verduras', name: 'Sandía', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🍉' },
+  { id: 'v7', category: 'Frutas y Verduras', name: 'Mango', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🥭' },
+  { id: 'v8', category: 'Frutas y Verduras', name: 'Papaya', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🍈' },
+  { id: 'v9', category: 'Frutas y Verduras', name: 'Tuna', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🌵' },
+  { id: 'v10', category: 'Frutas y Verduras', name: 'Mandarina', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍊' },
+  { id: 'v11', category: 'Frutas y Verduras', name: 'Ciruela', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🫐' },
+  { id: 'v12', category: 'Frutas y Verduras', name: 'Chile poblano', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🌶️' },
+  { id: 'v13', category: 'Frutas y Verduras', name: 'Nopal', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🌵' },
+  { id: 'v14', category: 'Frutas y Verduras', name: 'Plátanos dominicos', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍌' },
+  { id: 'v15', category: 'Frutas y Verduras', name: 'Naranja', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍊' },
+  { id: 'v16', category: 'Frutas y Verduras', name: 'Plátano', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍌' },
+  { id: 'v17', category: 'Frutas y Verduras', name: 'Pera', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍐' },
+  { id: 'v18', category: 'Frutas y Verduras', name: 'Manzana', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍎' },
 
-  // 2. Carnes, Aves, Pescados
-  { id: 'c1', category: 'Carnes, Aves y Pescados', name: 'Bistec de res', amount: 0, unit: 'g', lowThreshold: 300, kcal: 250, icon: '🥩' },
-  { id: 'c2', category: 'Carnes, Aves y Pescados', name: 'Pechuga de pollo', amount: 0, unit: 'g', lowThreshold: 300, kcal: 165, icon: '🍗' },
-  { id: 'c3', category: 'Carnes, Aves y Pescados', name: 'Filete de pescado', amount: 0, unit: 'g', lowThreshold: 300, kcal: 105, icon: '🐟' },
-  { id: 'c4', category: 'Carnes, Aves y Pescados', name: 'Jamón de pavo', amount: 0, unit: 'g', lowThreshold: 150, kcal: 104, icon: '🥓' },
-  { id: 'c5', category: 'Carnes, Aves y Pescados', name: 'Salchichas', amount: 0, unit: 'piezas', lowThreshold: 4, kcal: 300, icon: '🌭' },
+  // 2. Carnes, Aves y Pescados
+  { id: 'c1', category: 'Carnes, Aves y Pescados', name: 'Puntas de res', amount: 0, unit: 'g', lowThreshold: 300, kcal: 0, icon: '🥩' },
+  { id: 'c2', category: 'Carnes, Aves y Pescados', name: 'Jamón de pavo', amount: 0, unit: 'rebanada', lowThreshold: 10, kcal: 0, icon: '🥓' },
+  { id: 'c3', category: 'Carnes, Aves y Pescados', name: 'Pechuga de pavo', amount: 0, unit: 'rebanada', lowThreshold: 10, kcal: 0, icon: '🥓' },
+  { id: 'c4', category: 'Carnes, Aves y Pescados', name: 'Pechuga de pollo', amount: 0, unit: 'g', lowThreshold: 300, kcal: 0, icon: '🍗' },
+  { id: 'c5', category: 'Carnes, Aves y Pescados', name: 'Surimi', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🦀' },
+  { id: 'c6', category: 'Carnes, Aves y Pescados', name: 'Salchichas', amount: 0, unit: 'pieza', lowThreshold: 4, kcal: 0, icon: '🌭' },
+  { id: 'c7', category: 'Carnes, Aves y Pescados', name: 'Carne deshebrada', amount: 0, unit: 'g', lowThreshold: 200, kcal: 0, icon: '🥩' },
+  { id: 'c8', category: 'Carnes, Aves y Pescados', name: 'Pescado', amount: 0, unit: 'g', lowThreshold: 200, kcal: 0, icon: '🐟' },
+  { id: 'c9', category: 'Carnes, Aves y Pescados', name: 'Bistec de res', amount: 0, unit: 'g', lowThreshold: 300, kcal: 0, icon: '🥩' },
+  { id: 'c10', category: 'Carnes, Aves y Pescados', name: 'Pollo deshebrado', amount: 0, unit: 'g', lowThreshold: 200, kcal: 0, icon: '🍗' },
+  { id: 'c11', category: 'Carnes, Aves y Pescados', name: 'Atún en agua', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🥫' },
 
-  // 3. Lácteos, Quesos y Huevo
-  { id: 'l1', category: 'Lácteos y Huevo', name: 'Leche descremada', amount: 0, unit: 'litros', lowThreshold: 1, kcal: 34, icon: '🥛' },
-  { id: 'l2', category: 'Lácteos y Huevo', name: 'Queso panela', amount: 0, unit: 'g', lowThreshold: 200, kcal: 293, icon: '🧀' },
-  { id: 'l3', category: 'Lácteos y Huevo', name: 'Queso manchego', amount: 0, unit: 'g', lowThreshold: 200, kcal: 320, icon: '🧀' },
-  { id: 'l4', category: 'Lácteos y Huevo', name: 'Huevo', amount: 0, unit: 'piezas', lowThreshold: 6, kcal: 155, icon: '🥚' },
+  // 3. Lácteos y Huevo
+  { id: 'l1', category: 'Lácteos y Huevo', name: 'Queso manchego', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🧀' },
+  { id: 'l2', category: 'Lácteos y Huevo', name: 'Leche descremada', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🥛' },
+  { id: 'l3', category: 'Lácteos y Huevo', name: 'Huevo', amount: 0, unit: 'pieza', lowThreshold: 6, kcal: 0, icon: '🥚' },
+  { id: 'l4', category: 'Lácteos y Huevo', name: 'Requesón', amount: 0, unit: 'cucharada', lowThreshold: 4, kcal: 0, icon: '🧀' },
+  { id: 'l5', category: 'Lácteos y Huevo', name: 'Queso panela', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🧀' },
+  { id: 'l6', category: 'Lácteos y Huevo', name: 'Queso cottage', amount: 0, unit: 'cucharada', lowThreshold: 4, kcal: 0, icon: '🧀' },
+  { id: 'l7', category: 'Lácteos y Huevo', name: 'Queso Oaxaca', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🧀' },
+  { id: 'l8', category: 'Lácteos y Huevo', name: 'Crema', amount: 0, unit: 'cucharada', lowThreshold: 4, kcal: 0, icon: '🥛' },
 
   // 4. Panadería y Cereales
-  { id: 'p1', category: 'Panadería y Cereales', name: 'Tortillas de maíz', amount: 0, unit: 'kg', lowThreshold: 0.5, kcal: 218, icon: '🫓' },
-  { id: 'p2', category: 'Panadería y Cereales', name: 'Pan de caja integral', amount: 0, unit: 'piezas', lowThreshold: 4, kcal: 247, icon: '🍞' },
-  { id: 'p3', category: 'Panadería y Cereales', name: 'Arroz blanco', amount: 0, unit: 'g', lowThreshold: 300, kcal: 130, icon: '🍚' },
-  { id: 'p4', category: 'Panadería y Cereales', name: 'Avena', amount: 0, unit: 'g', lowThreshold: 250, kcal: 389, icon: '🥣' },
+  { id: 'p1', category: 'Panadería y Cereales', name: 'Arroz blanco', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🍚' },
+  { id: 'p2', category: 'Panadería y Cereales', name: 'Pan integral', amount: 0, unit: 'rebanada', lowThreshold: 4, kcal: 0, icon: '🍞' },
+  { id: 'p3', category: 'Panadería y Cereales', name: 'Pan de caja', amount: 0, unit: 'rebanada', lowThreshold: 4, kcal: 0, icon: '🍞' },
+  { id: 'p4', category: 'Panadería y Cereales', name: 'Tortilla de maíz', amount: 0, unit: 'pieza', lowThreshold: 10, kcal: 0, icon: '🫓' },
+  { id: 'p5', category: 'Panadería y Cereales', name: 'Tortilla de nopal', amount: 0, unit: 'pieza', lowThreshold: 10, kcal: 0, icon: '🫓' },
+  { id: 'p6', category: 'Panadería y Cereales', name: 'Tortilla de harina', amount: 0, unit: 'pieza', lowThreshold: 10, kcal: 0, icon: '🫓' },
+  { id: 'p7', category: 'Panadería y Cereales', name: 'Bolillo', amount: 0, unit: 'pieza', lowThreshold: 4, kcal: 0, icon: '🥖' },
+  { id: 'p8', category: 'Panadería y Cereales', name: 'Tostadas', amount: 0, unit: 'pieza', lowThreshold: 10, kcal: 0, icon: '🫓' },
+  { id: 'p9', category: 'Panadería y Cereales', name: 'Bísquet', amount: 0, unit: 'pieza', lowThreshold: 2, kcal: 0, icon: '🥐' },
+  { id: 'p10', category: 'Panadería y Cereales', name: 'Sopa de fideo', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🥣' },
+  { id: 'p11', category: 'Panadería y Cereales', name: 'Galletas integrales', amount: 0, unit: 'pieza', lowThreshold: 5, kcal: 0, icon: '🍪' },
+  { id: 'p12', category: 'Panadería y Cereales', name: 'Cuernito', amount: 0, unit: 'pieza', lowThreshold: 2, kcal: 0, icon: '🥐' },
+  { id: 'p13', category: 'Panadería y Cereales', name: 'Pan árabe', amount: 0, unit: 'pieza', lowThreshold: 4, kcal: 0, icon: '🫓' },
+  { id: 'p14', category: 'Panadería y Cereales', name: 'Cereal integral', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🥣' },
 
   // 5. Abarrotes y Despensa
-  { id: 'a1', category: 'Abarrotes y Despensa', name: 'Atún en agua', amount: 0, unit: 'latas', lowThreshold: 2, kcal: 116, icon: '🥫' },
-  { id: 'a2', category: 'Abarrotes y Despensa', name: 'Frijoles refritos', amount: 0, unit: 'bolsas', lowThreshold: 1, kcal: 94, icon: '🫘' },
-  { id: 'a3', category: 'Abarrotes y Despensa', name: 'Crema de cacahuate', amount: 0, unit: 'frascos', lowThreshold: 1, kcal: 588, icon: '🥜' },
-  { id: 'a4', category: 'Abarrotes y Despensa', name: 'Aceite de oliva', amount: 0, unit: 'botellas', lowThreshold: 1, kcal: 884, icon: '🍾' },
-  
-  // 6. Bebidas
-  { id: 'b1', category: 'Bebidas e Infusiones', name: 'Té sin azúcar', amount: 0, unit: 'cajas', lowThreshold: 1, kcal: 1, icon: '🍵' },
-  { id: 'b2', category: 'Bebidas e Infusiones', name: 'Café soluble', amount: 0, unit: 'frascos', lowThreshold: 1, kcal: 2, icon: '☕' },
+  { id: 'a1', category: 'Abarrotes y Despensa', name: 'Ate', amount: 0, unit: 'rebanada', lowThreshold: 2, kcal: 0, icon: '🍬' },
+  { id: 'a2', category: 'Abarrotes y Despensa', name: 'Mayonesa light', amount: 0, unit: 'cucharada', lowThreshold: 2, kcal: 0, icon: '🍯' },
+  { id: 'a3', category: 'Abarrotes y Despensa', name: 'Frijoles', amount: 0, unit: 'cucharada', lowThreshold: 2, kcal: 0, icon: '🫘' },
+  { id: 'a4', category: 'Abarrotes y Despensa', name: 'Margarina', amount: 0, unit: 'cucharadita', lowThreshold: 2, kcal: 0, icon: '🧈' },
+  { id: 'a5', category: 'Abarrotes y Despensa', name: 'Azúcar', amount: 0, unit: 'cucharadita', lowThreshold: 5, kcal: 0, icon: '🍚' },
+  { id: 'a6', category: 'Abarrotes y Despensa', name: 'Miel maple', amount: 0, unit: 'cucharadita', lowThreshold: 2, kcal: 0, icon: '🍯' },
+  { id: 'a7', category: 'Abarrotes y Despensa', name: 'Aceite', amount: 0, unit: 'cucharadita', lowThreshold: 5, kcal: 0, icon: '🍾' },
+  { id: 'a8', category: 'Abarrotes y Despensa', name: 'Mermelada baja en calorías', amount: 0, unit: 'cucharadita', lowThreshold: 2, kcal: 0, icon: '🍯' },
+
+  // 6. Bebidas e Infusiones
+  { id: 'b1', category: 'Bebidas e Infusiones', name: 'Jugo de naranja o mandarina', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🧃' }
 ];
 
 export const mockMenus = [
@@ -287,3 +318,4 @@ export const mockMissing = [
   { id: 'm2', name: 'Queso manchego', qty: '60 g', icon: '🧀' },
   { id: 'm3', name: 'Pescado', qty: '250 g', icon: '🐟' }
 ];
+

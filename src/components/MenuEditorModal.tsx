@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { X, Plus, Trash2, ArrowRight, Edit3 } from 'lucide-react';
-import { mockInventory } from '../data';
+import { X, Plus, Trash2, ArrowRight, Edit3, Search, GripVertical } from 'lucide-react';
+import { useAppData } from '../hooks/useAppData';
 
 interface MenuEditorProps {
   menu: any;
@@ -16,7 +16,7 @@ function formatTo24h(timeStr: string) {
   let [hours, minutes] = time.split(':');
   if (period === 'PM' && hours !== '12') hours = String(Number(hours) + 12);
   if (period === 'AM' && hours === '12') hours = '00';
-  return `${hours.padStart(2, '0')}:\${minutes}`;
+  return `${hours.padStart(2, '0')}:${minutes}`;
 }
 
 function formatTo12h(timeStr: string) {
@@ -26,12 +26,14 @@ function formatTo12h(timeStr: string) {
   const h = Number(hours);
   const period = h >= 12 ? 'PM' : 'AM';
   const h12 = h % 12 || 12;
-  return `${h12.toString().padStart(2, '0')}:\${minutes} \${period}`;
+  return `${h12.toString().padStart(2, '0')}:${minutes} ${period}`;
 }
 
 export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: MenuEditorProps) {
+  const { inventory } = useAppData();
   const [title, setTitle] = useState(menu.title);
-  const [coverImage, setCoverImage] = useState(menu.coverImage || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80');
+  const [coverImage, setCoverImage] = useState(menu.coverImage || '/menu1.jpg');
+  const [themeColor, setThemeColor] = useState(menu.themeColor || 'amarillo');
   const [meals, setMeals] = useState<any[]>(menu.meals || []);
   
   const [showAddMeal, setShowAddMeal] = useState(false);
@@ -42,10 +44,23 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
   const [newMealTime, setNewMealTime] = useState('12:00 PM');
   const [selectedIngredients, setSelectedIngredients] = useState<any[]>([]);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+  const [draggedMealIdx, setDraggedMealIdx] = useState<number | null>(null);
+
+  const [itemToAdd, setItemToAdd] = useState<any | null>(null);
+  const [itemQty, setItemQty] = useState<number>(1);
+
+  const categories = Array.from(new Set(inventory.map(item => item.category)));
+  const groupedInventory = categories.map(cat => ({
+    name: cat,
+    items: inventory.filter(item => item.category === cat && item.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  })).filter(cat => cat.items.length > 0);
 
   const handleAddIngredient = (item: any) => {
     if (selectedIngredients.find(i => i.name === item.name)) return;
-    setSelectedIngredients([...selectedIngredients, { name: item.name, qty: '1 porción', icon: item.icon, ready: true }]);
+    setItemToAdd(item);
+    setItemQty(item.unit === 'g' || item.unit === 'ml' ? 100 : 1);
   };
 
   const handleRemoveIngredient = (name: string) => {
@@ -73,14 +88,15 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
   const handleSaveMeal = () => {
     if (!newMealName) return;
     
+    let updatedMeals = [];
     if (editingMealId) {
-       setMeals(meals.map(m => m.id === editingMealId ? {
+       updatedMeals = meals.map(m => m.id === editingMealId ? {
           ...m,
           name: newMealName,
           type: newMealType,
           time: newMealTime,
           ingredients: selectedIngredients
-       } : m));
+       } : m);
     } else {
        const newMeal = {
          id: 'meal-' + Date.now(),
@@ -92,8 +108,22 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
          icon: '🍽️',
          ingredients: selectedIngredients
        };
-       setMeals([...meals, newMeal]);
+       updatedMeals = [...meals, newMeal];
     }
+    
+    updatedMeals.sort((a, b) => {
+      const parse = (t: string) => {
+        if (!t) return 0;
+        const [time, p] = t.split(' ');
+        let [h, m] = time.split(':').map(Number);
+        if (p === 'PM' && h !== 12) h += 12;
+        if (p === 'AM' && h === 12) h = 0;
+        return h * 60 + m;
+      };
+      return parse(a.time) - parse(b.time);
+    });
+    
+    setMeals(updatedMeals);
     
     setShowAddMeal(false);
     setEditingMealId(null);
@@ -124,28 +154,36 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
 
           <div className="mb-6">
              <label className="block text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">Portada del menú</label>
-             <div className="flex gap-3 overflow-x-auto pb-2 custom-scrollbar">
-                {["https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80","https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=80","https://images.unsplash.com/photo-149883716733f-a5189f104c21?w=400&q=80","https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80","https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400&q=80","https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&q=80"].map(img => (
+             <div className="flex gap-3 overflow-x-auto pb-4 pt-2 px-1 custom-scrollbar">
+                {["/menu1.jpg", "/menu2.jpg", "/menu3.jpg", "/menu4.jpg", "/menu5.jpg", "/menu6.jpg", "/menu7.jpg"].map(img => (
                    <img 
                       key={img}
                       src={img}
                       alt="Cover option"
                       onClick={() => setCoverImage(img)}
-                      className={`w-16 h-16 rounded-xl object-cover cursor-pointer border-2 transition-all ${coverImage === img ? 'border-primary-900 shadow-[4px_4px_0_0_var(--color-primary-900)] scale-110' : 'border-transparent hover:border-text-main'}`}
+                      className={`w-24 h-24 sm:w-32 sm:h-32 rounded-xl object-cover cursor-pointer border-2 transition-all shrink-0 ${coverImage === img ? 'border-primary-900 shadow-[4px_4px_0_0_var(--color-primary-900)] scale-110' : 'border-transparent hover:border-text-main'}`}
                    />
                 ))}
              </div>
-             <div className="mt-3">
-                <input 
-                   type="text" 
-                   placeholder="Pega aquí la URL de tu imagen o ruta local (ej. /foto.jpg)" 
-                   value={coverImage} 
-                   onChange={e => setCoverImage(e.target.value)} 
-                   className="w-full bg-surface border-2 border-text-main rounded-xl p-3 text-sm font-bold text-text-main focus:outline-none focus:translate-y-1 focus:shadow-[0_0_0_0_var(--color-text-main)] shadow-[4px_4px_0_0_var(--color-text-main)] transition-all"
-                />
-             </div>
           </div>
 
+          <div className="mb-6">
+             <label className="block text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">Color del menú</label>
+             <div className="flex gap-4">
+                {[
+                   { id: 'amarillo', class: 'bg-[#fde047]' },
+                   { id: 'azul', class: 'bg-blue-400' },
+                   { id: 'verde', class: 'bg-green-400' },
+                   { id: 'naranja', class: 'bg-orange-500' }
+                ].map(color => (
+                   <button
+                      key={color.id}
+                      onClick={() => setThemeColor(color.id)}
+                      className={`w-10 h-10 rounded-full border-2 border-text-main ${color.class} transition-all ${themeColor === color.id ? 'shadow-[4px_4px_0_0_var(--color-text-main)] scale-110' : 'shadow-none hover:shadow-[2px_2px_0_0_var(--color-text-main)]'}`}
+                   />
+                ))}
+             </div>
+          </div>
 
           <div>
              <div className="flex justify-between items-center mb-4">
@@ -186,13 +224,46 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
                             </div>
                          )}
 
-                         <div className="h-40 overflow-y-auto border-2 border-text-main rounded-xl p-2 bg-surface shadow-inner custom-scrollbar">
-                            {mockInventory.map(item => (
-                               <button key={item.id} onClick={() => handleAddIngredient(item)} className="w-full flex items-center justify-between px-3 py-2 text-xs hover:bg-slate-100 font-bold border-b-2 border-border-subtle last:border-0 transition-colors">
-                                  <span className="flex items-center gap-2"><span className="text-lg">{item.icon}</span> {item.name}</span>
-                                  <Plus size={14} className="text-text-secondary" />
-                               </button>
-                            ))}
+                         <div className="mb-2 relative">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary" size={16} />
+                            <input 
+                               type="text" 
+                               placeholder="Buscar alimento..." 
+                               value={searchTerm}
+                               onChange={e => setSearchTerm(e.target.value)}
+                               className="w-full pl-10 pr-4 py-2 border-2 border-text-main rounded-xl font-bold text-sm bg-surface focus:outline-none focus:shadow-[2px_2px_0_0_var(--color-text-main)] transition-all"
+                            />
+                         </div>
+                         <div className="h-64 overflow-y-auto border-2 border-text-main rounded-xl p-2 bg-surface shadow-inner custom-scrollbar space-y-2">
+                            {groupedInventory.map(category => {
+                               const isExpanded = expandedCategory === category.name || searchTerm !== '';
+                               return (
+                               <div key={category.name} className="border-2 border-text-main rounded-xl overflow-hidden shadow-[2px_2px_0_0_var(--color-text-main)]">
+                                  <button onClick={() => setExpandedCategory(isExpanded && searchTerm === '' ? null : category.name)} className="w-full flex items-center justify-between p-3 bg-[#bef264] hover:bg-[#a3e635] transition-colors text-left">
+                                      <div className="flex items-center gap-3">
+                                          <div className="w-8 h-8 rounded-full bg-surface border border-text-main flex items-center justify-center text-sm">{category.items[0]?.icon}</div>
+                                          <div>
+                                             <h6 className="font-bold text-xs uppercase tracking-widest text-text-main">{category.name}</h6>
+                                             <p className="text-[9px] font-bold text-text-secondary">{category.items.length} alimentos</p>
+                                          </div>
+                                      </div>
+                                      <div className="w-6 h-6 rounded-full bg-surface border border-text-main flex items-center justify-center">
+                                         {isExpanded ? <X size={12} /> : <Plus size={12} />}
+                                      </div>
+                                  </button>
+                                  {isExpanded && (
+                                     <div className="bg-surface p-2 border-t-2 border-text-main">
+                                        {category.items.map(item => (
+                                            <button key={item.id} onClick={() => handleAddIngredient(item)} className="w-full flex items-center justify-between px-3 py-2 text-xs hover:bg-slate-100 font-bold border-b-2 border-border-subtle last:border-0 transition-colors">
+                                               <span className="flex items-center gap-2"><span className="text-lg">{item.icon}</span> {item.name}</span>
+                                               <Plus size={14} className="text-text-secondary" />
+                                            </button>
+                                        ))}
+                                     </div>
+                                  )}
+                               </div>
+                               );
+                            })}
                          </div>
                       </div>
 
@@ -204,15 +275,60 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
                           {editingMealId ? 'Guardar Cambios' : 'Confirmar Comida'}
                         </button>
                       </div>
-                   </div>
+                    </div>
+                    
+                    {itemToAdd && (
+                       <div className="fixed inset-0 bg-text-main/20 z-[110] flex items-center justify-center p-4 animate-in fade-in">
+                          <div className="bg-surface border-2 border-text-main rounded-[24px] p-6 w-full max-w-sm shadow-[8px_8px_0_0_var(--color-text-main)] text-center">
+                             <div className="text-4xl mb-2">{itemToAdd.icon}</div>
+                             <h3 className="font-display font-black text-xl uppercase tracking-tight text-text-main mb-4">{itemToAdd.name}</h3>
+                             
+                             <div className="flex flex-col items-center mb-6">
+                                <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2 text-left w-full max-w-[280px]">Cantidad</p>
+                                <div className="flex items-center gap-4 justify-center w-full max-w-[280px]">
+                                   <div className="flex items-center bg-surface border-2 border-text-main rounded-[16px] shadow-[4px_4px_0_0_var(--color-text-main)] overflow-hidden shrink-0">
+                                      <button onClick={() => setItemQty(Math.max(1, itemQty - (itemToAdd.unit === 'g' || itemToAdd.unit === 'ml' ? 10 : 1)))} className="w-12 h-12 bg-[#e2e8f0] flex items-center justify-center text-text-main text-2xl font-black border-r-2 border-text-main hover:bg-slate-300 transition-colors">-</button>
+                                      <input type="number" value={itemQty} onChange={(e) => setItemQty(Number(e.target.value))} className="w-20 h-12 bg-white text-center font-black text-2xl text-text-main focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
+                                      <button onClick={() => setItemQty(itemQty + (itemToAdd.unit === 'g' || itemToAdd.unit === 'ml' ? 10 : 1))} className="w-12 h-12 bg-[#e2e8f0] flex items-center justify-center text-text-main text-2xl font-black border-l-2 border-text-main hover:bg-slate-300 transition-colors">+</button>
+                                   </div>
+                                   <span className="text-[10px] font-black uppercase tracking-widest text-text-main bg-[#bef264] px-4 py-2 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] whitespace-nowrap">{itemToAdd.unit}</span>
+                                </div>
+                             </div>
+                             
+                             <div className="flex gap-3">
+                                <button onClick={() => setItemToAdd(null)} className="flex-1 bg-surface border-2 border-text-main text-text-main font-black uppercase tracking-widest py-3 rounded-xl hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">Cancelar</button>
+                                <button onClick={() => {
+                                   setSelectedIngredients([...selectedIngredients, { name: itemToAdd.name, qty: `${itemQty} ${itemToAdd.unit}`, icon: itemToAdd.icon, ready: true }]);
+                                   setItemToAdd(null);
+                                }} className="flex-1 bg-primary-900 border-2 border-text-main text-white font-black uppercase tracking-widest py-3 rounded-xl hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">Agregar</button>
+                             </div>
+                          </div>
+                       </div>
+                    )}
                 </div>
              )}
 
              {!showAddMeal && (
                  <div className="space-y-4">
                     {meals.map((meal, idx) => (
-                       <div key={meal.id} className="flex justify-between items-center bg-surface border-2 border-text-main p-4 rounded-[20px] shadow-[4px_4px_0_0_var(--color-text-main)] hover:shadow-[6px_6px_0_0_var(--color-text-main)] hover:-translate-y-1 transition-all group">
-                          <div className="flex-1" onClick={() => openEditMeal(meal)}>
+                       <div 
+                          key={meal.id} 
+                          draggable
+                          onDragStart={() => setDraggedMealIdx(idx)}
+                          onDragOver={(e) => {
+                            e.preventDefault();
+                            if (draggedMealIdx === null || draggedMealIdx === idx) return;
+                            const newMeals = [...meals];
+                            const dragged = newMeals[draggedMealIdx];
+                            newMeals.splice(draggedMealIdx, 1);
+                            newMeals.splice(idx, 0, dragged);
+                            setMeals(newMeals);
+                            setDraggedMealIdx(idx);
+                          }}
+                          onDragEnd={() => setDraggedMealIdx(null)}
+                          className={`flex justify-between items-center bg-surface border-2 border-text-main p-4 rounded-[20px] shadow-[4px_4px_0_0_var(--color-text-main)] transition-all group ${draggedMealIdx === idx ? 'opacity-50 scale-95' : 'hover:-translate-y-1 hover:shadow-[6px_6px_0_0_var(--color-text-main)]'}`}
+                       >
+                          <div className="flex-1 cursor-pointer" onClick={() => openEditMeal(meal)}>
                              <div className="flex items-center gap-2 mb-1">
                                 <p className="text-[10px] font-black text-text-secondary uppercase tracking-widest">{meal.type}</p>
                                 <span className="text-primary-500 text-[10px] font-black">•</span>
@@ -222,13 +338,16 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
                              <p className="text-[9px] font-bold text-text-secondary mt-1">{meal.ingredients?.length || 0} ingredientes</p>
                           </div>
                           
-                          <div className="flex gap-2 shrink-0">
-                             <button onClick={() => openEditMeal(meal)} className="w-10 h-10 bg-surface border-2 border-text-main rounded-full flex items-center justify-center text-text-main hover:bg-[#fde047] shadow-[2px_2px_0_0_var(--color-text-main)] transition-colors">
+                          <div className="flex gap-2 shrink-0 items-center">
+                             <button onClick={() => openEditMeal(meal)} className="w-10 h-10 bg-blue-500 border-2 border-text-main rounded-full flex items-center justify-center text-white hover:bg-blue-600 shadow-[2px_2px_0_0_var(--color-text-main)] transition-colors">
                                 <Edit3 size={18} />
                              </button>
-                             <button onClick={() => setMeals(meals.filter((_, i) => i !== idx))} className="w-10 h-10 bg-surface border-2 border-text-main rounded-full flex items-center justify-center text-text-main hover:bg-red-400 hover:text-white shadow-[2px_2px_0_0_var(--color-text-main)] transition-colors">
+                             <button onClick={() => setMeals(meals.filter((_, i) => i !== idx))} className="w-10 h-10 bg-red-500 border-2 border-text-main rounded-full flex items-center justify-center text-white hover:bg-red-600 shadow-[2px_2px_0_0_var(--color-text-main)] transition-colors">
                                 <Trash2 size={18} />
                              </button>
+                             <div className="cursor-grab active:cursor-grabbing text-text-secondary hover:text-text-main ml-2 px-1">
+                                <GripVertical size={24} />
+                             </div>
                           </div>
                        </div>
                     ))}
@@ -244,7 +363,7 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
           {onDelete && (
              <div className="w-full">
              {!showDeleteConfirm ? (
-               <button onClick={() => setShowDeleteConfirm(true)} className="w-full bg-red-100 border-2 border-text-main text-red-600 font-black uppercase tracking-widest py-4 rounded-full flex items-center justify-center gap-2 hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)] hover:bg-red-500 hover:text-white transition-all mt-6 mb-4 neo-btn">
+               <button onClick={() => setShowDeleteConfirm(true)} className="w-full bg-red-500 border-2 border-text-main text-white font-black uppercase tracking-widest py-4 rounded-full flex items-center justify-center gap-2 hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)] hover:bg-red-100 hover:text-red-600 transition-all mt-6 mb-4 neo-btn">
                  Eliminar Menú <Trash2 size={18} />
                </button>
              ) : (
@@ -262,7 +381,7 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
              )}
              </div>
           )}
-          <button onClick={() => onSave({ title, meals, coverImage })} className="w-full bg-accent-500 border-2 border-text-main text-text-main font-black uppercase tracking-widest py-4 rounded-full flex items-center justify-center gap-2 hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)] hover:bg-accent-400 transition-all neo-btn">
+          <button onClick={() => onSave({ title, meals, coverImage, themeColor })} className="w-full bg-accent-500 border-2 border-text-main text-text-main font-black uppercase tracking-widest py-4 rounded-full flex items-center justify-center gap-2 hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)] hover:bg-accent-400 transition-all neo-btn">
             Guardar Cambios <ArrowRight size={18} />
           </button>
       </div>

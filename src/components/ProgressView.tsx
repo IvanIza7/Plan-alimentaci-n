@@ -87,7 +87,7 @@ export default function ProgressView() {
         <div className="bg-background rounded-full p-1.5 flex border-2 border-border-subtle neo-card shadow-none">
            <button 
               onClick={() => setTab('adherencia')}
-              className={`flex-1 py-3 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all ${tab === 'adherencia' ? 'bg-primary-900 text-surface neo-card shadow-[4px_4px_0_0_var(--color-text-main)]' : 'text-text-secondary hover:text-text-main'}`}
+              className={`flex-1 py-3 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-widest transition-all ${tab === 'adherencia' ? 'bg-accent-500 text-text-main neo-card shadow-[4px_4px_0_0_var(--color-text-main)]' : 'text-text-secondary hover:text-text-main'}`}
            >
               Adherencia
            </button>
@@ -112,7 +112,7 @@ export default function ProgressView() {
               
               <div className="flex gap-2 mt-6">
                  {['L', 'M', 'X', 'J', 'V', 'S', 'D'].map((day, i) => (
-                    <div key={day} className={`flex-1 aspect-square rounded-full flex items-center justify-center ${i < 5 ? 'bg-accent-500 text-text-main' : 'bg-surface/10 text-primary-300'}`}>
+                    <div key={day} className={`flex-1 aspect-square rounded-full flex items-center justify-center border-2 border-text-main ${i < 5 ? 'bg-accent-500 text-text-main' : 'bg-surface text-text-main'}`}>
                        <span className={`text-[10px] font-black uppercase tracking-widest`}>{day}</span>
                     </div>
                  ))}
@@ -123,29 +123,29 @@ export default function ProgressView() {
            <div className="mt-4">
               <h3 className="text-[10px] font-black text-text-secondary uppercase tracking-widest mb-4 px-2">Patrones de Conducta</h3>
               <div className="grid grid-cols-2 gap-4">
-                 <div className="bg-surface border-2 border-border-subtle p-5 rounded-[28px]">
-                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mb-3 text-green-700">
+                 <div className="bg-surface border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] p-5 rounded-[28px]">
+                    <div className="w-10 h-10 rounded-full bg-accent-500 border-2 border-text-main flex items-center justify-center mb-3 text-text-main">
                        <Activity size={20} />
                     </div>
                     <h3 className="text-3xl font-display font-black text-text-main mb-1 tracking-tight">{totalMeals}</h3>
                     <p className="text-[10px] font-black text-text-secondary uppercase tracking-widest">Comidas<br/>Registradas</p>
                  </div>
-                 <div className="bg-surface border-2 border-border-subtle p-5 rounded-[28px]">
-                    <div className="w-10 h-10 rounded-full bg-accent-100 flex items-center justify-center mb-3 text-accent-700">
+                 <div className="bg-surface border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] p-5 rounded-[28px]">
+                    <div className="w-10 h-10 rounded-full bg-accent-500 border-2 border-text-main flex items-center justify-center mb-3 text-text-main">
                        <TrendingDown size={20} />
                     </div>
                     <h3 className="text-3xl font-display font-black text-text-main mb-1 tracking-tight">{totalSubstitutions}</h3>
                     <p className="text-[10px] font-black text-text-secondary uppercase tracking-widest">Alimentos<br/>Sustituidos</p>
                  </div>
-                 <div className="bg-surface border-2 border-border-subtle p-5 rounded-[28px]">
-                    <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mb-3 text-red-700">
+                 <div className="bg-surface border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] p-5 rounded-[28px]">
+                    <div className="w-10 h-10 rounded-full bg-accent-500 border-2 border-text-main flex items-center justify-center mb-3 text-text-main">
                        <XCircle size={20} />
                     </div>
                     <h3 className="text-3xl font-display font-black text-text-main mb-1 tracking-tight">{totalSkipped}</h3>
                     <p className="text-[10px] font-black text-text-secondary uppercase tracking-widest">Alimentos<br/>Omitidos</p>
                  </div>
-                 <div className="bg-surface border-2 border-border-subtle p-5 rounded-[28px]">
-                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-3 text-blue-700">
+                 <div className="bg-surface border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] p-5 rounded-[28px]">
+                    <div className="w-10 h-10 rounded-full bg-accent-500 border-2 border-text-main flex items-center justify-center mb-3 text-text-main">
                        <PlusCircle size={20} />
                     </div>
                     <h3 className="text-3xl font-display font-black text-text-main mb-1 tracking-tight">{totalAdded}</h3>
@@ -167,12 +167,12 @@ export default function ProgressView() {
               </div>
               <div className="flex items-baseline gap-2 mb-2">
                  <h2 className="text-6xl md:text-7xl font-display font-black text-text-main tracking-tighter">68</h2>
-                 <span className="text-2xl font-bold text-text-secondary">kg</span>
-                 <div className="flex items-center gap-1 text-green-400 ml-3 font-bold text-[11px] bg-green-400/20 px-2.5 py-1.5 rounded-full uppercase tracking-wider">
+                 <span className="text-2xl font-bold text-text-main">kg</span>
+                 <div className="flex items-center gap-1 text-text-main bg-white border-2 border-text-main ml-3 font-bold text-[11px] px-2.5 py-1.5 rounded-full uppercase tracking-wider">
                     <TrendingDown size={14} /> 0.8 kg
                  </div>
               </div>
-              <p className="text-[9px] font-bold uppercase tracking-widest text-text-secondary">vs medición anterior</p>
+              <p className="text-[9px] font-bold uppercase tracking-widest text-text-main">vs medición anterior</p>
            </button>
 
            {/* Weight Chart (Conditionally shown under the hero) */}
@@ -227,9 +227,9 @@ export default function ProgressView() {
                     const isYearExpanded = expandedHistory.includes(year);
                     return (
                        <div key={year} className="bg-surface border-2 border-text-main rounded-[24px] overflow-hidden neo-card shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">
-                          <button onClick={() => toggleHistoryNode(year)} className="w-full flex justify-between items-center p-4 bg-accent-100 hover:bg-accent-200 transition-colors">
+                          <button onClick={() => toggleHistoryNode(year)} className="w-full flex justify-between items-center p-4 bg-accent-500 hover:bg-accent-400 transition-colors">
                              <h4 className="text-sm font-black text-text-main uppercase tracking-widest">{year}</h4>
-                             <div className={`transition-transform ${isYearExpanded ? 'rotate-180' : ''}`}>
+                             <div className={`transition-transform text-text-main ${isYearExpanded ? 'rotate-180' : ''}`}>
                                 <ChevronDown size={18} />
                              </div>
                           </button>
@@ -251,15 +251,15 @@ export default function ProgressView() {
                                          {isMonthExpanded && (
                                             <div className="p-4 pl-8 pt-0 space-y-3 bg-surface">
                                                {entries.sort((a, b) => b.timestamp - a.timestamp).map((entry, idx) => (
-                                                  <div key={idx} className="bg-background border-2 border-border-subtle p-4 rounded-[20px] flex items-center justify-between hover:border-text-main transition-colors">
+                                                  <div key={idx} className="bg-accent-500 border-2 border-text-main p-4 rounded-[20px] flex items-center justify-between shadow-[2px_2px_0_0_var(--color-text-main)] transition-colors hover:shadow-[4px_4px_0_0_var(--color-text-main)] hover:-translate-y-1">
                                                      <div className="flex items-center gap-4">
-                                                        <div className="w-2.5 h-2.5 rounded-full bg-accent-500 border border-text-main shadow-sm"></div>
+                                                        <div className="w-2.5 h-2.5 rounded-full bg-text-main border border-text-main shadow-sm"></div>
                                                         <div>
-                                                           <div className="flex items-center gap-2 mb-0.5"><p className="text-[9px] font-black uppercase text-text-secondary tracking-widest">{entry.date}</p><span className="text-[8px] font-bold text-text-secondary bg-background px-1.5 py-0.5 rounded-full border border-border-subtle">{entry.time}</span></div>
+                                                           <div className="flex items-center gap-2 mb-0.5"><p className="text-[9px] font-black uppercase text-text-main tracking-widest">{entry.date}</p><span className="text-[8px] font-bold text-text-main bg-surface px-1.5 py-0.5 rounded-full border border-text-main">{entry.time}</span></div>
                                                            <p className="font-display font-black text-xl text-text-main leading-none">{entry.weight} kg</p>
                                                         </div>
                                                      </div>
-                                                     <span className="text-xs font-bold text-text-secondary">{entry.fat} grasa</span>
+                                                     <span className="text-xs font-bold text-text-main">{entry.fat} grasa</span>
                                                   </div>
                                                ))}
                                             </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, ArrowDown, Check } from 'lucide-react';
 import { equivalencesData } from '../data/equivalences';
-import { mockInventory } from '../data';
+import { useAppData } from '../hooks/useAppData';
 
 interface SwapModalProps {
   ingredient: any;
@@ -10,6 +10,8 @@ interface SwapModalProps {
 }
 
 export default function EquivalenceSwapModal({ ingredient, onClose, onSwap }: SwapModalProps) {
+  const { inventory } = useAppData();
+  
   const getCategory = () => {
     const normalize = (s) => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/s$/, '').replace(/es$/, '');
     const ingN = normalize(ingredient.name);
@@ -80,25 +82,26 @@ export default function EquivalenceSwapModal({ ingredient, onClose, onSwap }: Sw
         {/* Equivalences List */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
            {availableEquivalences.map((eq, idx) => {
-              // Try to find icon in mock inventory or assign a default
-              const invItem = mockInventory.find(i => i.name.toLowerCase().includes(eq.name.toLowerCase()));
+              // Try to find icon in real inventory or assign a default
+              const invItem = inventory.find(i => i.name.toLowerCase().includes(eq.name.toLowerCase()) || eq.name.toLowerCase().includes(i.name.toLowerCase()));
               const icon = invItem ? invItem.icon : '🥑';
+              const isInInventory = !!invItem;
               
               return (
                  <button 
                     key={idx} 
                     onClick={() => onSwap({ name: eq.name, qty: eq.amount, icon, ready: true })}
-                    className="w-full bg-background border-2 border-text-main rounded-[24px] p-4 flex items-center gap-4 shadow-none hover:shadow-[4px_4px_0_0_var(--color-text-main)] hover:-translate-y-1 transition-all text-left"
+                    className="w-full bg-[#e6ebc5] rounded-[24px] p-4 flex items-center gap-4 hover:brightness-95 transition-all text-left"
                  >
-                    <div className="w-12 h-12 rounded-full bg-surface flex items-center justify-center text-2xl shrink-0 border border-border-subtle">
+                    <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-2xl shrink-0 border-[1.5px] border-text-main">
                        {icon}
                     </div>
                     <div className="flex-1">
-                       <h5 className="font-bold text-text-main leading-tight mb-0.5">{eq.name}</h5>
-                       <p className="text-[9px] font-black text-text-secondary uppercase tracking-widest">{eq.amount}</p>
+                       <h5 className="font-bold text-text-main leading-tight">{eq.name}</h5>
+                       <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary mt-1">{eq.amount}</p>
                     </div>
-                    <div className="w-8 h-8 rounded-full border-2 border-text-main flex items-center justify-center bg-surface shrink-0">
-                       <Check size={14} className="text-text-main" />
+                    <div className={`w-10 h-10 rounded-full border-[1.5px] border-text-main flex items-center justify-center shrink-0 ${isInInventory ? 'bg-[#bef264]' : 'bg-red-400'}`}>
+                       {isInInventory ? <Check size={18} className="text-text-main" /> : <X size={18} className="text-text-main" />}
                     </div>
                  </button>
               );

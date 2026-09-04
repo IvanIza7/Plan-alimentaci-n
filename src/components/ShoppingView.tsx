@@ -183,9 +183,9 @@ export default function ShoppingView() {
       ) : (
          <div className="space-y-6 animate-in fade-in">
             {Object.entries(historyGroups).sort((a,b) => Number(b[0]) - Number(a[0])).map(([year, months]) => (
-               <div key={year} className="bg-[#bef264] border-2 border-text-main rounded-[32px] overflow-hidden shadow-[8px_8px_0_0_var(--color-text-main)]">
-                  <div className="p-6 border-b-2 border-text-main bg-[#a3e635] flex justify-between items-center">
-                     <h3 className="text-2xl font-black text-text-main tracking-widest">{year}</h3>
+               <div key={year} className="bg-surface border-2 border-text-main rounded-[32px] overflow-hidden shadow-[8px_8px_0_0_var(--color-text-main)]">
+                  <div className="p-6 border-b-2 border-text-main bg-orange-500 flex justify-between items-center">
+                     <h3 className="text-2xl font-black text-surface tracking-widest">{year}</h3>
                   </div>
                   <div className="p-4 space-y-4">
                      {Object.entries(months).map(([month, logs]) => (
@@ -281,7 +281,7 @@ export default function ShoppingView() {
                         )}
                      </div>
                      <div className="pt-4 border-t-2 border-border-subtle">
-                        <button onClick={() => { setAddMode('custom'); if (addIcon === '🛒') setAddIcon({'Frutas y Verduras':'🍎','Carnes, Aves y Pescados':'🥩','Lácteos y Huevo':'🥛','Panadería y Cereales':'🍞','Abarrotes y Despensa':'🥫','Bebidas e Infusiones':'🧃','Otros':'🛒'}[addCat] || '🛒'); }} className="w-full bg-[#fde047] border-2 border-text-main text-text-main font-black uppercase tracking-widest py-4 rounded-xl hover:-translate-y-1 transition-all shadow-[4px_4px_0_0_var(--color-text-main)] neo-btn">
+                        <button onClick={() => { setAddMode('custom'); if (addIcon === '🛒') setAddIcon({'Frutas y Verduras':'🍎','Carnes, Aves y Pescados':'🥩','Lácteos y Huevo':'🥛','Panadería y Cereales':'🍞','Abarrotes y Despensa':'🥫','Bebidas e Infusiones':'🧃','Otros':'🛒'}[addCat] || '🛒'); }} className="w-full bg-orange-500 border-2 border-text-main text-surface font-black uppercase tracking-widest py-4 rounded-xl hover:-translate-y-1 transition-all shadow-[4px_4px_0_0_var(--color-text-main)] neo-btn">
                            Agregar Manual
                         </button>
                      </div>
@@ -338,7 +338,7 @@ export default function ShoppingView() {
                      </div>
                      
                      <div className="pt-4">
-                        <button onClick={handleSaveNew} className="w-full bg-[#4ade80] border-2 border-text-main text-text-main font-black uppercase tracking-widest py-4 rounded-xl neo-btn hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)]">
+                        <button onClick={handleSaveNew} className="w-full bg-orange-500 border-2 border-text-main text-surface font-black uppercase tracking-widest py-4 rounded-xl neo-btn hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)]">
                            Agregar Producto
                         </button>
                      </div>

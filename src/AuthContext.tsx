@@ -60,8 +60,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error signing in', error);
+      setError(`Error al iniciar sesión: ${error.message || error}`);
     }
   };
 
