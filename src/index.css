@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-900: #526B70;
+  --color-primary-700: #6F898E;
+  --color-primary-500: #8BA3A8;
+  --color-primary-300: #B7C7C9;
+  --color-primary-100: #E8EFF0;
+  
+  --color-accent-500: #D4E838;
+  --color-accent-400: #E2F13C;
+  --color-accent-100: #E2F13C;
+
+  --color-background: #E6F0C0;
+  --color-surface: #FFFFFF;
+  --color-text-main: #1E293B;
+  --color-text-secondary: #64748B;
+  --color-border-subtle: #E2E8E8;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Poppins', sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer components {
+  .neo-card {
+    border: 2px solid var(--color-text-main);
+    border-radius: 28px;
+    box-shadow: 6px 6px 0px 0px var(--color-text-main);
+    transition: all 0.2s ease;
+  }
+  .neo-btn {
+    border: 2px solid var(--color-text-main);
+    border-radius: 999px;
+    box-shadow: 4px 4px 0px 0px var(--color-text-main);
+    transition: all 0.2s ease;
+  }
+  .neo-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--color-text-main);
+  }
+
+  .markdown-body {
+    @apply text-text-main text-[15px] sm:text-base leading-relaxed;
+  }
+  .markdown-body h1 {
+    @apply font-display text-4xl sm:text-5xl font-black text-text-main mb-8 mt-12 tracking-tighter uppercase;
+  }
+  .markdown-body h2 {
+    @apply font-display text-2xl sm:text-3xl font-black text-text-main mb-6 mt-10 tracking-tight uppercase;
+  }
+  .markdown-body h3 {
+    @apply font-display text-lg sm:text-xl font-bold text-text-main mb-4 mt-8 uppercase;
+  }
+  .markdown-body p {
+    @apply mb-4;
+  }
+  .markdown-body ul {
+    @apply list-disc list-inside mb-6 space-y-2 text-text-main;
+  }
+  .markdown-body li {
+    @apply marker:text-primary-500;
+  }
+  .markdown-body strong {
+    @apply font-semibold text-text-main;
+  }
+  .markdown-body hr {
+    @apply border-t-4 border-text-main my-10;
+  }
+  .markdown-body code {
+    @apply bg-background text-text-main px-2 py-1 text-sm font-mono border-2 border-text-main shadow-[2px_2px_0px_0px_var(--color-text-main)] font-bold;
+    border-radius: 8px;
+  }
+}
+

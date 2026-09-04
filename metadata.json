@@ -1,0 +1,6 @@
+{
+  "name": "Planificador Nutricional",
+  "description": "Sistema de planificación, seguimiento, inventario y equivalencias alimentarias.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
