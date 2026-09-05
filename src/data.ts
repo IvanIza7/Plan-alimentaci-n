@@ -2119,3 +2119,9 @@ export const mockMenus = [
     ]
   }
 ];
+
+export const mockMissing = [
+  { id: 'm1', name: 'Melón', qty: '1 taza', icon: '🍈' },
+  { id: 'm2', name: 'Queso manchego', qty: '60 g', icon: '🧀' },
+  { id: 'm3', name: 'Pescado', qty: '250 g', icon: '🐟' }
+];
