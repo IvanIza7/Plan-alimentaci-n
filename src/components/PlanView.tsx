@@ -1,10 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, AlertTriangle, ArrowLeft, X, Edit3, Plus, Trash2, Check } from 'lucide-react';
+import { ArrowRight, AlertTriangle, ArrowLeft, X, Edit3, Plus, Trash2, Check, ChevronDown, ChevronUp } from 'lucide-react';
 import { StatusBadge } from './StatusBadge';
 import MenuEditorModal from './MenuEditorModal';
 import { useAppData } from '../hooks/useAppData';
 import { mockMenus } from '../data';
 import { getNutritionalSummary } from '../data/equivalences';
+
+const DishCard = ({ dish }: { dish: any }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+     <div className="bg-surface border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] rounded-[16px] overflow-hidden transition-all">
+        <button 
+           onClick={() => setIsOpen(!isOpen)}
+           className="w-full bg-[#fde047] p-3 flex justify-between items-center hover:bg-[#fef08a] transition-colors"
+        >
+           <h4 className="font-display font-black text-sm uppercase tracking-tight">{dish.name}</h4>
+           <div className="w-6 h-6 rounded-full border-2 border-text-main flex items-center justify-center bg-surface shrink-0">
+              {isOpen ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+           </div>
+        </button>
+        {isOpen && (
+           <div className="p-4 grid grid-cols-1 sm:grid-cols-3 gap-3 animate-in slide-in-from-top-2 fade-in duration-200 border-t-2 border-text-main">
+              {dish.ingredients?.map((ing: any, idx: number) => (
+                <div key={`dish-ing-${idx}`} className="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-2 p-3 bg-background border-2 border-text-main rounded-[12px] hover:-translate-y-0.5 transition-all">
+                   <div className="text-2xl sm:text-3xl bg-surface w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border-2 border-text-main shrink-0 shadow-[2px_2px_0_0_var(--color-text-main)]">{ing.icon}</div>
+                   <div className="hidden sm:block w-6 h-0.5 bg-border-subtle"></div>
+                   <div className="flex flex-col sm:items-center w-full">
+                      <p className="font-bold text-sm text-text-main leading-tight text-center">{ing.name}</p>
+                      <p className="text-[9px] font-black uppercase tracking-widest text-text-main bg-white px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] mt-1 text-center inline-block">{ing.qty}</p>
+                   </div>
+                </div>
+              ))}
+           </div>
+        )}
+     </div>
+  );
+};
 
 export default function PlanView() {
   const { menus, activeMenus, assignMenuToDate, updateMenu, deleteMenu, addMenu } = useAppData();
@@ -128,14 +159,25 @@ export default function PlanView() {
 
            <div className="space-y-6">
               {menu.meals.map((meal) => {
-                 const readyCount = meal.ingredients?.filter(i => i.ready).length || 0;
-                 const totalCount = meal.ingredients?.length || 0;
+                 const allIngs = [...(meal.ingredients || [])];
+                 if (meal.dishes) {
+                    meal.dishes.forEach((d: any) => {
+                       if (d.ingredients) allIngs.push(...d.ingredients);
+                    });
+                 }
+                 const readyCount = allIngs.filter(i => i.ready).length || 0;
+                 const totalCount = allIngs.length || 0;
                  const progress = totalCount === 0 ? 0 : (readyCount / totalCount) * 100;
+
+                 const validDishes = meal.dishes ? meal.dishes.filter((d: any) => d.ingredients && d.ingredients.length > 1) : [];
+                 const singleItemDishes = meal.dishes ? meal.dishes.filter((d: any) => !d.ingredients || d.ingredients.length <= 1) : [];
+                 const singleDishIngredients = singleItemDishes.flatMap((d: any) => d.ingredients || []);
+                 const allLooseIngredients = [...(meal.ingredients || []), ...singleDishIngredients];
 
                  return (
                     <div key={meal.id} className="bg-surface border-2 border-text-main rounded-[24px] flex flex-col neo-card shadow-[6px_6px_0_0_var(--color-text-main)] overflow-hidden">
                        {(() => {
-     const macros = getNutritionalSummary((meal.ingredients || []).map(i => ({ name: i.name, amount: i.qty })));
+     const macros = getNutritionalSummary(allIngs.map(i => ({ name: i.name, amount: i.qty })));
      return (
        <div className="border-b-2 border-text-main">
          <div className={`p-4 flex justify-between items-center ${getMenuColors(menu.themeColor).bg} ${getMenuColors(menu.themeColor).text}`}>
@@ -153,21 +195,32 @@ export default function PlanView() {
        </div>
      );
   })()}
-  <div className={`p-4 md:p-6 ${getMenuColors(menu.themeColor).lightBg}`}>
-                          {/* Grid for Ingredients */}
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                   {meal.ingredients?.map((ing, idx) => (
-                                      <div key={idx} className="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-2 p-3 bg-surface border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] rounded-[16px] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">
-                                         <div className="text-2xl sm:text-3xl bg-background w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border border-border-subtle shrink-0">{ing.icon}</div>
-                                         <div className="hidden sm:block w-6 h-0.5 bg-border-subtle"></div>
-                                         <div className="flex flex-col sm:items-center w-full">
-                                            <p className="font-bold text-sm text-text-main leading-tight text-center">{ing.name}</p>
-                                            <p className="text-[9px] font-black uppercase tracking-widest text-text-main bg-[#fde047] px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] mt-1 text-center inline-block">{ing.qty}</p>
+  <div className={`p-4 md:p-6 ${getMenuColors(menu.themeColor).lightBg} flex flex-col gap-4`}>
+                                {/* Dishes (Grouped Ingredients) */}
+                                {validDishes.length > 0 && (
+                                  <div className="flex flex-col gap-4">
+                                     {validDishes.map((dish: any, dIdx: number) => (
+                                        <DishCard key={`dish-${dIdx}`} dish={dish} />
+                                     ))}
+                                  </div>
+                                )}
+                                
+                                {/* Individual Ingredients */}
+                                {allLooseIngredients.length > 0 && (
+                                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                      {allLooseIngredients.map((ing: any, idx: number) => (
+                                         <div key={`ing-${idx}`} className="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-2 p-3 bg-surface border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] rounded-[16px] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">
+                                            <div className="text-2xl sm:text-3xl bg-background w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border border-border-subtle shrink-0">{ing.icon}</div>
+                                            <div className="hidden sm:block w-6 h-0.5 bg-border-subtle"></div>
+                                            <div className="flex flex-col sm:items-center w-full">
+                                               <p className="font-bold text-sm text-text-main leading-tight text-center">{ing.name}</p>
+                                               <p className="text-[9px] font-black uppercase tracking-widest text-text-main bg-[#fde047] px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] mt-1 text-center inline-block">{ing.qty}</p>
+                                            </div>
                                          </div>
-                                      </div>
-                                   ))}
-                                </div>
-                          </div>
+                                      ))}
+                                   </div>
+                                )}
+                           </div>
                     </div>
                  );
               })}
@@ -320,14 +373,25 @@ export default function PlanView() {
                     {/* Meals List */}
                     <div className="space-y-6">
                        {currentMenu.meals.map((meal: any) => {
-                       const readyCount = meal.ingredients?.filter(i => i.ready).length || 0;
-                       const totalCount = meal.ingredients?.length || 0;
-                       const progress = totalCount === 0 ? 0 : (readyCount / totalCount) * 100;
+                        const allIngs = [...(meal.ingredients || [])];
+                        if (meal.dishes) {
+                           meal.dishes.forEach((d: any) => {
+                              if (d.ingredients) allIngs.push(...d.ingredients);
+                           });
+                        }
+                        const readyCount = allIngs.filter(i => i.ready).length || 0;
+                        const totalCount = allIngs.length || 0;
+                        const progress = totalCount === 0 ? 0 : (readyCount / totalCount) * 100;
+
+                        const validDishes = meal.dishes ? meal.dishes.filter((d: any) => d.ingredients && d.ingredients.length > 1) : [];
+                        const singleItemDishes = meal.dishes ? meal.dishes.filter((d: any) => !d.ingredients || d.ingredients.length <= 1) : [];
+                        const singleDishIngredients = singleItemDishes.flatMap((d: any) => d.ingredients || []);
+                        const allLooseIngredients = [...(meal.ingredients || []), ...singleDishIngredients];
 
                        return (
                           <div key={meal.id} className="bg-surface border-2 border-text-main rounded-[24px] flex flex-col neo-card shadow-[6px_6px_0_0_var(--color-text-main)] overflow-hidden">
                              {(() => {
-     const macros = getNutritionalSummary((meal.ingredients || []).map(i => ({ name: i.name, amount: i.qty })));
+     const macros = getNutritionalSummary(allIngs.map(i => ({ name: i.name, amount: i.qty })));
      return (
        <div className="border-b-2 border-text-main">
          <div className={`p-4 flex justify-between items-center ${getMenuColors(currentMenu.themeColor).bg} ${getMenuColors(currentMenu.themeColor).text}`}>
@@ -345,21 +409,32 @@ export default function PlanView() {
        </div>
      );
   })()}
-  <div className={`p-4 md:p-6 ${getMenuColors(currentMenu.themeColor).lightBg}`}>
-                                {/* Grid for Ingredients */}
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                                   {meal.ingredients?.map((ing, idx) => (
-                                      <div key={idx} className="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-2 p-3 bg-surface border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] rounded-[16px] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">
-                                         <div className="text-2xl sm:text-3xl bg-background w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border border-border-subtle shrink-0">{ing.icon}</div>
-                                         <div className="hidden sm:block w-6 h-0.5 bg-border-subtle"></div>
-                                         <div className="flex flex-col sm:items-center w-full">
-                                            <p className="font-bold text-sm text-text-main leading-tight text-center">{ing.name}</p>
-                                            <p className="text-[9px] font-black uppercase tracking-widest text-text-main bg-[#fde047] px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] mt-1 text-center inline-block">{ing.qty}</p>
+  <div className={`p-4 md:p-6 ${getMenuColors(currentMenu.themeColor).lightBg} flex flex-col gap-4`}>
+                                {/* Dishes (Grouped Ingredients) */}
+                                {validDishes.length > 0 && (
+                                  <div className="flex flex-col gap-4">
+                                     {validDishes.map((dish: any, dIdx: number) => (
+                                        <DishCard key={`dish-${dIdx}`} dish={dish} />
+                                     ))}
+                                  </div>
+                                )}
+                                
+                                {/* Individual Ingredients */}
+                                {allLooseIngredients.length > 0 && (
+                                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                      {allLooseIngredients.map((ing: any, idx: number) => (
+                                         <div key={`ing-${idx}`} className="flex sm:flex-col items-center sm:justify-center gap-3 sm:gap-2 p-3 bg-surface border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] rounded-[16px] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">
+                                            <div className="text-2xl sm:text-3xl bg-background w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border border-border-subtle shrink-0">{ing.icon}</div>
+                                            <div className="hidden sm:block w-6 h-0.5 bg-border-subtle"></div>
+                                            <div className="flex flex-col sm:items-center w-full">
+                                               <p className="font-bold text-sm text-text-main leading-tight text-center">{ing.name}</p>
+                                               <p className="text-[9px] font-black uppercase tracking-widest text-text-main bg-[#fde047] px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] mt-1 text-center inline-block">{ing.qty}</p>
+                                            </div>
                                          </div>
-                                      </div>
-                                   ))}
-                                </div>
-                          </div>
+                                      ))}
+                                   </div>
+                                )}
+                           </div>
                     </div>
                  );
               })}

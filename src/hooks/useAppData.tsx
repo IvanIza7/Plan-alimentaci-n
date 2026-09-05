@@ -134,8 +134,8 @@ export function AppDataProvider({ children }: { children: React.ReactNode }) {
 
   const seedData = async () => {
     if (loading) return;
-    if (localStorage.getItem('seeded_v3_' + user?.uid)) return;
-    localStorage.setItem('seeded_v3_' + user?.uid, 'true');
+    if (localStorage.getItem('seedData_v4_done' + user?.uid)) return;
+    localStorage.setItem('seedData_v4_done' + user?.uid, 'true');
     if (!user) return;
     try {
       // Fetch directly from DB to avoid state sync issues on mount

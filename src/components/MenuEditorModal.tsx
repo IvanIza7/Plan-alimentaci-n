@@ -43,6 +43,7 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
   const [newMealType, setNewMealType] = useState('COLACIÓN');
   const [newMealTime, setNewMealTime] = useState('12:00 PM');
   const [selectedIngredients, setSelectedIngredients] = useState<any[]>([]);
+  const [selectedDishes, setSelectedDishes] = useState<any[]>([]);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
@@ -50,6 +51,10 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
 
   const [itemToAdd, setItemToAdd] = useState<any | null>(null);
   const [itemQty, setItemQty] = useState<number>(1);
+  const [isAddingToDish, setIsAddingToDish] = useState<boolean>(false);
+  const [dishNameInput, setDishNameInput] = useState<string>('');
+  const [dishIngredients, setDishIngredients] = useState<any[]>([]);
+  const [editingDishIdx, setEditingDishIdx] = useState<number | null>(null);
 
   const categories = Array.from(new Set<string>(inventory.map((item: any) => item.category)));
   const groupedInventory = categories.map(cat => ({
@@ -58,13 +63,21 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
   })).filter(cat => cat.items.length > 0);
 
   const handleAddIngredient = (item: any) => {
-    if (selectedIngredients.find(i => i.name === item.name)) return;
+    if (isAddingToDish) {
+      if (dishIngredients.find(i => i.name === item.name)) return;
+    } else {
+      if (selectedIngredients.find(i => i.name === item.name)) return;
+    }
     setItemToAdd(item);
     setItemQty(item.unit === 'g' || item.unit === 'ml' ? 100 : 1);
   };
 
   const handleRemoveIngredient = (name: string) => {
     setSelectedIngredients(selectedIngredients.filter(i => i.name !== name));
+  };
+  
+  const handleRemoveDishIngredient = (name: string) => {
+    setDishIngredients(dishIngredients.filter(i => i.name !== name));
   };
 
   const openAddMeal = () => {
@@ -73,6 +86,7 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
     setNewMealType('COLACIÓN');
     setNewMealTime('12:00 PM');
     setSelectedIngredients([]);
+    setSelectedDishes([]);
     setShowAddMeal(true);
   };
   
@@ -82,6 +96,7 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
     setNewMealType(meal.type);
     setNewMealTime(meal.time);
     setSelectedIngredients(meal.ingredients || []);
+    setSelectedDishes(meal.dishes || []);
     setShowAddMeal(true);
   };
 
@@ -95,7 +110,8 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
           name: newMealName,
           type: newMealType,
           time: newMealTime,
-          ingredients: selectedIngredients
+          ingredients: selectedIngredients,
+          dishes: selectedDishes
        } : m);
     } else {
        const newMeal = {
@@ -106,7 +122,8 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
          status: 'available',
          statusText: 'Disponible',
          icon: '🍽️',
-         ingredients: selectedIngredients
+         ingredients: selectedIngredients,
+         dishes: selectedDishes
        };
        updatedMeals = [...meals, newMeal];
     }
@@ -129,6 +146,7 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
     setEditingMealId(null);
     setNewMealName('');
     setSelectedIngredients([]);
+    setSelectedDishes([]);
   };
 
   return (
@@ -213,6 +231,37 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
                       <div className="space-y-3">
                          <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary">Ingredientes del Inventario</p>
                          
+                         {selectedDishes.length > 0 && (
+                            <div className="flex flex-col gap-3 mb-4">
+                               {selectedDishes.map((dish, dIdx) => (
+                                  <div key={dIdx} className="bg-surface border-2 border-text-main rounded-xl p-3 shadow-[2px_2px_0_0_var(--color-text-main)]">
+                                     <div className="flex justify-between items-center mb-2">
+                                        <h6 className="font-bold text-xs uppercase tracking-widest text-text-main">{dish.name}</h6>
+                                        <div className="flex gap-2">
+                                           <button onClick={() => {
+                                              setDishNameInput(dish.name);
+                                              setDishIngredients(dish.ingredients || []);
+                                              setEditingDishIdx(dIdx);
+                                              setIsAddingToDish(true);
+                                           }} className="text-blue-600 hover:text-blue-800"><Edit3 size={14} /></button>
+                                           <button onClick={() => {
+                                              setSelectedDishes(selectedDishes.filter((_, i) => i !== dIdx));
+                                           }} className="text-red-600 hover:text-red-800"><X size={14} /></button>
+                                        </div>
+                                     </div>
+                                     <div className="flex flex-wrap gap-2">
+                                        {dish.ingredients?.map((ing: any) => (
+                                           <div key={ing.name} className="flex items-center gap-1 bg-[#fde047] text-text-main px-2 py-1 rounded-full text-[9px] font-black uppercase tracking-widest border border-text-main">
+                                              <span className="font-bold opacity-80">{ing.qty}</span>
+                                              <span>{ing.name}</span>
+                                           </div>
+                                        ))}
+                                     </div>
+                                  </div>
+                               ))}
+                            </div>
+                         )}
+                         
                          {selectedIngredients.length > 0 && (
                             <div className="flex flex-wrap gap-2 mb-2 p-3 bg-surface border-2 border-text-main rounded-xl">
                                {selectedIngredients.map(ing => (
@@ -222,6 +271,70 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
                                      <button onClick={() => handleRemoveIngredient(ing.name)} className="hover:text-red-600 transition-colors ml-1"><X size={14} /></button>
                                   </div>
                                ))}
+                            </div>
+                         )}
+
+                         {!isAddingToDish && (
+                            <button onClick={() => {
+                               setIsAddingToDish(true);
+                               setDishNameInput('');
+                               setDishIngredients([]);
+                               setEditingDishIdx(null);
+                            }} className="w-full bg-[#bef264] border-2 border-text-main text-text-main font-black text-[10px] uppercase tracking-widest py-2 rounded-xl mb-2 hover:-translate-y-1 shadow-[2px_2px_0_0_var(--color-text-main)] transition-all flex items-center justify-center gap-2">
+                               <Plus size={14} /> Crear Platillo (Agrupar)
+                            </button>
+                         )}
+
+                         {isAddingToDish && (
+                            <div className="bg-[#a3e635] p-3 rounded-xl border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] mb-4 animate-in fade-in">
+                               <div className="flex justify-between items-center mb-2">
+                                  <h6 className="font-black text-xs uppercase tracking-widest text-text-main">
+                                    {editingDishIdx !== null ? 'Editar Platillo' : 'Nuevo Platillo'}
+                                  </h6>
+                                  <button onClick={() => {
+                                     setIsAddingToDish(false);
+                                     setDishNameInput('');
+                                     setDishIngredients([]);
+                                     setEditingDishIdx(null);
+                                  }} className="text-text-main hover:opacity-70"><X size={16} /></button>
+                               </div>
+                               <input 
+                                  type="text" 
+                                  placeholder="Nombre del platillo..." 
+                                  value={dishNameInput}
+                                  onChange={e => setDishNameInput(e.target.value)}
+                                  className="w-full mb-3 px-3 py-2 border-2 border-text-main rounded-lg font-bold text-sm bg-surface focus:outline-none"
+                               />
+                               {dishIngredients.length > 0 && (
+                                  <div className="flex flex-wrap gap-2 mb-3">
+                                     {dishIngredients.map(ing => (
+                                        <div key={ing.name} className="flex items-center gap-1 bg-surface text-text-main px-2 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border border-text-main">
+                                           <span className="font-bold opacity-80">{ing.qty}</span>
+                                           <span>{ing.name}</span>
+                                           <button onClick={() => handleRemoveDishIngredient(ing.name)} className="hover:text-red-600 ml-1"><X size={12} /></button>
+                                        </div>
+                                     ))}
+                                  </div>
+                               )}
+                               <button 
+                                  onClick={() => {
+                                     if (!dishNameInput) return;
+                                     if (editingDishIdx !== null) {
+                                        const newDishes = [...selectedDishes];
+                                        newDishes[editingDishIdx] = { name: dishNameInput, ingredients: dishIngredients };
+                                        setSelectedDishes(newDishes);
+                                     } else {
+                                        setSelectedDishes([...selectedDishes, { name: dishNameInput, ingredients: dishIngredients }]);
+                                     }
+                                     setIsAddingToDish(false);
+                                     setDishNameInput('');
+                                     setDishIngredients([]);
+                                     setEditingDishIdx(null);
+                                  }} 
+                                  className="w-full bg-primary-900 text-white font-black text-xs uppercase tracking-widest py-2 rounded-lg border-2 border-text-main hover:bg-primary-800 transition-colors"
+                               >
+                                  {editingDishIdx !== null ? 'Actualizar Platillo' : 'Guardar Platillo'}
+                               </button>
                             </div>
                          )}
 
@@ -299,7 +412,11 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
                              <div className="flex gap-3">
                                 <button onClick={() => setItemToAdd(null)} className="flex-1 bg-surface border-2 border-text-main text-text-main font-black uppercase tracking-widest py-3 rounded-xl hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">Cancelar</button>
                                 <button onClick={() => {
-                                   setSelectedIngredients([...selectedIngredients, { name: itemToAdd.name, qty: `${itemQty} ${itemToAdd.unit}`, icon: itemToAdd.icon, ready: true }]);
+                                   if (isAddingToDish) {
+                                      setDishIngredients([...dishIngredients, { name: itemToAdd.name, qty: `${itemQty} ${itemToAdd.unit}`, icon: itemToAdd.icon, ready: true }]);
+                                   } else {
+                                      setSelectedIngredients([...selectedIngredients, { name: itemToAdd.name, qty: `${itemQty} ${itemToAdd.unit}`, icon: itemToAdd.icon, ready: true }]);
+                                   }
                                    setItemToAdd(null);
                                 }} className="flex-1 bg-primary-900 border-2 border-text-main text-white font-black uppercase tracking-widest py-3 rounded-xl hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">Agregar</button>
                              </div>

@@ -1,4 +1,4 @@
-export const mockInventory = [
+export const mockInventory = [{"id":"new1","category":"Lácteos y Huevo","name":"Proteína en polvo","amount":0,"unit":"scoop","lowThreshold":1,"kcal":0,"icon":"🥤"},{"id":"new2","category":"Abarrotes y Despensa","name":"Crema de cacahuate","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🥜"},{"id":"new3","category":"Panadería y Cereales","name":"Avena o amaranto o granola","amount":0,"unit":"cucharada","lowThreshold":5,"kcal":0,"icon":"🥣"},{"id":"new4","category":"Abarrotes y Despensa","name":"Chocolate en polvo, azúcar o miel","amount":0,"unit":"cucharada","lowThreshold":5,"kcal":0,"icon":"🍫"},{"id":"new5","category":"Lácteos y Huevo","name":"Yogur para beber","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍶"},{"id":"new6","category":"Panadería y Cereales","name":"Barra de granola o pan dulce","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍫"},{"id":"new7","category":"Frutas y Verduras","name":"Papaya picada","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍈"},{"id":"new8","category":"Abarrotes y Despensa","name":"Salsa verde o roja","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🌶️"},{"id":"new9","category":"Bebidas e Infusiones","name":"Té sin azúcar","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍵"},{"id":"new10","category":"Frutas y Verduras","name":"Cilantro picado","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🌿"},{"id":"new11","category":"Frutas y Verduras","name":"Rajitas en vinagre","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🌶️"},{"id":"new12","category":"Frutas y Verduras","name":"Zanahoria rallada","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🥕"},{"id":"new13","category":"Abarrotes y Despensa","name":"Jugo Maggi y sal","amount":0,"unit":"cucharadita","lowThreshold":5,"kcal":0,"icon":"🧂"},{"id":"new14","category":"Bebidas e Infusiones","name":"Café sin azúcar","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"☕"},{"id":"new15","category":"Frutas y Verduras","name":"Melón picado","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍈"},{"id":"new16","category":"Frutas y Verduras","name":"Espinacas frescas","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🥬"},{"id":"new17","category":"Abarrotes y Despensa","name":"Caldillo de jitomate","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🍅"},{"id":"new18","category":"Panadería y Cereales","name":"Crema de zanahoria","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},{"id":"new19","category":"Frutas y Verduras","name":"Durazno","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍑"},{"id":"new20","category":"Lácteos y Huevo","name":"Queso cottage","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🧀"},{"id":"new21","category":"Abarrotes y Despensa","name":"Azúcar con canela","amount":0,"unit":"cucharadita","lowThreshold":2,"kcal":0,"icon":"🧂"},{"id":"new22","category":"Frutas y Verduras","name":"Manzana rebanada","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍎"},{"id":"new23","category":"Frutas y Verduras","name":"Cebolla morada picada","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🧅"},{"id":"new24","category":"Abarrotes y Despensa","name":"Limón y chile Tajín","amount":0,"unit":"cucharadita","lowThreshold":2,"kcal":0,"icon":"🍋"},{"id":"new25","category":"Panadería y Cereales","name":"Sopa de cebolla","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},{"id":"new26","category":"Frutas y Verduras","name":"Kiwi","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🥝"},{"id":"new27","category":"Carnes, Aves y Pescados","name":"Salchichas de pavo","amount":0,"unit":"pieza","lowThreshold":3,"kcal":0,"icon":"🌭"},{"id":"new28","category":"Frutas y Verduras","name":"Chile verde","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🌶️"},{"id":"new29","category":"Frutas y Verduras","name":"Piña picada","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍍"},{"id":"new30","category":"Frutas y Verduras","name":"Sandía picada","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍉"},{"id":"new31","category":"Abarrotes y Despensa","name":"Vinagre balsámico","amount":0,"unit":"cucharadita","lowThreshold":2,"kcal":0,"icon":"🍶"},{"id":"new32","category":"Panadería y Cereales","name":"Crema de calabacita","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},{"id":"new33","category":"Frutas y Verduras","name":"Mango","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🥭"},{"id":"new34","category":"Frutas y Verduras","name":"Tuna","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🌵"},{"id":"new35","category":"Frutas y Verduras","name":"Mandarina en gajos","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍊"},{"id":"new36","category":"Panadería y Cereales","name":"Sopa de rajas","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},{"id":"new37","category":"Panadería y Cereales","name":"Pan árabe","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🫓"},{"id":"new38","category":"Abarrotes y Despensa","name":"Puré de tomate con orégano","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🍅"},{"id":"new39","category":"Lácteos y Huevo","name":"Queso manchego rallado","amount":0,"unit":"g","lowThreshold":50,"kcal":0,"icon":"🧀"},{"id":"new40","category":"Frutas y Verduras","name":"Naranja en gajos","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍊"},{"id":"new41","category":"Panadería y Cereales","name":"Tortilla de maíz dorada","amount":0,"unit":"pieza","lowThreshold":5,"kcal":0,"icon":"🫓"},{"id":"new42","category":"Carnes, Aves y Pescados","name":"Pechuga de pollo deshebrada","amount":0,"unit":"g","lowThreshold":100,"kcal":0,"icon":"🍗"},{"id":"new43","category":"Abarrotes y Despensa","name":"Salsa de soya con azúcar","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🍶"},{"id":"new44","category":"Abarrotes y Despensa","name":"Ajonjolí tostado","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🥜"},{"id":"new45","category":"Frutas y Verduras","name":"Zanahoria, jícama, betabel, limón","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥗"},{"id":"new46","category":"Panadería y Cereales","name":"Crema de brócoli","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},
   // 1. Frutas y Verduras
   { id: 'v1', category: 'Frutas y Verduras', name: 'Zanahoria rallada', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🥕' },
   { id: 'v2', category: 'Frutas y Verduras', name: 'Melón', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🍈' },
@@ -75,118 +75,119 @@ export const mockInventory = [
 export const mockMenus = [
   {
     "id": "m1",
-    "title": "Menú 1",
-    "subtitle": "Plan Nutricional Día 1",
+    "title": "MENÚ 1",
+    "subtitle": "Plan Nutricional",
     "meals": [
       {
-        "id": "0dfe3d87-2cc1-4627-a02c-c7f4fde24951",
+        "id": "pre-gym",
         "type": "PRE-ENTRENO",
         "time": "07:00 AM",
-        "name": "Pre-entreno (Antes del Gym)",
+        "name": "Pre-Gym (7:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "💪",
+        "dishes": [
+          {
+            "name": "Tostada de crema de maní",
+            "ingredients": [
+              {
+                "name": "Pan",
+                "qty": "1 rebanada",
+                "icon": "🍞",
+                "ready": true
+              },
+              {
+                "name": "Crema de cacahuate",
+                "qty": "1 cucharada",
+                "icon": "🥜",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Proteína en polvo (opcional)",
+            "name": "Proteína en polvo",
             "qty": "1 scoop",
             "icon": "🥤",
             "ready": true
-          },
-          {
-            "name": "Pan",
-            "qty": "1 rebanada",
-            "icon": "🍞",
-            "ready": true
-          },
-          {
-            "name": "Crema de cacahuate",
-            "qty": "1 cucharada",
-            "icon": "🥜",
-            "ready": true
           }
         ]
       },
       {
-        "id": "979ac803-2cc8-483b-93c4-f46ec9149f61",
-        "type": "COLACIÓN",
-        "time": "11:30 AM",
-        "name": "Lunch",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🥪",
-        "ingredients": [
-          {
-            "name": "Barra de granola o pan con mermelada",
-            "qty": "1 pza",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Yogur para beber",
-            "qty": "1 pza",
-            "icon": "🍶",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "3a363e49-7afb-49ae-9538-16f2938e2926",
+        "id": "m1-des",
         "type": "DESAYUNO",
         "time": "09:00 AM",
-        "name": "Desayuno Fuerte",
+        "name": "Desayuno (9:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🍳",
+        "dishes": [
+          {
+            "name": "Licuado energético matutino",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Huevos con salsa",
+            "ingredients": [
+              {
+                "name": "Huevo",
+                "qty": "2 piezas",
+                "icon": "🥚",
+                "ready": true
+              },
+              {
+                "name": "Salsa verde o roja",
+                "qty": "Al gusto",
+                "icon": "🌶️",
+                "ready": true
+              },
+              {
+                "name": "Tortilla de maíz o nopal",
+                "qty": "1-2 piezas",
+                "icon": "🫓",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Fruta fresca",
+            "ingredients": [
+              {
+                "name": "Papaya picada",
+                "qty": "2 tazas",
+                "icon": "🍈",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
-          {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Huevos",
-            "qty": "2 piezas",
-            "icon": "🥚",
-            "ready": true
-          },
-          {
-            "name": "Salsa verde o roja",
-            "qty": "Al gusto",
-            "icon": "🌶️",
-            "ready": true
-          },
-          {
-            "name": "Tortilla de maíz (o 2 de nopal)",
-            "qty": "1 pieza",
-            "icon": "🫓",
-            "ready": true
-          },
-          {
-            "name": "Papaya picada",
-            "qty": "2 tazas",
-            "icon": "🍈",
-            "ready": true
-          },
           {
             "name": "Té sin azúcar",
             "qty": "1 taza",
@@ -196,36 +197,90 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "e5a40b79-b796-49a3-aef3-93009d8b1c76",
-        "type": "COMIDA",
-        "time": "02:00 PM",
-        "name": "Comida Principal",
+        "id": "lunch",
+        "type": "COLACIÓN",
+        "time": "11:30 AM",
+        "name": "Lunch (11:30)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🍽️",
+        "icon": "🥪",
+        "dishes": [
+          {
+            "name": "Snack dulce",
+            "ingredients": [
+              {
+                "name": "Barra de granola o pan dulce",
+                "qty": "1 pieza",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          }
+        ],
+        "ingredients": [
+          {
+            "name": "Yogur para beber",
+            "qty": "1 pieza",
+            "icon": "🍶",
+            "ready": true
+          }
+        ]
+      },
+      {
+        "id": "m1-com",
+        "type": "COMIDA",
+        "time": "02:00 PM",
+        "name": "Comida",
+        "status": "available",
+        "statusText": "Disponible",
+        "icon": "🥘",
+        "dishes": [
+          {
+            "name": "Puntas de res a la mexicana",
+            "ingredients": [
+              {
+                "name": "Puntas de res",
+                "qty": "200 g",
+                "icon": "🥩",
+                "ready": true
+              },
+              {
+                "name": "Cebolla, jitomate, cilantro",
+                "qty": "Al gusto",
+                "icon": "🥗",
+                "ready": true
+              },
+              {
+                "name": "Rajitas en vinagre",
+                "qty": "Al gusto",
+                "icon": "🌶️",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Ensalada fresca",
+            "ingredients": [
+              {
+                "name": "Zanahoria rallada",
+                "qty": "½ taza",
+                "icon": "🥕",
+                "ready": true
+              },
+              {
+                "name": "Limón y Maggi",
+                "qty": "Al gusto",
+                "icon": "🍋",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
             "name": "Arroz blanco cocido",
             "qty": "1 taza",
             "icon": "🍚",
-            "ready": true
-          },
-          {
-            "name": "Puntas de res",
-            "qty": "200 g",
-            "icon": "🥩",
-            "ready": true
-          },
-          {
-            "name": "Cebolla, jitomate, cilantro, rajitas",
-            "qty": "Al gusto",
-            "icon": "🧅",
-            "ready": true
-          },
-          {
-            "name": "Zanahoria rallada con limón y maggi",
-            "qty": "½ taza",
-            "icon": "🥕",
             "ready": true
           },
           {
@@ -237,92 +292,117 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "04172e10-66f6-4d53-acce-ebadb8173363",
+        "id": "col-tarde",
         "type": "COLACIÓN",
         "time": "04:30 PM",
-        "name": "Colación de la tarde",
+        "name": "Colación Tarde (4:30 o 5:00)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌯",
-        "ingredients": [
+        "icon": "🥪",
+        "dishes": [
           {
-            "name": "Pieza de pan",
-            "qty": "1 pza",
-            "icon": "🥯",
-            "ready": true
-          },
-          {
-            "name": "Jamón / Queso / Pollo / Salchicha",
-            "qty": "40-50 g",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Verdura al gusto",
-            "qty": "Al gusto",
-            "icon": "🥬",
-            "ready": true
-          },
-          {
-            "name": "Mayonesa",
-            "qty": "1 cucharada",
-            "icon": "🍯",
-            "ready": true
+            "name": "Emparedado de la tarde",
+            "ingredients": [
+              {
+                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "qty": "1 pieza",
+                "icon": "🥖",
+                "ready": true
+              },
+              {
+                "name": "Jamón, Queso, Pollo o Salchicha",
+                "qty": "1 porción",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Lechuga y jitomate",
+                "qty": "Al gusto",
+                "icon": "🥬",
+                "ready": true
+              },
+              {
+                "name": "Mayonesa",
+                "qty": "1 cucharada",
+                "icon": "🥚",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "e2add08a-8b43-40d5-9bc4-8370b78a730f",
-        "type": "COLACIÓN",
-        "time": "06:00 PM",
-        "name": "Colación Extra",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🍎",
-        "ingredients": [
-          {
-            "name": "Pera",
-            "qty": "1 pieza",
-            "icon": "🍐",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "ff451ea0-e5a0-40d7-a09e-f841da7bbcc7",
+        "id": "m1-cen",
         "type": "CENA",
-        "time": "08:00 PM",
+        "time": "07:00 PM",
         "name": "Cena",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🌙",
+        "dishes": [
+          {
+            "name": "Licuado ligero nocturno",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Sándwich caliente de jamón y queso",
+            "ingredients": [
+              {
+                "name": "Pan integral",
+                "qty": "2 rebanadas",
+                "icon": "🍞",
+                "ready": true
+              },
+              {
+                "name": "Jamón de pavo",
+                "qty": "4 rebanadas",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Queso manchego",
+                "qty": "30 g",
+                "icon": "🧀",
+                "ready": true
+              },
+              {
+                "name": "Mayonesa light",
+                "qty": "1 cucharadita",
+                "icon": "🥚",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Pan integral",
-            "qty": "2 rebanadas",
-            "icon": "🍞",
-            "ready": true
-          },
-          {
-            "name": "Jamón de pavo",
-            "qty": "4 rebanadas",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Queso manchego",
-            "qty": "30 g",
-            "icon": "🧀",
-            "ready": true
-          },
-          {
-            "name": "Mayonesa light",
-            "qty": "1 cucharadita",
-            "icon": "🍯",
-            "ready": true
-          },
-          {
-            "name": "Café con leche descremada sin azúcar",
+            "name": "Café con leche descremada",
             "qty": "1 taza",
             "icon": "☕",
             "ready": true
@@ -336,156 +416,145 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "c392cfca-d9e6-424a-b287-5ce55dee90d5",
+        "id": "m1-col",
         "type": "COLACIÓN",
-        "time": "07:30 PM",
-        "name": "Complemento nocturno",
+        "time": "08:00 PM",
+        "name": "Colación",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌙",
-        "ingredients": [
+        "icon": "🍐",
+        "dishes": [
           {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
+            "name": "Fruta de colación",
+            "ingredients": [
+              {
+                "name": "Pera",
+                "qty": "1 pieza",
+                "icon": "🍐",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       }
     ]
   },
   {
     "id": "m2",
-    "title": "Menú 2",
-    "subtitle": "Plan Nutricional Día 2",
+    "title": "MENÚ 2",
+    "subtitle": "Plan Nutricional",
     "meals": [
       {
-        "id": "ae5819d1-cd5b-43e9-a1f2-afe57951eec3",
+        "id": "pre-gym",
         "type": "PRE-ENTRENO",
         "time": "07:00 AM",
-        "name": "Pre-entreno (Antes del Gym)",
+        "name": "Pre-Gym (7:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "💪",
+        "dishes": [
+          {
+            "name": "Tostada de crema de maní",
+            "ingredients": [
+              {
+                "name": "Pan",
+                "qty": "1 rebanada",
+                "icon": "🍞",
+                "ready": true
+              },
+              {
+                "name": "Crema de cacahuate",
+                "qty": "1 cucharada",
+                "icon": "🥜",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Proteína en polvo (opcional)",
+            "name": "Proteína en polvo",
             "qty": "1 scoop",
             "icon": "🥤",
             "ready": true
-          },
-          {
-            "name": "Pan",
-            "qty": "1 rebanada",
-            "icon": "🍞",
-            "ready": true
-          },
-          {
-            "name": "Crema de cacahuate",
-            "qty": "1 cucharada",
-            "icon": "🥜",
-            "ready": true
           }
         ]
       },
       {
-        "id": "960d3355-d7e2-4b51-9429-f0be65f9c2c6",
-        "type": "COLACIÓN",
-        "time": "11:30 AM",
-        "name": "Lunch",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🥪",
-        "ingredients": [
-          {
-            "name": "Barra de granola o pan con mermelada",
-            "qty": "1 pza",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Yogur para beber",
-            "qty": "1 pza",
-            "icon": "🍶",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "2d8e6ff4-d80c-4c0c-8071-d0ad97b25004",
+        "id": "m2-des",
         "type": "DESAYUNO",
         "time": "09:00 AM",
-        "name": "Desayuno Fuerte",
+        "name": "Desayuno (9:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🍳",
+        "dishes": [
+          {
+            "name": "Licuado energético matutino",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Enchiladas ligeras de requesón",
+            "ingredients": [
+              {
+                "name": "Tortilla de maíz",
+                "qty": "2 piezas",
+                "icon": "🫓",
+                "ready": true
+              },
+              {
+                "name": "Requesón",
+                "qty": "6 cucharadas",
+                "icon": "🧀",
+                "ready": true
+              },
+              {
+                "name": "Salsa verde o roja",
+                "qty": "Al gusto",
+                "icon": "🌶️",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Fruta fresca",
+            "ingredients": [
+              {
+                "name": "Melón picado",
+                "qty": "1 taza",
+                "icon": "🍈",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
-          {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Tortilla de maíz",
-            "qty": "2 piezas",
-            "icon": "🫓",
-            "ready": true
-          },
-          {
-            "name": "Requesón",
-            "qty": "6 cucharadas",
-            "icon": "🧀",
-            "ready": true
-          },
-          {
-            "name": "Salsa verde o roja",
-            "qty": "Al gusto",
-            "icon": "🌶️",
-            "ready": true
-          },
-          {
-            "name": "Melón picado",
-            "qty": "1 taza",
-            "icon": "🍈",
-            "ready": true
-          },
           {
             "name": "Té sin azúcar",
             "qty": "1 taza",
@@ -495,131 +564,198 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "f7d4f969-72a8-48cd-84fd-42aae7c31dd8",
-        "type": "COMIDA",
-        "time": "02:00 PM",
-        "name": "Comida Principal",
+        "id": "lunch",
+        "type": "COLACIÓN",
+        "time": "11:30 AM",
+        "name": "Lunch (11:30)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🍽️",
+        "icon": "🥪",
+        "dishes": [
+          {
+            "name": "Snack dulce",
+            "ingredients": [
+              {
+                "name": "Barra de granola o pan dulce",
+                "qty": "1 pieza",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Crema de zanahoria (con leche descr.)",
-            "qty": "1 taza",
-            "icon": "🥣",
+            "name": "Yogur para beber",
+            "qty": "1 pieza",
+            "icon": "🍶",
             "ready": true
+          }
+        ]
+      },
+      {
+        "id": "m2-com",
+        "type": "COMIDA",
+        "time": "02:00 PM",
+        "name": "Comida",
+        "status": "available",
+        "statusText": "Disponible",
+        "icon": "🥘",
+        "dishes": [
+          {
+            "name": "Pechugas rellenas en caldillo",
+            "ingredients": [
+              {
+                "name": "Pechuga de pollo",
+                "qty": "200 g",
+                "icon": "🍗",
+                "ready": true
+              },
+              {
+                "name": "Espinacas frescas",
+                "qty": "Al gusto",
+                "icon": "🥬",
+                "ready": true
+              },
+              {
+                "name": "Caldillo de jitomate",
+                "qty": "Al gusto",
+                "icon": "🍅",
+                "ready": true
+              }
+            ]
           },
           {
-            "name": "Pechuga de pollo",
-            "qty": "200 g",
-            "icon": "🍗",
-            "ready": true
-          },
+            "name": "Entrada caliente",
+            "ingredients": [
+              {
+                "name": "Crema de zanahoria",
+                "qty": "1 taza",
+                "icon": "🥣",
+                "ready": true
+              }
+            ]
+          }
+        ],
+        "ingredients": [
           {
-            "name": "Espinacas frescas y caldillo de jitomate",
-            "qty": "Al gusto",
-            "icon": "🥬",
-            "ready": true
-          },
-          {
-            "name": "Tortilla de maíz (o 4 de nopal)",
-            "qty": "2 piezas",
+            "name": "Tortilla de maíz o nopal",
+            "qty": "2-4 piezas",
             "icon": "🫓",
             "ready": true
           },
           {
             "name": "Durazno",
-            "qty": "2 piezas medianas",
+            "qty": "2 piezas",
             "icon": "🍑",
             "ready": true
           }
         ]
       },
       {
-        "id": "64aa7e5b-5ba7-444e-a758-c577ff99ebe8",
+        "id": "col-tarde",
         "type": "COLACIÓN",
         "time": "04:30 PM",
-        "name": "Colación de la tarde",
+        "name": "Colación Tarde (4:30 o 5:00)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌯",
-        "ingredients": [
+        "icon": "🥪",
+        "dishes": [
           {
-            "name": "Pieza de pan",
-            "qty": "1 pza",
-            "icon": "🥯",
-            "ready": true
-          },
-          {
-            "name": "Jamón / Queso / Pollo / Salchicha",
-            "qty": "40-50 g",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Verdura al gusto",
-            "qty": "Al gusto",
-            "icon": "🥬",
-            "ready": true
-          },
-          {
-            "name": "Mayonesa",
-            "qty": "1 cucharada",
-            "icon": "🍯",
-            "ready": true
+            "name": "Emparedado de la tarde",
+            "ingredients": [
+              {
+                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "qty": "1 pieza",
+                "icon": "🥖",
+                "ready": true
+              },
+              {
+                "name": "Jamón, Queso, Pollo o Salchicha",
+                "qty": "1 porción",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Lechuga y jitomate",
+                "qty": "Al gusto",
+                "icon": "🥬",
+                "ready": true
+              },
+              {
+                "name": "Mayonesa",
+                "qty": "1 cucharada",
+                "icon": "🥚",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "e8a000d2-5d96-49fc-b772-b0c879c7c8c5",
-        "type": "COLACIÓN",
-        "time": "06:00 PM",
-        "name": "Colación Extra",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🍎",
-        "ingredients": [
-          {
-            "name": "Manzana",
-            "qty": "1 pieza",
-            "icon": "🍎",
-            "ready": true
-          },
-          {
-            "name": "Queso cottage",
-            "qty": "2 cucharadas",
-            "icon": "🧀",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "14ff7429-bc88-4f61-9616-8ab33d317960",
+        "id": "m2-cen",
         "type": "CENA",
-        "time": "08:00 PM",
+        "time": "07:00 PM",
         "name": "Cena",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🌙",
+        "dishes": [
+          {
+            "name": "Licuado ligero nocturno",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Molletes con panela",
+            "ingredients": [
+              {
+                "name": "Bolillo (sin migajón)",
+                "qty": "1 pieza",
+                "icon": "🥖",
+                "ready": true
+              },
+              {
+                "name": "Frijoles refritos",
+                "qty": "2 cucharadas",
+                "icon": "🫘",
+                "ready": true
+              },
+              {
+                "name": "Queso panela",
+                "qty": "100 g",
+                "icon": "🧀",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
-          {
-            "name": "Bolillo (sin migajón)",
-            "qty": "1 pieza",
-            "icon": "🥖",
-            "ready": true
-          },
-          {
-            "name": "Frijoles refritos",
-            "qty": "2 cucharadas",
-            "icon": "🫘",
-            "ready": true
-          },
-          {
-            "name": "Queso panela",
-            "qty": "100 g",
-            "icon": "🧀",
-            "ready": true
-          },
           {
             "name": "Té sin azúcar",
             "qty": "1 taza",
@@ -629,209 +765,259 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "635c8100-e6fe-47c2-a718-06f41ef4ab05",
+        "id": "m2-col",
         "type": "COLACIÓN",
-        "time": "07:30 PM",
-        "name": "Complemento nocturno",
+        "time": "08:00 PM",
+        "name": "Colación",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌙",
-        "ingredients": [
+        "icon": "🍎",
+        "dishes": [
           {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
+            "name": "Manzana con requesón",
+            "ingredients": [
+              {
+                "name": "Manzana",
+                "qty": "1 pieza",
+                "icon": "🍎",
+                "ready": true
+              },
+              {
+                "name": "Queso cottage",
+                "qty": "2 cucharadas",
+                "icon": "🧀",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       }
     ]
   },
   {
     "id": "m3",
-    "title": "Menú 3",
-    "subtitle": "Plan Nutricional Día 3",
+    "title": "MENÚ 3",
+    "subtitle": "Plan Nutricional",
     "meals": [
       {
-        "id": "6667aa5e-a066-4025-a3c9-6c484fa1cd5c",
+        "id": "pre-gym",
         "type": "PRE-ENTRENO",
         "time": "07:00 AM",
-        "name": "Pre-entreno (Antes del Gym)",
+        "name": "Pre-Gym (7:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "💪",
+        "dishes": [
+          {
+            "name": "Tostada de crema de maní",
+            "ingredients": [
+              {
+                "name": "Pan",
+                "qty": "1 rebanada",
+                "icon": "🍞",
+                "ready": true
+              },
+              {
+                "name": "Crema de cacahuate",
+                "qty": "1 cucharada",
+                "icon": "🥜",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Proteína en polvo (opcional)",
+            "name": "Proteína en polvo",
             "qty": "1 scoop",
             "icon": "🥤",
-            "ready": true
-          },
-          {
-            "name": "Pan",
-            "qty": "1 rebanada",
-            "icon": "🍞",
-            "ready": true
-          },
-          {
-            "name": "Crema de cacahuate",
-            "qty": "1 cucharada",
-            "icon": "🥜",
             "ready": true
           }
         ]
       },
       {
-        "id": "36ecfe87-5f75-44bd-b331-9a77841d589e",
+        "id": "m3-des",
+        "type": "DESAYUNO",
+        "time": "09:00 AM",
+        "name": "Desayuno (9:00)",
+        "status": "available",
+        "statusText": "Disponible",
+        "icon": "🍳",
+        "dishes": [
+          {
+            "name": "Licuado energético matutino",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Pan francés con fruta y miel",
+            "ingredients": [
+              {
+                "name": "Pan de caja",
+                "qty": "2 rebanadas",
+                "icon": "🍞",
+                "ready": true
+              },
+              {
+                "name": "Huevo",
+                "qty": "1 pieza",
+                "icon": "🥚",
+                "ready": true
+              },
+              {
+                "name": "Margarina",
+                "qty": "½ cucharadita",
+                "icon": "🧈",
+                "ready": true
+              },
+              {
+                "name": "Azúcar con canela",
+                "qty": "1 cucharadita",
+                "icon": "🧂",
+                "ready": true
+              },
+              {
+                "name": "Manzana rebanada",
+                "qty": "1 pieza chica",
+                "icon": "🍎",
+                "ready": true
+              },
+              {
+                "name": "Miel maple",
+                "qty": "1 cucharadita",
+                "icon": "🍯",
+                "ready": true
+              }
+            ]
+          }
+        ],
+        "ingredients": [
+          {
+            "name": "Té sin azúcar",
+            "qty": "1 taza",
+            "icon": "🍵",
+            "ready": true
+          }
+        ]
+      },
+      {
+        "id": "lunch",
         "type": "COLACIÓN",
         "time": "11:30 AM",
-        "name": "Lunch",
+        "name": "Lunch (11:30)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🥪",
+        "dishes": [
+          {
+            "name": "Snack dulce",
+            "ingredients": [
+              {
+                "name": "Barra de granola o pan dulce",
+                "qty": "1 pieza",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Barra de granola o pan con mermelada",
-            "qty": "1 pza",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
             "name": "Yogur para beber",
-            "qty": "1 pza",
+            "qty": "1 pieza",
             "icon": "🍶",
             "ready": true
           }
         ]
       },
       {
-        "id": "3573ae2a-f8cd-403e-8948-f871ba9ba5b4",
-        "type": "DESAYUNO",
-        "time": "09:00 AM",
-        "name": "Desayuno Fuerte",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🍳",
-        "ingredients": [
-          {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Pan de caja",
-            "qty": "2 rebanadas",
-            "icon": "🍞",
-            "ready": true
-          },
-          {
-            "name": "Huevo (para remojar pan)",
-            "qty": "1 pieza",
-            "icon": "🥚",
-            "ready": true
-          },
-          {
-            "name": "Margarina, azúcar y canela",
-            "qty": "1 cdta",
-            "icon": "🧈",
-            "ready": true
-          },
-          {
-            "name": "Manzana rebanada",
-            "qty": "1 pieza chica",
-            "icon": "🍎",
-            "ready": true
-          },
-          {
-            "name": "Miel maple",
-            "qty": "1 cucharadita",
-            "icon": "🍯",
-            "ready": true
-          },
-          {
-            "name": "Té sin azúcar",
-            "qty": "1 taza",
-            "icon": "🍵",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "b3d91dfa-5a1e-49b1-8458-f557242167f3",
+        "id": "m3-com",
         "type": "COMIDA",
         "time": "02:00 PM",
-        "name": "Comida Principal",
+        "name": "Comida",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🍽️",
+        "icon": "🥘",
+        "dishes": [
+          {
+            "name": "Tostadas frescas de surimi",
+            "ingredients": [
+              {
+                "name": "Tostadas horneadas",
+                "qty": "3 piezas",
+                "icon": "🫓",
+                "ready": true
+              },
+              {
+                "name": "Surimi picado",
+                "qty": "150 g",
+                "icon": "🦀",
+                "ready": true
+              },
+              {
+                "name": "Jitomate y cebolla",
+                "qty": "Al gusto",
+                "icon": "🥗",
+                "ready": true
+              },
+              {
+                "name": "Lechuga",
+                "qty": "Al gusto",
+                "icon": "🥬",
+                "ready": true
+              },
+              {
+                "name": "Mayonesa light",
+                "qty": "1 cucharada",
+                "icon": "🥚",
+                "ready": true
+              },
+              {
+                "name": "Limón y chile Tajín",
+                "qty": "Al gusto",
+                "icon": "🍋",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Entrada caliente",
+            "ingredients": [
+              {
+                "name": "Sopa de cebolla",
+                "qty": "1 taza",
+                "icon": "🥣",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
-          {
-            "name": "Sopa de cebolla",
-            "qty": "1 taza",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Surimi picado",
-            "qty": "150 g",
-            "icon": "🦀",
-            "ready": true
-          },
-          {
-            "name": "Jitomate, cebolla morada, mayonesa light",
-            "qty": "Al gusto",
-            "icon": "🥗",
-            "ready": true
-          },
-          {
-            "name": "Limón, Tajín, lechuga",
-            "qty": "Al gusto",
-            "icon": "🍋",
-            "ready": true
-          },
-          {
-            "name": "Tostadas horneadas",
-            "qty": "3 piezas",
-            "icon": "🫓",
-            "ready": true
-          },
           {
             "name": "Kiwi",
             "qty": "2 piezas",
@@ -841,243 +1027,257 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "32572d61-73ae-4fb1-b43d-b3ac3edd3c82",
+        "id": "col-tarde",
         "type": "COLACIÓN",
         "time": "04:30 PM",
-        "name": "Colación de la tarde",
+        "name": "Colación Tarde (4:30 o 5:00)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌯",
-        "ingredients": [
+        "icon": "🥪",
+        "dishes": [
           {
-            "name": "Pieza de pan",
-            "qty": "1 pza",
-            "icon": "🥯",
-            "ready": true
-          },
-          {
-            "name": "Jamón / Queso / Pollo / Salchicha",
-            "qty": "40-50 g",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Verdura al gusto",
-            "qty": "Al gusto",
-            "icon": "🥬",
-            "ready": true
-          },
-          {
-            "name": "Mayonesa",
-            "qty": "1 cucharada",
-            "icon": "🍯",
-            "ready": true
+            "name": "Emparedado de la tarde",
+            "ingredients": [
+              {
+                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "qty": "1 pieza",
+                "icon": "🥖",
+                "ready": true
+              },
+              {
+                "name": "Jamón, Queso, Pollo o Salchicha",
+                "qty": "1 porción",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Lechuga y jitomate",
+                "qty": "Al gusto",
+                "icon": "🥬",
+                "ready": true
+              },
+              {
+                "name": "Mayonesa",
+                "qty": "1 cucharada",
+                "icon": "🥚",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "a9f84e15-f0f4-4868-868e-3760dd1d676c",
-        "type": "COLACIÓN",
-        "time": "06:00 PM",
-        "name": "Colación Extra",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🍎",
-        "ingredients": [
-          {
-            "name": "Piña picada",
-            "qty": "1 taza",
-            "icon": "🍍",
-            "ready": true
-          },
-          {
-            "name": "Queso Oaxaca",
-            "qty": "30 g",
-            "icon": "🧀",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "870f6cd1-a8c0-4612-ab52-aaf85919db82",
+        "id": "m3-cen",
         "type": "CENA",
-        "time": "08:00 PM",
+        "time": "07:00 PM",
         "name": "Cena",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🌙",
+        "dishes": [
+          {
+            "name": "Licuado ligero nocturno",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Salchichas guisadas con cebollita",
+            "ingredients": [
+              {
+                "name": "Salchichas de pavo",
+                "qty": "3 piezas",
+                "icon": "🌭",
+                "ready": true
+              },
+              {
+                "name": "Cebollita y chile verde",
+                "qty": "Al gusto",
+                "icon": "🧅",
+                "ready": true
+              },
+              {
+                "name": "Jugo Maggi y limón",
+                "qty": "Al gusto",
+                "icon": "🍋",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
-          {
-            "name": "Salchichas de pavo",
-            "qty": "3 piezas",
-            "icon": "🌭",
-            "ready": true
-          },
-          {
-            "name": "Cebollita, chile verde, Maggi, limón",
-            "qty": "Al gusto",
-            "icon": "🧅",
-            "ready": true
-          },
           {
             "name": "Pan integral",
             "qty": "1 rebanada",
             "icon": "🍞",
             "ready": true
-          },
-          {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
           }
         ]
       },
       {
-        "id": "0d604c6d-beb1-445d-9cdc-f488c0163e5b",
+        "id": "m3-col",
         "type": "COLACIÓN",
-        "time": "07:30 PM",
-        "name": "Complemento nocturno",
+        "time": "08:00 PM",
+        "name": "Colación",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌙",
-        "ingredients": [
+        "icon": "🍍",
+        "dishes": [
           {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
+            "name": "Botana fresca y queso",
+            "ingredients": [
+              {
+                "name": "Piña picada",
+                "qty": "1 taza",
+                "icon": "🍍",
+                "ready": true
+              },
+              {
+                "name": "Queso Oaxaca",
+                "qty": "30 g",
+                "icon": "🧀",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       }
     ]
   },
   {
     "id": "m4",
-    "title": "Menú 4",
-    "subtitle": "Plan Nutricional Día 4",
+    "title": "MENÚ 4",
+    "subtitle": "Plan Nutricional",
     "meals": [
       {
-        "id": "8d1395df-bfec-4444-8425-622c77db3f2c",
+        "id": "pre-gym",
         "type": "PRE-ENTRENO",
         "time": "07:00 AM",
-        "name": "Pre-entreno (Antes del Gym)",
+        "name": "Pre-Gym (7:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "💪",
+        "dishes": [
+          {
+            "name": "Tostada de crema de maní",
+            "ingredients": [
+              {
+                "name": "Pan",
+                "qty": "1 rebanada",
+                "icon": "🍞",
+                "ready": true
+              },
+              {
+                "name": "Crema de cacahuate",
+                "qty": "1 cucharada",
+                "icon": "🥜",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Proteína en polvo (opcional)",
+            "name": "Proteína en polvo",
             "qty": "1 scoop",
             "icon": "🥤",
             "ready": true
-          },
-          {
-            "name": "Pan",
-            "qty": "1 rebanada",
-            "icon": "🍞",
-            "ready": true
-          },
-          {
-            "name": "Crema de cacahuate",
-            "qty": "1 cucharada",
-            "icon": "🥜",
-            "ready": true
           }
         ]
       },
       {
-        "id": "ef67ff2d-6113-406a-b391-8fa2ce8b97c1",
-        "type": "COLACIÓN",
-        "time": "11:30 AM",
-        "name": "Lunch",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🥪",
-        "ingredients": [
-          {
-            "name": "Barra de granola o pan con mermelada",
-            "qty": "1 pza",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Yogur para beber",
-            "qty": "1 pza",
-            "icon": "🍶",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "cd662075-52ea-4e23-b286-d3a58341d8d8",
+        "id": "m4-des",
         "type": "DESAYUNO",
         "time": "09:00 AM",
-        "name": "Desayuno Fuerte",
+        "name": "Desayuno (9:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🍳",
+        "dishes": [
+          {
+            "name": "Licuado energético matutino",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Quesadillas de panela",
+            "ingredients": [
+              {
+                "name": "Tortilla de harina",
+                "qty": "2 piezas",
+                "icon": "🫓",
+                "ready": true
+              },
+              {
+                "name": "Queso panela",
+                "qty": "120 g",
+                "icon": "🧀",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Fruta fresca",
+            "ingredients": [
+              {
+                "name": "Sandía picada",
+                "qty": "1 taza",
+                "icon": "🍉",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
-          {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Tortilla de harina",
-            "qty": "2 piezas",
-            "icon": "🫓",
-            "ready": true
-          },
-          {
-            "name": "Queso panela",
-            "qty": "120 g",
-            "icon": "🧀",
-            "ready": true
-          },
-          {
-            "name": "Sandía picada",
-            "qty": "1 taza",
-            "icon": "🍉",
-            "ready": true
-          },
           {
             "name": "Té sin azúcar",
             "qty": "1 taza",
@@ -1087,41 +1287,89 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "eeded853-44db-4648-a389-0da451cbcf2d",
-        "type": "COMIDA",
-        "time": "02:00 PM",
-        "name": "Comida Principal",
+        "id": "lunch",
+        "type": "COLACIÓN",
+        "time": "11:30 AM",
+        "name": "Lunch (11:30)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🍽️",
+        "icon": "🥪",
+        "dishes": [
+          {
+            "name": "Snack dulce",
+            "ingredients": [
+              {
+                "name": "Barra de granola o pan dulce",
+                "qty": "1 pieza",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Crema de calabacita",
-            "qty": "1 taza",
-            "icon": "🥣",
+            "name": "Yogur para beber",
+            "qty": "1 pieza",
+            "icon": "🍶",
             "ready": true
+          }
+        ]
+      },
+      {
+        "id": "m4-com",
+        "type": "COMIDA",
+        "time": "02:00 PM",
+        "name": "Comida",
+        "status": "available",
+        "statusText": "Disponible",
+        "icon": "🥘",
+        "dishes": [
+          {
+            "name": "Salpicón de res",
+            "ingredients": [
+              {
+                "name": "Carne de res deshebrada",
+                "qty": "200 g",
+                "icon": "🥩",
+                "ready": true
+              },
+              {
+                "name": "Lechuga, jitomate, cebolla, chile",
+                "qty": "Al gusto",
+                "icon": "🥗",
+                "ready": true
+              },
+              {
+                "name": "Aceite",
+                "qty": "1 cucharadita",
+                "icon": "🫗",
+                "ready": true
+              },
+              {
+                "name": "Vinagre balsámico",
+                "qty": "Al gusto",
+                "icon": "🍶",
+                "ready": true
+              }
+            ]
           },
           {
-            "name": "Carne de res deshebrada",
-            "qty": "200 g",
-            "icon": "🥩",
-            "ready": true
-          },
+            "name": "Entrada caliente",
+            "ingredients": [
+              {
+                "name": "Crema de calabacita",
+                "qty": "1 taza",
+                "icon": "🥣",
+                "ready": true
+              }
+            ]
+          }
+        ],
+        "ingredients": [
           {
-            "name": "Lechuga, jitomate, cebolla, chile",
-            "qty": "Al gusto",
-            "icon": "🥗",
-            "ready": true
-          },
-          {
-            "name": "Aceite y vinagre balsámico",
-            "qty": "1 cdta",
-            "icon": "🍾",
-            "ready": true
-          },
-          {
-            "name": "Tortilla de maíz (o 4 de nopal)",
-            "qty": "2 piezas",
+            "name": "Tortilla de maíz o nopal",
+            "qty": "2-4 piezas",
             "icon": "🫓",
             "ready": true
           },
@@ -1134,92 +1382,117 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "838b8158-4aa6-4557-92e3-0ff829de09a9",
+        "id": "col-tarde",
         "type": "COLACIÓN",
         "time": "04:30 PM",
-        "name": "Colación de la tarde",
+        "name": "Colación Tarde (4:30 o 5:00)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌯",
-        "ingredients": [
+        "icon": "🥪",
+        "dishes": [
           {
-            "name": "Pieza de pan",
-            "qty": "1 pza",
-            "icon": "🥯",
-            "ready": true
-          },
-          {
-            "name": "Jamón / Queso / Pollo / Salchicha",
-            "qty": "40-50 g",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Verdura al gusto",
-            "qty": "Al gusto",
-            "icon": "🥬",
-            "ready": true
-          },
-          {
-            "name": "Mayonesa",
-            "qty": "1 cucharada",
-            "icon": "🍯",
-            "ready": true
+            "name": "Emparedado de la tarde",
+            "ingredients": [
+              {
+                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "qty": "1 pieza",
+                "icon": "🥖",
+                "ready": true
+              },
+              {
+                "name": "Jamón, Queso, Pollo o Salchicha",
+                "qty": "1 porción",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Lechuga y jitomate",
+                "qty": "Al gusto",
+                "icon": "🥬",
+                "ready": true
+              },
+              {
+                "name": "Mayonesa",
+                "qty": "1 cucharada",
+                "icon": "🥚",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "98315eab-7023-4171-9254-bbd74cd0acd6",
-        "type": "COLACIÓN",
-        "time": "06:00 PM",
-        "name": "Colación Extra",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🍎",
-        "ingredients": [
-          {
-            "name": "Papaya picada con jugo de limón",
-            "qty": "1 taza",
-            "icon": "🍈",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "565892a9-43aa-4f9a-b52f-e57b62437862",
+        "id": "m4-cen",
         "type": "CENA",
-        "time": "08:00 PM",
+        "time": "07:00 PM",
         "name": "Cena",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🌙",
+        "dishes": [
+          {
+            "name": "Licuado ligero nocturno",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Bísquet dulce y salado",
+            "ingredients": [
+              {
+                "name": "Bísquet",
+                "qty": "1 pieza",
+                "icon": "🥐",
+                "ready": true
+              },
+              {
+                "name": "Mermelada baja en calorías",
+                "qty": "2 cucharaditas",
+                "icon": "🍓",
+                "ready": true
+              },
+              {
+                "name": "Pechuga de pavo",
+                "qty": "3 rebanadas",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Queso manchego",
+                "qty": "50 g",
+                "icon": "🧀",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Bísquet",
-            "qty": "1 pieza",
-            "icon": "🥐",
-            "ready": true
-          },
-          {
-            "name": "Mermelada baja en calorías",
-            "qty": "2 cdtas",
-            "icon": "🍯",
-            "ready": true
-          },
-          {
-            "name": "Pechuga de pavo",
-            "qty": "3 rebanadas",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Queso manchego",
-            "qty": "50 g",
-            "icon": "🧀",
-            "ready": true
-          },
-          {
-            "name": "Café con chorrito de leche",
+            "name": "Café con leche",
             "qty": "1 taza",
             "icon": "☕",
             "ready": true
@@ -1227,156 +1500,145 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "53005ad1-25d1-434c-b7e2-3dee058768fd",
+        "id": "m4-col",
         "type": "COLACIÓN",
-        "time": "07:30 PM",
-        "name": "Complemento nocturno",
+        "time": "08:00 PM",
+        "name": "Colación",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌙",
-        "ingredients": [
+        "icon": "🍈",
+        "dishes": [
           {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
+            "name": "Fruta cítrica",
+            "ingredients": [
+              {
+                "name": "Papaya picada con limón",
+                "qty": "1 taza",
+                "icon": "🍈",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       }
     ]
   },
   {
     "id": "m5",
-    "title": "Menú 5",
-    "subtitle": "Plan Nutricional Día 5",
+    "title": "MENÚ 5",
+    "subtitle": "Plan Nutricional",
     "meals": [
       {
-        "id": "8ddee997-237d-4f3f-972b-46950259fc2e",
+        "id": "pre-gym",
         "type": "PRE-ENTRENO",
         "time": "07:00 AM",
-        "name": "Pre-entreno (Antes del Gym)",
+        "name": "Pre-Gym (7:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "💪",
+        "dishes": [
+          {
+            "name": "Tostada de crema de maní",
+            "ingredients": [
+              {
+                "name": "Pan",
+                "qty": "1 rebanada",
+                "icon": "🍞",
+                "ready": true
+              },
+              {
+                "name": "Crema de cacahuate",
+                "qty": "1 cucharada",
+                "icon": "🥜",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Proteína en polvo (opcional)",
+            "name": "Proteína en polvo",
             "qty": "1 scoop",
             "icon": "🥤",
             "ready": true
-          },
-          {
-            "name": "Pan",
-            "qty": "1 rebanada",
-            "icon": "🍞",
-            "ready": true
-          },
-          {
-            "name": "Crema de cacahuate",
-            "qty": "1 cucharada",
-            "icon": "🥜",
-            "ready": true
           }
         ]
       },
       {
-        "id": "03ac3818-2d47-4f55-8b79-85b8883b2c9e",
-        "type": "COLACIÓN",
-        "time": "11:30 AM",
-        "name": "Lunch",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🥪",
-        "ingredients": [
-          {
-            "name": "Barra de granola o pan con mermelada",
-            "qty": "1 pza",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Yogur para beber",
-            "qty": "1 pza",
-            "icon": "🍶",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "898d66c7-c30a-4c95-9382-ab48d7a85619",
+        "id": "m5-des",
         "type": "DESAYUNO",
         "time": "09:00 AM",
-        "name": "Desayuno Fuerte",
+        "name": "Desayuno (9:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🍳",
+        "dishes": [
+          {
+            "name": "Licuado energético matutino",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Huevos rancheros",
+            "ingredients": [
+              {
+                "name": "Huevo estrellado",
+                "qty": "2 piezas",
+                "icon": "🍳",
+                "ready": true
+              },
+              {
+                "name": "Tortilla de maíz base",
+                "qty": "1 pieza",
+                "icon": "🫓",
+                "ready": true
+              },
+              {
+                "name": "Salsa verde o roja",
+                "qty": "Al gusto",
+                "icon": "🌶️",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Fruta fresca",
+            "ingredients": [
+              {
+                "name": "Tuna",
+                "qty": "2 piezas",
+                "icon": "🌵",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
-          {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Huevo estrellado",
-            "qty": "2 piezas",
-            "icon": "🥚",
-            "ready": true
-          },
-          {
-            "name": "Tortilla de maíz (base)",
-            "qty": "1 pieza",
-            "icon": "🫓",
-            "ready": true
-          },
-          {
-            "name": "Salsa verde o roja",
-            "qty": "Al gusto",
-            "icon": "🌶️",
-            "ready": true
-          },
-          {
-            "name": "Tuna",
-            "qty": "2 piezas",
-            "icon": "🌵",
-            "ready": true
-          },
           {
             "name": "Té sin azúcar",
             "qty": "1 taza",
@@ -1386,42 +1648,84 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "4c42043e-cf3c-4be3-aede-adab2292b59a",
-        "type": "COMIDA",
-        "time": "02:00 PM",
-        "name": "Comida Principal",
+        "id": "lunch",
+        "type": "COLACIÓN",
+        "time": "11:30 AM",
+        "name": "Lunch (11:30)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🍽️",
+        "icon": "🥪",
+        "dishes": [
+          {
+            "name": "Snack dulce",
+            "ingredients": [
+              {
+                "name": "Barra de granola o pan dulce",
+                "qty": "1 pieza",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Sopa de fideo aguada",
+            "name": "Yogur para beber",
+            "qty": "1 pieza",
+            "icon": "🍶",
+            "ready": true
+          }
+        ]
+      },
+      {
+        "id": "m5-com",
+        "type": "COMIDA",
+        "time": "02:00 PM",
+        "name": "Comida",
+        "status": "available",
+        "statusText": "Disponible",
+        "icon": "🥘",
+        "dishes": [
+          {
+            "name": "Pescado horneado con crema y eneldo",
+            "ingredients": [
+              {
+                "name": "Filete de pescado blanco",
+                "qty": "250 g",
+                "icon": "🐟",
+                "ready": true
+              },
+              {
+                "name": "Crema reducida en grasa con eneldo",
+                "qty": "2 cucharadas",
+                "icon": "🥛",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Ensalada y cereal",
+            "ingredients": [
+              {
+                "name": "Ensalada verde con limón",
+                "qty": "Al gusto",
+                "icon": "🥗",
+                "ready": true
+              },
+              {
+                "name": "Bolillo o galletas integrales",
+                "qty": "½ o 6 piezas",
+                "icon": "🥖",
+                "ready": true
+              }
+            ]
+          }
+        ],
+        "ingredients": [
+          {
+            "name": "Sopa de fideo",
             "qty": "1 taza",
             "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Filete de pescado blanco",
-            "qty": "250 g",
-            "icon": "🐟",
-            "ready": true
-          },
-          {
-            "name": "Crema reducida en grasa con eneldo",
-            "qty": "2 cdas",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Ensalada verde con limón o vinagre",
-            "qty": "Al gusto",
-            "icon": "🥗",
-            "ready": true
-          },
-          {
-            "name": "Bolillo sin migajón (o 6 galletas)",
-            "qty": "½ pieza",
-            "icon": "🥖",
             "ready": true
           },
           {
@@ -1433,231 +1737,244 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "be5dfcc0-dd6f-4f6e-adf0-615389617676",
+        "id": "col-tarde",
         "type": "COLACIÓN",
         "time": "04:30 PM",
-        "name": "Colación de la tarde",
+        "name": "Colación Tarde (4:30 o 5:00)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌯",
-        "ingredients": [
+        "icon": "🥪",
+        "dishes": [
           {
-            "name": "Pieza de pan",
-            "qty": "1 pza",
-            "icon": "🥯",
-            "ready": true
-          },
-          {
-            "name": "Jamón / Queso / Pollo / Salchicha",
-            "qty": "40-50 g",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Verdura al gusto",
-            "qty": "Al gusto",
-            "icon": "🥬",
-            "ready": true
-          },
-          {
-            "name": "Mayonesa",
-            "qty": "1 cucharada",
-            "icon": "🍯",
-            "ready": true
+            "name": "Emparedado de la tarde",
+            "ingredients": [
+              {
+                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "qty": "1 pieza",
+                "icon": "🥖",
+                "ready": true
+              },
+              {
+                "name": "Jamón, Queso, Pollo o Salchicha",
+                "qty": "1 porción",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Lechuga y jitomate",
+                "qty": "Al gusto",
+                "icon": "🥬",
+                "ready": true
+              },
+              {
+                "name": "Mayonesa",
+                "qty": "1 cucharada",
+                "icon": "🥚",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "7665c8b2-3b0e-4a61-84e1-82892300eade",
-        "type": "COLACIÓN",
-        "time": "06:00 PM",
-        "name": "Colación Extra",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🍎",
-        "ingredients": [
-          {
-            "name": "Ciruela",
-            "qty": "2 piezas grandes",
-            "icon": "🫐",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "b90e10e0-6c84-4f19-9b8b-2ce47aaff46b",
+        "id": "m5-cen",
         "type": "CENA",
-        "time": "08:00 PM",
+        "time": "07:00 PM",
         "name": "Cena",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🌙",
-        "ingredients": [
+        "dishes": [
           {
-            "name": "Tortilla de maíz",
-            "qty": "2 piezas",
-            "icon": "🫓",
-            "ready": true
+            "name": "Licuado ligero nocturno",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
           },
           {
-            "name": "Bistec de res asado",
-            "qty": "100 g",
-            "icon": "🥩",
-            "ready": true
+            "name": "Taquitos de bistec asado",
+            "ingredients": [
+              {
+                "name": "Tortilla de maíz",
+                "qty": "2 piezas",
+                "icon": "🫓",
+                "ready": true
+              },
+              {
+                "name": "Bistec de res",
+                "qty": "100 g",
+                "icon": "🥩",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "dff98e0d-3ffe-4718-9de5-a7548ad5e574",
+        "id": "m5-col",
         "type": "COLACIÓN",
-        "time": "07:30 PM",
-        "name": "Complemento nocturno",
+        "time": "08:00 PM",
+        "name": "Colación",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌙",
-        "ingredients": [
+        "icon": "🍒",
+        "dishes": [
           {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
+            "name": "Fruta fresca",
+            "ingredients": [
+              {
+                "name": "Ciruela",
+                "qty": "2 piezas grandes",
+                "icon": "🍒",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       }
     ]
   },
   {
     "id": "m6",
-    "title": "Menú 6",
-    "subtitle": "Plan Nutricional Día 6",
+    "title": "MENÚ 6",
+    "subtitle": "Plan Nutricional",
     "meals": [
       {
-        "id": "f2071211-dc77-4902-97a2-165d60391f84",
+        "id": "pre-gym",
         "type": "PRE-ENTRENO",
         "time": "07:00 AM",
-        "name": "Pre-entreno (Antes del Gym)",
+        "name": "Pre-Gym (7:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "💪",
+        "dishes": [
+          {
+            "name": "Tostada de crema de maní",
+            "ingredients": [
+              {
+                "name": "Pan",
+                "qty": "1 rebanada",
+                "icon": "🍞",
+                "ready": true
+              },
+              {
+                "name": "Crema de cacahuate",
+                "qty": "1 cucharada",
+                "icon": "🥜",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Proteína en polvo (opcional)",
+            "name": "Proteína en polvo",
             "qty": "1 scoop",
             "icon": "🥤",
             "ready": true
-          },
-          {
-            "name": "Pan",
-            "qty": "1 rebanada",
-            "icon": "🍞",
-            "ready": true
-          },
-          {
-            "name": "Crema de cacahuate",
-            "qty": "1 cucharada",
-            "icon": "🥜",
-            "ready": true
           }
         ]
       },
       {
-        "id": "ef7cdcb5-70dd-424e-9157-834bd0a2a3e1",
-        "type": "COLACIÓN",
-        "time": "11:30 AM",
-        "name": "Lunch",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🥪",
-        "ingredients": [
-          {
-            "name": "Barra de granola o pan con mermelada",
-            "qty": "1 pza",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Yogur para beber",
-            "qty": "1 pza",
-            "icon": "🍶",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "5c624ca5-d2c5-4bc0-8bff-9110fa3d1d01",
+        "id": "m6-des",
         "type": "DESAYUNO",
         "time": "09:00 AM",
-        "name": "Desayuno Fuerte",
+        "name": "Desayuno (9:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🍳",
+        "dishes": [
+          {
+            "name": "Licuado energético matutino",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Cuernito relleno de pavo y quesillo",
+            "ingredients": [
+              {
+                "name": "Cuernito",
+                "qty": "1 pieza",
+                "icon": "🥐",
+                "ready": true
+              },
+              {
+                "name": "Pechuga de pavo",
+                "qty": "3 rebanadas",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Queso Oaxaca",
+                "qty": "90 g",
+                "icon": "🧀",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Fruta fresca",
+            "ingredients": [
+              {
+                "name": "Fruta picada",
+                "qty": "1 taza",
+                "icon": "🍉",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
-          {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Cuernito",
-            "qty": "1 pieza",
-            "icon": "🥐",
-            "ready": true
-          },
-          {
-            "name": "Pechuga de pavo",
-            "qty": "3 rebanadas delgadas",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Queso Oaxaca",
-            "qty": "90 g",
-            "icon": "🧀",
-            "ready": true
-          },
-          {
-            "name": "Fruta picada (papaya/piña/melón)",
-            "qty": "1 taza",
-            "icon": "🍉",
-            "ready": true
-          },
           {
             "name": "Té sin azúcar",
             "qty": "1 taza",
@@ -1667,38 +1984,80 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "515963c8-31fc-445f-b8a5-5b84978b54d1",
-        "type": "COMIDA",
-        "time": "02:00 PM",
-        "name": "Comida Principal",
+        "id": "lunch",
+        "type": "COLACIÓN",
+        "time": "11:30 AM",
+        "name": "Lunch (11:30)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🍽️",
+        "icon": "🥪",
+        "dishes": [
+          {
+            "name": "Snack dulce",
+            "ingredients": [
+              {
+                "name": "Barra de granola o pan dulce",
+                "qty": "1 pieza",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Sopa de rajas",
-            "qty": "1 taza",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Queso panela asado",
-            "qty": "250 g",
-            "icon": "🧀",
-            "ready": true
-          },
-          {
-            "name": "Nopal asado (base)",
+            "name": "Yogur para beber",
             "qty": "1 pieza",
-            "icon": "🌵",
+            "icon": "🍶",
             "ready": true
+          }
+        ]
+      },
+      {
+        "id": "m6-com",
+        "type": "COMIDA",
+        "time": "02:00 PM",
+        "name": "Comida",
+        "status": "available",
+        "statusText": "Disponible",
+        "icon": "🥘",
+        "dishes": [
+          {
+            "name": "Nopal con panela asada",
+            "ingredients": [
+              {
+                "name": "Nopal asado",
+                "qty": "1 pieza",
+                "icon": "🌵",
+                "ready": true
+              },
+              {
+                "name": "Queso panela asado",
+                "qty": "250 g",
+                "icon": "🧀",
+                "ready": true
+              },
+              {
+                "name": "Salsa verde o roja",
+                "qty": "Al gusto",
+                "icon": "🌶️",
+                "ready": true
+              }
+            ]
           },
           {
-            "name": "Salsa verde o roja",
-            "qty": "Al gusto",
-            "icon": "🌶️",
-            "ready": true
-          },
+            "name": "Entrada caliente",
+            "ingredients": [
+              {
+                "name": "Sopa de rajas",
+                "qty": "1 taza",
+                "icon": "🥣",
+                "ready": true
+              }
+            ]
+          }
+        ],
+        "ingredients": [
           {
             "name": "Tortilla de nopal",
             "qty": "2 piezas",
@@ -1714,90 +2073,115 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "40a2db36-1eb8-437d-8ded-78acdbc4d2a9",
+        "id": "col-tarde",
         "type": "COLACIÓN",
         "time": "04:30 PM",
-        "name": "Colación de la tarde",
+        "name": "Colación Tarde (4:30 o 5:00)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌯",
-        "ingredients": [
+        "icon": "🥪",
+        "dishes": [
           {
-            "name": "Pieza de pan",
-            "qty": "1 pza",
-            "icon": "🥯",
-            "ready": true
-          },
-          {
-            "name": "Jamón / Queso / Pollo / Salchicha",
-            "qty": "40-50 g",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Verdura al gusto",
-            "qty": "Al gusto",
-            "icon": "🥬",
-            "ready": true
-          },
-          {
-            "name": "Mayonesa",
-            "qty": "1 cucharada",
-            "icon": "🍯",
-            "ready": true
+            "name": "Emparedado de la tarde",
+            "ingredients": [
+              {
+                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "qty": "1 pieza",
+                "icon": "🥖",
+                "ready": true
+              },
+              {
+                "name": "Jamón, Queso, Pollo o Salchicha",
+                "qty": "1 porción",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Lechuga y jitomate",
+                "qty": "Al gusto",
+                "icon": "🥬",
+                "ready": true
+              },
+              {
+                "name": "Mayonesa",
+                "qty": "1 cucharada",
+                "icon": "🥚",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "445ae638-6579-4b9a-93da-6972f8b1c458",
-        "type": "COLACIÓN",
-        "time": "06:00 PM",
-        "name": "Colación Extra",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🍎",
-        "ingredients": [
-          {
-            "name": "Naranja en gajos",
-            "qty": "1 pieza",
-            "icon": "🍊",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "2dd89324-d8d5-492b-8126-42d0eee93193",
+        "id": "m6-cen",
         "type": "CENA",
-        "time": "08:00 PM",
+        "time": "07:00 PM",
         "name": "Cena",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🌙",
+        "dishes": [
+          {
+            "name": "Licuado ligero nocturno",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Mini pizza árabe de atún",
+            "ingredients": [
+              {
+                "name": "Pan árabe",
+                "qty": "1 pieza",
+                "icon": "🫓",
+                "ready": true
+              },
+              {
+                "name": "Puré de tomate con orégano",
+                "qty": "Al gusto",
+                "icon": "🍅",
+                "ready": true
+              },
+              {
+                "name": "Atún en agua",
+                "qty": "60 g",
+                "icon": "🐟",
+                "ready": true
+              },
+              {
+                "name": "Queso manchego rallado",
+                "qty": "60 g",
+                "icon": "🧀",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
-          {
-            "name": "Pan árabe",
-            "qty": "1 pieza",
-            "icon": "🫓",
-            "ready": true
-          },
-          {
-            "name": "Puré de tomate con orégano",
-            "qty": "Al gusto",
-            "icon": "🍅",
-            "ready": true
-          },
-          {
-            "name": "Atún en agua drenado",
-            "qty": "60 g",
-            "icon": "🥫",
-            "ready": true
-          },
-          {
-            "name": "Queso manchego rallado",
-            "qty": "60 g",
-            "icon": "🧀",
-            "ready": true
-          },
           {
             "name": "Té sin azúcar",
             "qty": "1 taza",
@@ -1807,152 +2191,136 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "435a840e-9e16-4003-9f89-d59b4c16eafb",
+        "id": "m6-col",
         "type": "COLACIÓN",
-        "time": "07:30 PM",
-        "name": "Complemento nocturno",
+        "time": "08:00 PM",
+        "name": "Colación",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌙",
-        "ingredients": [
+        "icon": "🍊",
+        "dishes": [
           {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
+            "name": "Fruta cítrica",
+            "ingredients": [
+              {
+                "name": "Naranja en gajos",
+                "qty": "1 pieza",
+                "icon": "🍊",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       }
     ]
   },
   {
     "id": "m7",
-    "title": "Menú 7",
-    "subtitle": "Plan Nutricional Día 7",
+    "title": "MENÚ 7",
+    "subtitle": "Plan Nutricional",
     "meals": [
       {
-        "id": "f643add5-c1d7-4cbb-af15-6d9e2906421a",
+        "id": "pre-gym",
         "type": "PRE-ENTRENO",
         "time": "07:00 AM",
-        "name": "Pre-entreno (Antes del Gym)",
+        "name": "Pre-Gym (7:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "💪",
+        "dishes": [
+          {
+            "name": "Tostada de crema de maní",
+            "ingredients": [
+              {
+                "name": "Pan",
+                "qty": "1 rebanada",
+                "icon": "🍞",
+                "ready": true
+              },
+              {
+                "name": "Crema de cacahuate",
+                "qty": "1 cucharada",
+                "icon": "🥜",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Proteína en polvo (opcional)",
+            "name": "Proteína en polvo",
             "qty": "1 scoop",
             "icon": "🥤",
             "ready": true
-          },
-          {
-            "name": "Pan",
-            "qty": "1 rebanada",
-            "icon": "🍞",
-            "ready": true
-          },
-          {
-            "name": "Crema de cacahuate",
-            "qty": "1 cucharada",
-            "icon": "🥜",
-            "ready": true
           }
         ]
       },
       {
-        "id": "0e06d7ef-7e7a-46ee-adb1-4eba1ba14a5b",
-        "type": "COLACIÓN",
-        "time": "11:30 AM",
-        "name": "Lunch",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🥪",
-        "ingredients": [
-          {
-            "name": "Barra de granola o pan con mermelada",
-            "qty": "1 pza",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Yogur para beber",
-            "qty": "1 pza",
-            "icon": "🍶",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "c6462af8-6f0c-471e-8ac6-40439ff780e7",
+        "id": "m7-des",
         "type": "DESAYUNO",
         "time": "09:00 AM",
-        "name": "Desayuno Fuerte",
+        "name": "Desayuno (9:00)",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🍳",
+        "dishes": [
+          {
+            "name": "Licuado energético matutino",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          },
+          {
+            "name": "Chilaquiles con pollo",
+            "ingredients": [
+              {
+                "name": "Tortilla de maíz dorada",
+                "qty": "3 piezas",
+                "icon": "🫓",
+                "ready": true
+              },
+              {
+                "name": "Pechuga de pollo deshebrada",
+                "qty": "60 g",
+                "icon": "🍗",
+                "ready": true
+              },
+              {
+                "name": "Salsa verde o roja",
+                "qty": "Al gusto",
+                "icon": "🌶️",
+                "ready": true
+              }
+            ]
+          }
+        ],
         "ingredients": [
           {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
-          },
-          {
-            "name": "Tortilla de maíz (chilaquiles)",
-            "qty": "3 piezas",
-            "icon": "🫓",
-            "ready": true
-          },
-          {
-            "name": "Pechuga de pollo deshebrada",
-            "qty": "60 g",
-            "icon": "🍗",
-            "ready": true
-          },
-          {
-            "name": "Salsa verde o roja",
-            "qty": "Al gusto",
-            "icon": "🌶️",
-            "ready": true
-          },
-          {
-            "name": "Jugo natural de naranja o mandarina",
+            "name": "Jugo natural",
             "qty": "1 taza",
             "icon": "🧃",
             "ready": true
@@ -1966,162 +2334,220 @@ export const mockMenus = [
         ]
       },
       {
-        "id": "ce8844eb-42bd-4099-bec5-443dd73e9908",
+        "id": "lunch",
+        "type": "COLACIÓN",
+        "time": "11:30 AM",
+        "name": "Lunch (11:30)",
+        "status": "available",
+        "statusText": "Disponible",
+        "icon": "🥪",
+        "dishes": [
+          {
+            "name": "Snack dulce",
+            "ingredients": [
+              {
+                "name": "Barra de granola o pan dulce",
+                "qty": "1 pieza",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
+          }
+        ],
+        "ingredients": [
+          {
+            "name": "Yogur para beber",
+            "qty": "1 pieza",
+            "icon": "🍶",
+            "ready": true
+          }
+        ]
+      },
+      {
+        "id": "m7-com",
         "type": "COMIDA",
         "time": "02:00 PM",
-        "name": "Comida Principal",
+        "name": "Comida",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🍽️",
-        "ingredients": [
+        "icon": "🥘",
+        "dishes": [
           {
-            "name": "Crema de brócoli",
-            "qty": "1 taza",
-            "icon": "🥣",
-            "ready": true
+            "name": "Pollo oriental con ajonjolí",
+            "ingredients": [
+              {
+                "name": "Pechuga de pollo",
+                "qty": "200 g",
+                "icon": "🍗",
+                "ready": true
+              },
+              {
+                "name": "Salsa de soya con azúcar",
+                "qty": "Al gusto",
+                "icon": "🍶",
+                "ready": true
+              },
+              {
+                "name": "Ajonjolí tostado",
+                "qty": "1 cucharada",
+                "icon": "🥜",
+                "ready": true
+              }
+            ]
           },
           {
-            "name": "Pechuga de pollo",
-            "qty": "200 g",
-            "icon": "🍗",
-            "ready": true
+            "name": "Ensalada tricolor crujiente",
+            "ingredients": [
+              {
+                "name": "Zanahoria, jícama, betabel, limón",
+                "qty": "Al gusto",
+                "icon": "🥗",
+                "ready": true
+              }
+            ]
           },
           {
-            "name": "Salsa de soya, azúcar y ajonjolí",
-            "qty": "Al gusto",
-            "icon": "🧂",
-            "ready": true
-          },
-          {
-            "name": "Ensalada fresca rallada con limón",
-            "qty": "Al gusto",
-            "icon": "🥗",
-            "ready": true
+            "name": "Entrada caliente",
+            "ingredients": [
+              {
+                "name": "Crema de brócoli",
+                "qty": "1 taza",
+                "icon": "🥣",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "e136a043-a275-4080-ae7d-285974f18847",
+        "id": "col-tarde",
         "type": "COLACIÓN",
         "time": "04:30 PM",
-        "name": "Colación de la tarde",
+        "name": "Colación Tarde (4:30 o 5:00)",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌯",
-        "ingredients": [
+        "icon": "🥪",
+        "dishes": [
           {
-            "name": "Pieza de pan",
-            "qty": "1 pza",
-            "icon": "🥯",
-            "ready": true
-          },
-          {
-            "name": "Jamón / Queso / Pollo / Salchicha",
-            "qty": "40-50 g",
-            "icon": "🥓",
-            "ready": true
-          },
-          {
-            "name": "Verdura al gusto",
-            "qty": "Al gusto",
-            "icon": "🥬",
-            "ready": true
-          },
-          {
-            "name": "Mayonesa",
-            "qty": "1 cucharada",
-            "icon": "🍯",
-            "ready": true
+            "name": "Emparedado de la tarde",
+            "ingredients": [
+              {
+                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "qty": "1 pieza",
+                "icon": "🥖",
+                "ready": true
+              },
+              {
+                "name": "Jamón, Queso, Pollo o Salchicha",
+                "qty": "1 porción",
+                "icon": "🥓",
+                "ready": true
+              },
+              {
+                "name": "Lechuga y jitomate",
+                "qty": "Al gusto",
+                "icon": "🥬",
+                "ready": true
+              },
+              {
+                "name": "Mayonesa",
+                "qty": "1 cucharada",
+                "icon": "🥚",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "b8dee53e-ea84-441f-ae25-fa726eea96f5",
-        "type": "COLACIÓN",
-        "time": "06:00 PM",
-        "name": "Colación Extra",
-        "status": "available",
-        "statusText": "Disponible",
-        "icon": "🍎",
-        "ingredients": [
-          {
-            "name": "Queso Oaxaca",
-            "qty": "90 g",
-            "icon": "🧀",
-            "ready": true
-          }
-        ]
-      },
-      {
-        "id": "c407b2f8-afcd-4a01-96f4-6c6a5130485b",
+        "id": "m7-cen",
         "type": "CENA",
-        "time": "08:00 PM",
+        "time": "07:00 PM",
         "name": "Cena",
         "status": "available",
         "statusText": "Disponible",
         "icon": "🌙",
-        "ingredients": [
+        "dishes": [
           {
-            "name": "Cereal integral",
-            "qty": "1 ½ taza",
-            "icon": "🥣",
-            "ready": true
+            "name": "Licuado ligero nocturno",
+            "ingredients": [
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Avena o amaranto o granola",
+                "qty": "2 cucharadas",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Plátano, fresas o mango",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              },
+              {
+                "name": "Chocolate en polvo, azúcar o miel",
+                "qty": "1 cucharada",
+                "icon": "🍫",
+                "ready": true
+              }
+            ]
           },
           {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Plátano",
-            "qty": "1 pieza",
-            "icon": "🍌",
-            "ready": true
+            "name": "Bowl de cereal con fruta",
+            "ingredients": [
+              {
+                "name": "Cereal integral",
+                "qty": "1 ½ taza",
+                "icon": "🥣",
+                "ready": true
+              },
+              {
+                "name": "Leche descremada",
+                "qty": "1 taza",
+                "icon": "🥛",
+                "ready": true
+              },
+              {
+                "name": "Plátano rebanado",
+                "qty": "1 pieza",
+                "icon": "🍌",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       },
       {
-        "id": "875e26ed-d9dd-4a2c-b026-f03826df4d5d",
+        "id": "m7-col",
         "type": "COLACIÓN",
-        "time": "07:30 PM",
-        "name": "Complemento nocturno",
+        "time": "08:00 PM",
+        "name": "Colación",
         "status": "available",
         "statusText": "Disponible",
-        "icon": "🌙",
-        "ingredients": [
+        "icon": "🧀",
+        "dishes": [
           {
-            "name": "Leche descremada",
-            "qty": "1 taza",
-            "icon": "🥛",
-            "ready": true
-          },
-          {
-            "name": "Avena/amaranto/granola",
-            "qty": "2 cdas",
-            "icon": "🥣",
-            "ready": true
-          },
-          {
-            "name": "Plátano/fresas/mango",
-            "qty": "1 pza",
-            "icon": "🍌",
-            "ready": true
-          },
-          {
-            "name": "Chocolate/miel/azúcar",
-            "qty": "1 cda",
-            "icon": "🍫",
-            "ready": true
+            "name": "Porción de queso",
+            "ingredients": [
+              {
+                "name": "Queso Oaxaca",
+                "qty": "90 g",
+                "icon": "🧀",
+                "ready": true
+              }
+            ]
           }
-        ]
+        ],
+        "ingredients": []
       }
     ]
   }
-];
-
-export const mockMissing = [
-  { id: 'm1', name: 'Melón', qty: '1 taza', icon: '🍈' },
-  { id: 'm2', name: 'Queso manchego', qty: '60 g', icon: '🧀' },
-  { id: 'm3', name: 'Pescado', qty: '250 g', icon: '🐟' }
 ];
