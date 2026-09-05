@@ -134,10 +134,16 @@ export function AppDataProvider({ children }: { children: React.ReactNode }) {
 
   const seedData = async () => {
     if (loading) return;
-    if (localStorage.getItem('seeded_' + user?.uid)) return;
-    localStorage.setItem('seeded_' + user?.uid, 'true');
-    if (!user || menus.length > 0) return;
+    if (localStorage.getItem('seeded_v2_' + user?.uid)) return;
+    localStorage.setItem('seeded_v2_' + user?.uid, 'true');
+    if (!user) return;
     try {
+      // First delete old menus
+      const { deleteDoc, doc } = await import('firebase/firestore');
+      for (const m of menus) {
+        await deleteDoc(doc(db, 'menus', m.id));
+      }
+
       const batch = writeBatch(db);
       
       const newMenus = mockMenus.map(m => {
@@ -154,16 +160,17 @@ export function AppDataProvider({ children }: { children: React.ReactNode }) {
       });
 
       
-      const newInventory = mockInventory.map(item => {
-        const ref = doc(collection(db, 'inventory'));
-        batch.set(ref, {
-          ...item,
-          ownerId: user.uid,
-          createdAt: serverTimestamp(),
-          updatedAt: serverTimestamp()
+      if (inventory.length === 0) {
+        mockInventory.forEach(item => {
+          const ref = doc(collection(db, 'inventory'));
+          batch.set(ref, {
+            ...item,
+            ownerId: user.uid,
+            createdAt: serverTimestamp(),
+            updatedAt: serverTimestamp()
+          });
         });
-        return { ref, id: ref.id };
-      });
+      }
 
       // Assign first menu to today
       const today = new Date().toISOString().split('T')[0];

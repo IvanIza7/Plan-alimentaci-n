@@ -1,12 +1,9 @@
 import React from 'react';
-import { UserCircle, Target, BellRing, Settings, Lock, ChevronRight, AlertTriangle } from 'lucide-react';
-import { useAppData } from '../hooks/useAppData';
+import { UserCircle, Target, BellRing, Settings, Lock, ChevronRight } from 'lucide-react';
 
 export default function ProfileView() {
-  const { resetData } = useAppData();
-
   return (
-    <div className="flex flex-col gap-6 pb-20 items-center">
+    <div className="flex flex-col gap-6 pb-10 items-center">
       <header className="pt-8 flex flex-col items-center w-full">
          <div className="w-24 h-24 bg-primary-900 text-surface rounded-full flex items-center justify-center text-4xl font-display font-black neo-card shadow-[4px_4px_0_0_var(--color-text-main)] mb-5">
             I
@@ -41,24 +38,6 @@ export default function ProfileView() {
          <ProfileOption icon={<BellRing className="text-yellow-600" size={24} />} title="Notificaciones" subtitle="Recordatorios de comida" />
          <ProfileOption icon={<Settings className="text-slate-500" size={24} />} title="Configuración" subtitle="Comidas, unidades, plan" />
          <ProfileOption icon={<Lock className="text-orange-500" size={24} />} title="Privacidad" subtitle="Datos y exportación" />
-      </div>
-
-      {/* Danger Zone */}
-      <div className="w-full mt-8">
-        <button 
-          onClick={() => {
-            if (window.confirm('¿Estás seguro de que deseas borrar los menús actuales y cargar los 7 menús base?')) {
-              resetData();
-            }
-          }}
-          className="w-full bg-red-500 text-white border-2 border-text-main rounded-2xl p-4 flex items-center justify-center gap-3 neo-card shadow-[4px_4px_0_0_var(--color-text-main)] hover:bg-red-600 hover:-translate-y-1 transition-all"
-        >
-          <AlertTriangle size={24} />
-          <span className="font-display font-black tracking-widest uppercase text-sm">Restaurar Datos Iniciales</span>
-        </button>
-        <p className="text-xs text-text-secondary text-center mt-3 font-bold uppercase tracking-wider">
-          Esto borrará tus menús modificados y cargará los de fábrica.
-        </p>
       </div>
     </div>
   );
