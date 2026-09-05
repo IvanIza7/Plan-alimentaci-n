@@ -7,7 +7,7 @@ import { mockMenus } from '../data';
 import { getNutritionalSummary } from '../data/equivalences';
 
 export default function PlanView() {
-  const { menus, activeMenus, assignMenuToDate, updateMenu, deleteMenu } = useAppData();
+  const { menus, activeMenus, assignMenuToDate, updateMenu, deleteMenu, addMenu } = useAppData();
   
   const [sortOrder, setSortOrder] = useState<'latest' | 'alpha'>('alpha');
 
@@ -190,6 +190,14 @@ export default function PlanView() {
                           meals: JSON.stringify(updates.meals),
                           coverImage: updates.coverImage,
                           themeColor: updates.themeColor
+                       });
+                    } else if (addMenu) {
+                       await addMenu({
+                          title: updates.title,
+                          subtitle: 'Nuevo Menú',
+                          meals: JSON.stringify(updates.meals),
+                          coverImage: updates.coverImage || `/menu${Math.floor(Math.random()*7)+1}.jpg`,
+                          themeColor: updates.themeColor || 'emerald'
                        });
                     }
                     setShowMenuEditor(false);

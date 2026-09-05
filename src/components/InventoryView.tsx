@@ -43,7 +43,7 @@ const NumberStepper = ({ value, onChange }: { value: number, onChange: (val: num
 };
 
 export default function InventoryView() {
-  const { inventory, addInventoryItem, updateInventoryItem, deleteInventoryItem, addShoppingItem } = useAppData();
+  const { inventory, addInventoryItem, updateInventoryItem, deleteInventoryItem, addShoppingItem, loading } = useAppData();
   
   const totalItems = inventory.length;
   

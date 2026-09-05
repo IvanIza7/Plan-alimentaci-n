@@ -79,7 +79,7 @@ export default function ShoppingView() {
      }
   };
 
-  const categories = Array.from(new Set(items.map(i => i.category)));
+  const categories = Array.from(new Set<string>(items.map((i: any) => i.category)));
   const total = items.length;
   const completed = items.filter(i => i.checked).length;
   const toBuy = total - completed;
@@ -252,7 +252,7 @@ export default function ShoppingView() {
                         <input type="text" placeholder="Buscar en tu inventario..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="w-full bg-background border-2 border-text-main rounded-xl p-3 font-bold text-sm shadow-[4px_4px_0_0_var(--color-text-main)] focus:outline-none focus:translate-y-1 focus:shadow-[0_0_0_0_var(--color-text-main)] transition-all" />
                      </div>
                      <div className="max-h-[40vh] overflow-y-auto p-1 custom-scrollbar">
-                        {Array.from(new Set((inventory || []).filter(i => i.name.toLowerCase().includes(searchTerm.toLowerCase())).map(i => i.category))).map(cat => (
+                        {Array.from(new Set<string>((inventory || []).filter((i: any) => i.name.toLowerCase().includes(searchTerm.toLowerCase())).map((i: any) => i.category))).map(cat => (
                            <div key={cat} className="mb-4">
                               <h4 className="text-[10px] font-black text-text-secondary uppercase tracking-widest mb-2 px-1">{cat}</h4>
                               <div className="grid grid-cols-3 gap-2 sm:gap-3">

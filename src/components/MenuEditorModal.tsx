@@ -51,7 +51,7 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
   const [itemToAdd, setItemToAdd] = useState<any | null>(null);
   const [itemQty, setItemQty] = useState<number>(1);
 
-  const categories = Array.from(new Set(inventory.map(item => item.category)));
+  const categories = Array.from(new Set<string>(inventory.map((item: any) => item.category)));
   const groupedInventory = categories.map(cat => ({
     name: cat,
     items: inventory.filter(item => item.category === cat && item.name.toLowerCase().includes(searchTerm.toLowerCase()))
