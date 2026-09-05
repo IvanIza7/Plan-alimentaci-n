@@ -134,14 +134,16 @@ export function AppDataProvider({ children }: { children: React.ReactNode }) {
 
   const seedData = async () => {
     if (loading) return;
-    if (localStorage.getItem('seeded_v2_' + user?.uid)) return;
-    localStorage.setItem('seeded_v2_' + user?.uid, 'true');
+    if (localStorage.getItem('seeded_v3_' + user?.uid)) return;
+    localStorage.setItem('seeded_v3_' + user?.uid, 'true');
     if (!user) return;
     try {
-      // First delete old menus
-      const { deleteDoc, doc } = await import('firebase/firestore');
-      for (const m of menus) {
-        await deleteDoc(doc(db, 'menus', m.id));
+      // Fetch directly from DB to avoid state sync issues on mount
+      const { deleteDoc, doc, getDocs, query, collection, where } = await import('firebase/firestore');
+      const q = query(collection(db, 'menus'), where('ownerId', '==', user.uid));
+      const snapshot = await getDocs(q);
+      for (const d of snapshot.docs) {
+        await deleteDoc(doc(db, 'menus', d.id));
       }
 
       const batch = writeBatch(db);
