@@ -182,6 +182,20 @@ export function AppDataProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const resetData = async () => {
+    if (!user) return;
+    try {
+      const { deleteDoc, doc } = await import('firebase/firestore');
+      for (const m of menus) {
+        await deleteDoc(doc(db, 'menus', m.id));
+      }
+      localStorage.removeItem('seeded_' + user.uid);
+      window.location.reload();
+    } catch(err) {
+      console.error("Error resetting data", err);
+    }
+  };
+
   const assignMenuToDate = async (dateId: string, menuId: string) => {
     if (!user) return;
     try {
@@ -327,7 +341,7 @@ export function AppDataProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  return <AppDataContext.Provider value={{ shoppingHistory, saveShoppingHistory, deleteShoppingItem, menus, activeMenus, loading, seedData, assignMenuToDate, addMenu, deleteMenu, updateMenu, inventory, addInventoryItem, updateInventoryItem, deleteInventoryItem, shoppingList, addShoppingItem, updateShoppingItem }}>{children}</AppDataContext.Provider>;
+  return <AppDataContext.Provider value={{ shoppingHistory, saveShoppingHistory, deleteShoppingItem, menus, activeMenus, loading, seedData, resetData, assignMenuToDate, addMenu, deleteMenu, updateMenu, inventory, addInventoryItem, updateInventoryItem, deleteInventoryItem, shoppingList, addShoppingItem, updateShoppingItem }}>{children}</AppDataContext.Provider>;
 }
 
 
