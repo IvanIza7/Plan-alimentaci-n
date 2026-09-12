@@ -183,7 +183,7 @@ export default function ProgressView() {
                     <ResponsiveContainer width="100%" height="100%">
                        <LineChart data={flatChartData}>
                           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
-                          <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#64748b' }} dy={10} />
+                          <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#64748b' }} dy={10} padding={{ left: 20, right: 20 }} />
                           <YAxis domain={['auto', 'auto']} axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#64748b' }} width={40} />
                           <Tooltip 
                              contentStyle={{ borderRadius: '16px', border: '2px solid #0f172a', boxShadow: '4px 4px 0 0 #0f172a', fontWeight: 'bold' }} 
@@ -281,8 +281,8 @@ export default function ProgressView() {
                <div className="bg-surface border-t-2 border-l-2 border-r-2 sm:border-b-2 border-text-main rounded-t-[32px] sm:rounded-[32px] p-6 w-full max-w-sm neo-card shadow-[0_-8px_0_0_var(--color-text-main)] sm:shadow-[8px_8px_0_0_var(--color-text-main)]">
                   <div className="flex justify-between items-center mb-6">
                      <h3 className="text-xl font-display font-black text-text-main uppercase tracking-tight">Nuevo Registro</h3>
-                     <button onClick={() => setShowWeightModal(false)} className="w-8 h-8 bg-background border-2 border-border-subtle rounded-full flex items-center justify-center text-text-secondary hover:text-text-main hover:border-text-main">
-                        <X size={16} />
+                     <button onClick={() => setShowWeightModal(false)} className="w-10 h-10 bg-[#ef4444] border-2 border-text-main rounded-full flex items-center justify-center text-white shadow-[2px_2px_0_0_var(--color-text-main)] hover:bg-red-600 hover:-translate-y-0.5 transition-all neo-btn">
+                        <X size={20} strokeWidth={3} />
                      </button>
                   </div>
 

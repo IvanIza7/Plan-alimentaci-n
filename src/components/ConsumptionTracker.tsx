@@ -13,6 +13,7 @@ interface Meal {
   time: string;
   name: string;
   ingredients?: Item[];
+  dishes?: any[];
 }
 
 interface TrackerProps {
@@ -31,15 +32,17 @@ export interface TrackedItem {
 }
 
 export default function ConsumptionTracker({ meal, onClose, onSave }: TrackerProps) {
+  const allIngredients = [...(meal.ingredients || []), ...(meal.dishes || []).flatMap((d: any) => d.ingredients || [])];
+
   const [trackedItems, setTrackedItems] = useState<TrackedItem[]>(() => 
-    (meal.ingredients || []).map((ing, i) => ({
+    allIngredients.map((ing, i) => ({
       id: `orig-${i}`,
       originalItem: ing,
       status: 'pending'
     }))
   );
   
-  const [activeItem, setActiveItem] = useState<TrackedItem | null>(null);
+  const [selectedItemIds, setSelectedItemIds] = useState<string[]>([]);
   const [showEquivalences, setShowEquivalences] = useState(false);
   const [showAddExtra, setShowAddExtra] = useState(false);
   const [showQtyEditor, setShowQtyEditor] = useState(false);
@@ -48,26 +51,26 @@ export default function ConsumptionTracker({ meal, onClose, onSave }: TrackerPro
 
   // Stats
   const consumedCount = trackedItems.filter(i => i.status === 'consumed' || i.status === 'substituted' || i.status === 'modified').length;
-  const originalCount = (meal.ingredients || []).length;
+  const originalCount = allIngredients.length;
   const subCount = trackedItems.filter(i => i.status === 'substituted').length;
   const skippedCount = trackedItems.filter(i => i.status === 'skipped').length;
   const addedCount = trackedItems.filter(i => i.status === 'added').length;
 
-  const updateItemStatus = (id: string, status: TrackStatus, actualItem?: Item) => {
+  const updateItemsStatus = (ids: string[], status: TrackStatus, actualItem?: Item) => {
     setTrackedItems(prev => prev.map(item => {
-      if (item.id === id) {
+      if (ids.includes(item.id)) {
         return { ...item, status, actualItem: actualItem || item.originalItem };
       }
       return item;
     }));
-    setActiveItem(null);
+    setSelectedItemIds([]);
     setShowEquivalences(false);
     setShowQtyEditor(false);
   };
 
   const handleEquivalenceSelect = (equivName: string, equivAmount: string) => {
-    if (!activeItem) return;
-    updateItemStatus(activeItem.id, 'substituted', { name: equivName, qty: equivAmount });
+    if (selectedItemIds.length !== 1) return;
+    updateItemsStatus([selectedItemIds[0]], 'substituted', { name: equivName, qty: equivAmount });
   };
 
   const handleAddExtra = (name: string, qty: string) => {
@@ -81,8 +84,9 @@ export default function ConsumptionTracker({ meal, onClose, onSave }: TrackerPro
   };
 
   const handleSaveQty = () => {
-    if (!activeItem) return;
-    updateItemStatus(activeItem.id, 'modified', { name: activeItem.originalItem?.name || '', qty: tempQty });
+    if (selectedItemIds.length !== 1) return;
+    const singleItem = trackedItems.find(i => i.id === selectedItemIds[0]);
+    updateItemsStatus([selectedItemIds[0]], 'modified', { name: singleItem?.originalItem?.name || '', qty: tempQty });
   };
 
 
@@ -98,8 +102,8 @@ export default function ConsumptionTracker({ meal, onClose, onSave }: TrackerPro
             </h3>
             <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary">{meal.type} · {meal.time}</p>
           </div>
-          <button onClick={onClose} className="w-10 h-10 bg-background border-2 border-border-subtle rounded-full flex items-center justify-center text-text-secondary hover:text-text-main hover:border-text-main transition-colors">
-            <X size={20} />
+          <button onClick={onClose} className="w-10 h-10 bg-[#ef4444] border-2 border-text-main rounded-full flex items-center justify-center text-white shadow-[2px_2px_0_0_var(--color-text-main)] hover:bg-red-600 hover:-translate-y-0.5 transition-all neo-btn">
+            <X size={20} strokeWidth={3} />
           </button>
         </div>
 
@@ -159,14 +163,14 @@ export default function ConsumptionTracker({ meal, onClose, onSave }: TrackerPro
                  )}
               </div>
             </div>
-          ) : activeItem && showEquivalences ? (
+          ) : (selectedItemIds.length === 1 && showEquivalences) ? (
             // Equivalences View
             <div className="space-y-6">
               <div className="bg-background border-2 border-border-subtle p-4 rounded-[24px]">
                  <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">Sustituyendo:</p>
                  <div className="flex justify-between items-center">
-                    <span className="font-bold">{activeItem.originalItem?.name}</span>
-                    <span className="text-xs font-black bg-surface px-2 py-1 rounded-full border border-border-subtle">{activeItem.originalItem?.qty}</span>
+                    <span className="font-bold">{trackedItems.find(i => i.id === selectedItemIds[0])?.originalItem?.name}</span>
+                    <span className="text-xs font-black bg-surface px-2 py-1 rounded-full border border-border-subtle">{trackedItems.find(i => i.id === selectedItemIds[0])?.originalItem?.qty}</span>
                  </div>
               </div>
 
@@ -189,72 +193,56 @@ export default function ConsumptionTracker({ meal, onClose, onSave }: TrackerPro
                 </div>
               </div>
             </div>
-          ) : activeItem && showQtyEditor ? (
+          ) : (selectedItemIds.length === 1 && showQtyEditor) ? (
             <div className="space-y-6">
               <div className="bg-background border-2 border-border-subtle p-4 rounded-[24px]">
                  <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">Editando cantidad de:</p>
                  <div className="flex justify-between items-center">
-                    <span className="font-bold">{activeItem.originalItem?.name}</span>
-                    <span className="text-xs font-black bg-surface px-2 py-1 rounded-full border border-border-subtle">{activeItem.originalItem?.qty}</span>
+                    <span className="font-bold">{trackedItems.find(i => i.id === selectedItemIds[0])?.originalItem?.name}</span>
+                    <span className="text-xs font-black bg-surface px-2 py-1 rounded-full border border-border-subtle">{trackedItems.find(i => i.id === selectedItemIds[0])?.originalItem?.qty}</span>
                  </div>
               </div>
               <div>
                  <label className="block text-[10px] font-black uppercase tracking-widest text-text-secondary mb-2">Nueva cantidad</label>
                  <input type="text" value={tempQty} onChange={(e) => setTempQty(e.target.value)} className="w-full bg-surface border-2 border-text-main rounded-xl p-4 font-bold text-text-main focus:outline-none shadow-[2px_2px_0_0_var(--color-text-main)]" placeholder="Ej: 1/2 taza" />
                  <button onClick={handleSaveQty} className="w-full mt-4 bg-accent-500 text-text-main font-black uppercase tracking-widest py-4 rounded-xl border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)]">Guardar Cambios</button>
-              </div>
-            </div>
-          ) : activeItem && !showEquivalences ? (
-            // Single Item Action Menu
-            <div className="space-y-6">
-              <div className="bg-surface border-2 border-text-main p-6 rounded-[24px] shadow-[4px_4px_0_0_var(--color-text-main)]">
-                 <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary mb-4 text-center">¿Qué hiciste con este alimento?</p>
-                 <div className="text-center mb-6">
-                    <h4 className="font-display font-black text-2xl uppercase tracking-tight">{activeItem.originalItem?.name}</h4>
-                    <span className="inline-block mt-2 font-bold text-sm bg-background border-2 border-border-subtle px-4 py-1.5 rounded-full">{activeItem.originalItem?.qty}</span>
-                 </div>
-                 
-                 <div className="space-y-3">
-                    <button onClick={() => updateItemStatus(activeItem.id, 'consumed')} className="w-full bg-text-main text-surface font-black uppercase tracking-widest py-4 rounded-xl border-2 border-transparent flex items-center justify-center gap-2 hover:bg-black/80 transition-colors">
-                       <Check size={18} /> Comí lo indicado
-                    </button>
-                    <button onClick={() => setShowEquivalences(true)} className="w-full bg-accent-100 text-text-main font-black uppercase tracking-widest py-4 rounded-xl border-2 border-text-main flex items-center justify-center gap-2 shadow-[2px_2px_0_0_var(--color-text-main)] hover:bg-accent-200 transition-colors">
-                       🔄 Cambié el alimento
-                    </button>
-                    <button onClick={() => { setTempQty(activeItem.originalItem?.qty || ''); setShowQtyEditor(true); }} className="w-full bg-surface text-text-main font-black uppercase tracking-widest py-4 rounded-xl border-2 border-text-main flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors">
-     ✏️ Cambié la cantidad
-  </button>
-  <button onClick={() => updateItemStatus(activeItem.id, 'skipped')} className="w-full bg-surface text-text-main font-black uppercase tracking-widest py-4 rounded-xl border-2 border-text-main flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors">
-                       ✕ No lo consumí
-                    </button>
-                 </div>
-              </div>
+               </div>
             </div>
           ) : (
-            // Main List
+            // Main List // Main List
             <div className="space-y-4">
               <p className="text-[10px] font-bold text-text-secondary uppercase tracking-widest mb-2 flex items-center gap-2"><Info size={14}/> Selecciona para registrar</p>
               {trackedItems.map((item) => (
-                <div key={item.id} onClick={() => item.status === 'pending' && setActiveItem(item)} className={`bg-surface border-2 rounded-[24px] p-4 transition-all ${item.status === 'pending' ? 'border-border-subtle hover:border-text-main cursor-pointer' : 'border-text-main shadow-[4px_4px_0_0_var(--color-text-main)]'}`}>
+                <div key={item.id} onClick={() => {
+                   if (item.status === 'pending') {
+                      setSelectedItemIds(prev => prev.includes(item.id) ? prev.filter(id => id !== item.id) : [...prev, item.id]);
+                   }
+                }} className={`bg-surface border-2 border-text-main rounded-[24px] p-4 transition-all ${item.status === 'pending' ? (selectedItemIds.includes(item.id) ? 'shadow-[4px_4px_0_0_var(--color-text-main)] bg-blue-50 border-blue-500 scale-[1.02]' : 'shadow-[2px_2px_0_0_var(--color-text-main)] hover:shadow-[4px_4px_0_0_var(--color-text-main)] hover:-translate-y-1 cursor-pointer neo-card') : 'shadow-[4px_4px_0_0_var(--color-text-main)] bg-slate-100 opacity-70'}`}>
                    
                    <div className="flex justify-between items-center">
-                      <div>
-                         <h4 className={`font-black text-sm uppercase tracking-widest ${item.status === 'skipped' ? 'line-through text-text-secondary' : 'text-text-main'}`}>{item.actualItem?.name || item.originalItem?.name}</h4>
-                         <p className="text-xs font-bold text-text-secondary mt-1">{item.actualItem?.qty || item.originalItem?.qty}</p>
+                      <div className="flex items-center gap-3">
+                         {item.status === 'pending' && (
+                            <div className={`w-5 h-5 rounded-md border-2 border-text-main flex items-center justify-center ${selectedItemIds.includes(item.id) ? 'bg-primary-500 text-surface' : 'bg-surface'}`}>
+                               {selectedItemIds.includes(item.id) && <Check size={14} strokeWidth={4} />}
+                            </div>
+                         )}
+                         <div>
+                            <h4 className={`font-black text-sm uppercase tracking-widest ${item.status === 'skipped' ? 'line-through text-text-secondary' : 'text-text-main'}`}>{item.actualItem?.name || item.originalItem?.name}</h4>
+                            <p className="text-[10px] font-black uppercase tracking-widest mt-1 bg-surface border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] px-2 py-0.5 rounded-full inline-block">{item.actualItem?.qty || item.originalItem?.qty}</p>
+                         </div>
                       </div>
                       
                       {item.status === 'pending' ? (
-                        <div className="w-8 h-8 rounded-full border-2 border-border-subtle flex items-center justify-center text-text-secondary">
-                           <ArrowRight size={14} />
-                        </div>
+                        null
                       ) : (
-                        <div className="flex flex-col items-end gap-1">
-                           <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-1 rounded-full ${item.status === 'consumed' ? 'bg-green-100 text-green-700' : item.status === 'substituted' ? 'bg-accent-100 text-accent-700' : item.status === 'skipped' ? 'bg-red-100 text-red-700' : 'bg-primary-100 text-primary-700'}`}>
-                              {item.status === 'consumed' && '✓ Listo'}
-                              {item.status === 'substituted' && '🔄 Sustituido'}
-                              {item.status === 'skipped' && '✕ Omitido'}
+                        <div className="flex flex-col items-end gap-2">
+                           <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] ${item.status === 'consumed' ? 'bg-[#bef264] text-text-main' : item.status === 'substituted' ? 'bg-[#fef08a] text-text-main' : item.status === 'skipped' ? 'bg-[#ef4444] text-white' : 'bg-orange-400 text-text-main'}`}>
+                              {item.status === 'consumed' && 'Listo'}
+                              {item.status === 'substituted' && 'Sustituido'}
+                              {item.status === 'skipped' && 'Omitido'}
+                              {item.status === 'modified' && 'Modificado'}
                            </span>
-                           <button onClick={(e) => { e.stopPropagation(); updateItemStatus(item.id, 'pending'); }} className="text-[9px] font-bold text-text-secondary underline mt-1">Deshacer</button>
+                           <button onClick={(e) => { e.stopPropagation(); updateItemsStatus([item.id], 'pending'); }} className="text-[9px] font-black uppercase tracking-widest bg-surface border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] px-2 py-1 rounded-full hover:bg-slate-200 transition-colors">Deshacer</button>
                         </div>
                       )}
                    </div>
@@ -267,9 +255,9 @@ export default function ConsumptionTracker({ meal, onClose, onSave }: TrackerPro
                 </div>
               ))}
               
-              {!summaryMode && !activeItem && (
-                 <button onClick={() => setShowAddExtra(true)} className="w-full bg-background border-2 border-dashed border-border-subtle hover:border-text-main text-text-main font-black uppercase tracking-widest py-4 rounded-[24px] flex items-center justify-center gap-2 transition-colors mt-4">
-                    <Plus size={16} /> Agregar alimento extra
+              {!summaryMode && selectedItemIds.length === 0 && (
+                 <button onClick={() => setShowAddExtra(true)} className="w-full bg-orange-400 border-2 border-text-main text-text-main font-black uppercase tracking-widest py-4 rounded-xl flex items-center justify-center gap-2 shadow-[4px_4px_0_0_var(--color-text-main)] hover:-translate-y-1 hover:bg-orange-500 transition-all neo-btn mt-4">
+                    <Plus size={18} strokeWidth={3} /> Agregar alimento extra
                  </button>
               )}
             </div>
@@ -278,16 +266,40 @@ export default function ConsumptionTracker({ meal, onClose, onSave }: TrackerPro
 
         {/* Footer actions */}
         <div className="mt-6 pt-4 border-t-2 border-border-subtle shrink-0">
-           {(activeItem || showAddExtra) ? (
-              <button onClick={() => { setActiveItem(null); setShowEquivalences(false); setShowQtyEditor(false); setShowAddExtra(false); }} className="w-full py-4 text-xs font-black uppercase tracking-widest text-text-secondary hover:text-text-main">
+           {(showAddExtra || showEquivalences || showQtyEditor) ? (
+              <button onClick={() => { setSelectedItemIds([]); setShowEquivalences(false); setShowQtyEditor(false); setShowAddExtra(false); }} className="w-full py-4 text-xs font-black uppercase tracking-widest text-text-secondary hover:text-text-main">
                  Cancelar edición
               </button>
            ) : summaryMode ? (
               <button onClick={() => onSave(trackedItems)} className="w-full bg-primary-900 text-surface font-black text-sm uppercase tracking-widest py-4 rounded-full neo-btn hover:bg-primary-800 transition-colors shadow-[4px_4px_0_0_var(--color-text-main)] border-2 border-text-main">
                  Confirmar Consumo
               </button>
+           ) : selectedItemIds.length > 0 ? (
+              <div className="space-y-3">
+                 <p className="text-[10px] font-black uppercase tracking-widest text-text-secondary text-center mb-2">Acción para {selectedItemIds.length} alimento(s)</p>
+                 <button onClick={() => updateItemsStatus(selectedItemIds, 'consumed')} className="w-full bg-[#bef264] text-text-main font-black uppercase tracking-widest py-3 rounded-xl border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] flex items-center justify-center gap-2 hover:bg-[#a3e635] hover:-translate-y-1 transition-all neo-btn">
+                    Comí lo indicado
+                 </button>
+                 {selectedItemIds.length === 1 && (
+                    <>
+                       <button onClick={() => setShowEquivalences(true)} className="w-full bg-[#fef08a] text-text-main font-black uppercase tracking-widest py-3 rounded-xl border-2 border-text-main flex items-center justify-center gap-2 shadow-[4px_4px_0_0_var(--color-text-main)] hover:bg-[#fde047] hover:-translate-y-1 transition-all neo-btn">
+                          Cambié el alimento
+                       </button>
+                       <button onClick={() => { 
+                          const singleItem = trackedItems.find(i => i.id === selectedItemIds[0]);
+                          setTempQty(singleItem?.originalItem?.qty || ''); 
+                          setShowQtyEditor(true); 
+                       }} className="w-full bg-orange-400 text-text-main font-black uppercase tracking-widest py-3 rounded-xl border-2 border-text-main flex items-center justify-center gap-2 shadow-[4px_4px_0_0_var(--color-text-main)] hover:bg-orange-500 hover:-translate-y-1 transition-all neo-btn">
+                          Cambié la cantidad
+                       </button>
+                    </>
+                 )}
+                 <button onClick={() => updateItemsStatus(selectedItemIds, 'skipped')} className="w-full bg-[#ef4444] text-white font-black uppercase tracking-widest py-3 rounded-xl border-2 border-text-main flex items-center justify-center gap-2 shadow-[4px_4px_0_0_var(--color-text-main)] hover:bg-red-600 hover:-translate-y-1 transition-all neo-btn">
+                    No lo consumí
+                 </button>
+              </div>
            ) : (
-              <button onClick={() => setSummaryMode(true)} disabled={trackedItems.some(i => i.status === 'pending')} className={`w-full font-black text-sm uppercase tracking-widest py-4 rounded-full border-2 transition-all ${trackedItems.some(i => i.status === 'pending') ? 'bg-background border-border-subtle text-text-secondary cursor-not-allowed' : 'bg-accent-500 border-text-main text-text-main neo-btn hover:bg-accent-400 shadow-[4px_4px_0_0_var(--color-text-main)]'}`}>
+              <button onClick={() => setSummaryMode(true)} disabled={trackedItems.some(i => i.status === 'pending')} className={`w-full font-black text-sm uppercase tracking-widest py-4 rounded-xl border-2 transition-all ${trackedItems.some(i => i.status === 'pending') ? 'bg-slate-200 border-text-main text-text-secondary cursor-not-allowed shadow-[4px_4px_0_0_var(--color-text-main)]' : 'bg-accent-400 border-text-main text-text-main neo-btn hover:bg-accent-500 hover:-translate-y-1 shadow-[4px_4px_0_0_var(--color-text-main)]'}`}>
                  Revisar Resumen
               </button>
            )}

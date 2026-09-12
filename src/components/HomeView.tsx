@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Bell, ArrowRight, Calendar, ShoppingCart, RefreshCcw, LayoutGrid, ChevronDown } from 'lucide-react';
+import { Bell, ArrowRight, Calendar, ShoppingCart, RefreshCcw, LayoutGrid, ChevronDown, ChevronUp } from 'lucide-react';
 import { mockMenus, mockMissing } from '../data';
 import { StatusBadge } from './StatusBadge';
 import { useAppData } from '../hooks/useAppData';
@@ -8,6 +8,42 @@ import { useConsumption } from '../hooks/useConsumption';
 import { getNutritionalSummary } from '../data/equivalences';
 import EquivalenceSwapModal from './EquivalenceSwapModal';
 
+const DishCardHome = ({ dish, mealId, setSwapTarget }: { dish: any, mealId: string, setSwapTarget: any }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+     <div className="bg-surface border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] rounded-[16px] overflow-hidden transition-all mb-3">
+        <button 
+           onClick={(e) => { e.stopPropagation(); setIsOpen(!isOpen); }}
+           className="w-full bg-[#fde047] p-3 flex justify-between items-center hover:bg-[#fef08a] transition-colors"
+        >
+           <h4 className="font-display font-black text-sm uppercase tracking-tight">{dish.name}</h4>
+           <div className="w-6 h-6 rounded-full border-2 border-text-main flex items-center justify-center bg-surface shrink-0">
+              {isOpen ? <ChevronUp size={14} strokeWidth={3} /> : <ChevronDown size={14} strokeWidth={3} />}
+           </div>
+        </button>
+        {isOpen && (
+           <div className="p-4 flex flex-col gap-3 animate-in slide-in-from-top-2 fade-in duration-200 border-t-2 border-text-main bg-background">
+              {dish.ingredients?.map((ing: any, idx: number) => (
+                 <button key={`dish-ing-${idx}`} onClick={(e) => { e.stopPropagation(); setSwapTarget({ mealId, ingredient: ing }); }} className="w-full flex justify-between items-center bg-surface p-3 rounded-[16px] border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">
+                    <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-background flex items-center justify-center shrink-0 border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)]">
+                            <span className="text-sm">{ing.icon || '🥑'}</span>
+                        </div>
+                        <span className="text-xs font-black text-text-main text-left">{ing.name}</span>
+                    </div>
+                    <div className="flex items-center gap-2 shrink-0 ml-2">
+                        <span className="text-[9px] font-black uppercase tracking-widest text-text-main bg-[#fde047] px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)]">{ing.qty}</span>
+                        <div className="w-6 h-6 rounded-full bg-accent-100 flex items-center justify-center text-accent-700 shadow-[2px_2px_0_0_var(--color-text-main)] border-2 border-text-main">
+                            <RefreshCcw size={12} strokeWidth={3} />
+                        </div>
+                    </div>
+                 </button>
+              ))}
+           </div>
+        )}
+     </div>
+  );
+};
 
 export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) => void }) {
     const { menus, activeMenus, seedData, updateMenu, inventory } = useAppData();
@@ -91,7 +127,7 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
   }
 
   
-    const allIngredients = todayMenu?.meals?.flatMap((m: any) => m.ingredients || []) || [];
+    const allIngredients = todayMenu?.meals?.flatMap((m: any) => [...(m.ingredients || []), ...(m.dishes || []).flatMap((d: any) => d.ingredients || [])]) || [];
   const uniqueIngredients = Object.values(allIngredients.reduce((acc: any, ing: any) => {
      if (!acc[ing.name]) acc[ing.name] = ing;
      return acc;
@@ -154,7 +190,8 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
                   );
                }
                const nextMeal = todayMenu.meals.find((m: any) => !logs.includes(m.id)) || todayMenu.meals[0];
-               const ingredientSummary = (nextMeal.ingredients || []).map((i: any) => i.name).join(' - ') || 'Ver detalles';
+               const allNextIngs = [...(nextMeal.ingredients || []), ...(nextMeal.dishes || []).flatMap((d: any) => d.ingredients || [])];
+               const ingredientSummary = allNextIngs.map((i: any) => i.name).join(' - ') || 'Ver detalles';
                return (
                   <div className={`${getMenuColors(todayMenu.themeColor).bg} ${getMenuColors(todayMenu.themeColor).text} rounded-[24px] p-4 flex gap-4 items-center border-2 border-text-main shadow-[4px_4px_0_0_var(--color-text-main)] cursor-pointer hover:-translate-y-1 hover:shadow-[6px_6px_0_0_var(--color-text-main)] transition-all`} onClick={() => onNavigate?.('plan')}>
                      <div className="flex-1">
@@ -162,7 +199,7 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
                         <h3 className="font-display font-black text-xl uppercase mb-1">{nextMeal.type}</h3>
                         <p className="text-[11px] font-bold mb-3 line-clamp-1">{nextMeal.name}</p>
                         <div className="flex items-center gap-2">
-                          {nextMeal.ingredients && nextMeal.ingredients.every(i => i.ready) ? (
+                          {allNextIngs.length > 0 && allNextIngs.every((i: any) => i.ready !== false) ? (
                             <StatusBadge status="available" text="Ingredientes listos" />
                           ) : (
                             <StatusBadge status="missing" text="Faltan ingredientes" />
@@ -289,22 +326,35 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
                      <div className={`p-4 border-t-2 border-text-main transition-all duration-300 ${getMenuColors(todayMenu?.themeColor).lightBg}`}>
                         <h5 className="text-[9px] font-black uppercase tracking-widest text-text-secondary mb-3">Alimentos</h5>
                         <div className="space-y-3 mb-4">
-                           {meal.ingredients?.map((ing: any, i: number) => (
-                              <button key={i} onClick={(e) => { e.stopPropagation(); setSwapTarget({ mealId: meal.id, ingredient: ing }); }} className="w-full flex justify-between items-center bg-surface p-3 rounded-[16px] border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">
-                                 <div className="flex items-center gap-3">
-                                     <div className="w-8 h-8 rounded-full bg-background border border-border-subtle flex items-center justify-center shrink-0">
-                                         <span className="text-sm">{ing.icon || '🥑'}</span>
-                                     </div>
-                                     <span className="text-xs font-black text-text-main">{ing.name}</span>
-                                 </div>
-                                 <div className="flex items-center gap-2">
-                                     <span className="text-[9px] font-black uppercase tracking-widest text-text-main bg-[#fde047] px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)]">{ing.qty}</span>
-                                     <div className="w-6 h-6 rounded-full bg-accent-100 flex items-center justify-center text-accent-700">
-                                         <RefreshCcw size={12} />
-                                     </div>
-                                 </div>
-                              </button>
-                           ))}
+                           {(() => {
+                               const validDishes = meal.dishes ? meal.dishes.filter((d: any) => d.ingredients && d.ingredients.length > 1) : [];
+                               const singleItemDishes = meal.dishes ? meal.dishes.filter((d: any) => !d.ingredients || d.ingredients.length <= 1) : [];
+                               const singleDishIngredients = singleItemDishes.flatMap((d: any) => d.ingredients || []);
+                               const allLooseIngredients = [...(meal.ingredients || []), ...singleDishIngredients];
+                               return (
+                                  <>
+                                     {validDishes.map((dish: any, dIdx: number) => (
+                                        <DishCardHome key={`dish-${dIdx}`} dish={dish} mealId={meal.id} setSwapTarget={setSwapTarget} />
+                                     ))}
+                                     {allLooseIngredients.map((ing: any, i: number) => (
+                                        <button key={i} onClick={(e) => { e.stopPropagation(); setSwapTarget({ mealId: meal.id, ingredient: ing }); }} className="w-full flex justify-between items-center bg-surface p-3 rounded-[16px] border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--color-text-main)] transition-all">
+                                           <div className="flex items-center gap-3">
+                                               <div className="w-8 h-8 rounded-full bg-background flex items-center justify-center shrink-0 border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)]">
+                                                   <span className="text-sm">{ing.icon || '🥑'}</span>
+                                               </div>
+                                               <span className="text-xs font-black text-text-main text-left">{ing.name}</span>
+                                           </div>
+                                           <div className="flex items-center gap-2 shrink-0 ml-2">
+                                               <span className="text-[9px] font-black uppercase tracking-widest text-text-main bg-[#fde047] px-2 py-1 rounded-full border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)]">{ing.qty}</span>
+                                               <div className="w-6 h-6 rounded-full bg-accent-100 flex items-center justify-center text-accent-700 shadow-[2px_2px_0_0_var(--color-text-main)] border-2 border-text-main">
+                                                   <RefreshCcw size={12} strokeWidth={3} />
+                                               </div>
+                                           </div>
+                                        </button>
+                                     ))}
+                                  </>
+                               );
+                           })()}
                         </div>
                         <button onClick={() => setActiveMealTracker(meal)} className="w-full bg-accent-500 text-text-main border-2 border-text-main rounded-xl px-4 py-3 font-black text-xs uppercase tracking-widest neo-btn hover:bg-accent-400 shadow-[2px_2px_0_0_var(--color-text-main)] transition-colors">
                            Registrar Consumo
@@ -322,9 +372,9 @@ export default function HomeView({ onNavigate }: { onNavigate?: (tab: string) =>
          <h3 className="text-[10px] font-black text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.65)] uppercase tracking-widest mb-4 px-2">Acciones Rápidas</h3>
          <div className="grid grid-cols-2 gap-3 md:gap-4">
             <QuickAction icon={<Calendar />} label="Planear" color="bg-accent-500" onClick={() => onNavigate?.('plan')} />
-            <QuickAction icon={<RefreshCcw />} label="Inventario" color="bg-accent-500" onClick={() => onNavigate?.('inventario')} />
+            <QuickAction icon={<LayoutGrid />} label="Inventario" color="bg-accent-500" onClick={() => onNavigate?.('inventario')} />
             <QuickAction icon={<ShoppingCart />} label="Compras" color="bg-accent-500" onClick={() => onNavigate?.('compras')} />
-            <QuickAction icon={<LayoutGrid />} label="Equivalencias" color="bg-accent-500" onClick={() => onNavigate?.('equivalencias')} />
+            <QuickAction icon={<RefreshCcw />} label="Equivalencias" color="bg-accent-500" onClick={() => onNavigate?.('equivalencias')} />
          </div>
       </section>
       {/* Equivalences Swap Modal */}

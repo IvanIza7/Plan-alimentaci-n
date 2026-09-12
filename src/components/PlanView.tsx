@@ -578,8 +578,8 @@ export default function PlanView() {
               <div className="bg-surface border-t-2 border-l-2 border-r-2 sm:border-b-2 border-text-main rounded-t-[32px] sm:rounded-[32px] p-6 w-full max-w-md neo-card shadow-[0_-8px_0_0_var(--color-text-main)] sm:shadow-[8px_8px_0_0_var(--color-text-main)] max-h-[85vh] overflow-y-auto relative">
                  <div className="flex justify-between items-center mb-6 sticky top-0 bg-surface z-10 py-2">
                     <h3 className="text-xl font-display font-black text-text-main uppercase tracking-tight">Elegir Menú</h3>
-                    <button onClick={() => setShowMenuSelector(false)} className="w-8 h-8 bg-orange-500 border-2 border-text-main rounded-full flex items-center justify-center text-surface shadow-[2px_2px_0_0_var(--color-text-main)] hover:-translate-y-1 transition-all">
-                       <X size={16} strokeWidth={3} />
+                    <button onClick={() => setShowMenuSelector(false)} className="w-10 h-10 bg-[#ef4444] border-2 border-text-main rounded-full flex items-center justify-center text-white shadow-[2px_2px_0_0_var(--color-text-main)] hover:bg-red-600 hover:-translate-y-0.5 transition-all neo-btn">
+                       <X size={20} strokeWidth={3} />
                     </button>
                  </div>
                  

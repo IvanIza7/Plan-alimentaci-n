@@ -36,11 +36,35 @@ export default function ShoppingView() {
   const [addMode, setAddMode] = useState<'inventory'|'custom'>('inventory');
   const [expandedCat, setExpandedCat] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
+  const [showCompleteModal, setShowCompleteModal] = useState(false);
 
-  const items = shoppingList || [];
+  React.useEffect(() => {
+     if (addMode === 'custom' && addName.length > 2) {
+        const invItem = inventory.find(i => i.name.toLowerCase().includes(addName.toLowerCase()));
+        if (invItem) {
+           const cat = CATEGORIES.find(c => c.toUpperCase().includes(invItem.category.split(',')[0].toUpperCase()));
+           if (cat) setAddCat(cat);
+           if (invItem.icon) setAddIcon(invItem.icon);
+        }
+     }
+  }, [addName, addMode, inventory]);
+
+  const items = [...(shoppingList || [])].sort((a, b) => {
+     if (a.checked === b.checked) return 0;
+     return a.checked ? 1 : -1;
+  });
   
   const toggleItem = (item: ShoppingItem) => {
-    updateShoppingItem(item.id, { checked: !item.checked });
+    const willBeChecked = !item.checked;
+    updateShoppingItem(item.id, { checked: willBeChecked });
+    
+    if (willBeChecked) {
+       const currentlyCompleted = items.filter(i => i.checked).length;
+       const currentlyTotal = items.length;
+       if (currentlyCompleted + 1 === currentlyTotal) {
+          setTimeout(() => setShowCompleteModal(true), 400);
+       }
+    }
   };
   
   const handleDelete = (e: React.MouseEvent, id: string) => {
@@ -158,8 +182,8 @@ export default function ShoppingView() {
                                  <p className={`font-bold text-sm ${item.checked ? 'line-through decoration-text-secondary/50 text-text-secondary' : 'text-text-main'}`}>{item.name}</p>
                                  <p className="text-[10px] font-bold text-text-secondary uppercase tracking-wider">{item.qty}</p>
                               </div>
-                              <button onClick={(e) => handleDelete(e, item.id)} className="w-8 h-8 flex items-center justify-center rounded-full bg-background border-2 border-border-subtle text-text-secondary hover:text-red-500 hover:border-red-500 transition-colors">
-                                 <Trash2 size={14} />
+                              <button onClick={(e) => handleDelete(e, item.id)} className="w-8 h-8 flex items-center justify-center rounded-full bg-[#ef4444] border-2 border-text-main text-white hover:bg-red-600 hover:-translate-y-0.5 shadow-[2px_2px_0_0_var(--color-text-main)] transition-all neo-btn">
+                                 <Trash2 size={14} strokeWidth={2.5} />
                               </button>
                            </div>
                         ))}
@@ -201,20 +225,20 @@ export default function ShoppingView() {
                                           <span className="text-xs font-black uppercase tracking-widest text-text-secondary">
                                              {d.getDate()} {month.substring(0,3)}
                                           </span>
-                                          <span className="text-[9px] font-bold bg-background px-2 py-1 rounded-full border border-border-subtle text-text-secondary">
-                                             {d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
-                                          </span>
+                                           <span className="text-[9px] font-bold bg-surface shadow-[2px_2px_0_0_var(--color-text-main)] px-2 py-1 rounded-full border-2 border-text-main text-text-main">
+                                              {d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                                           </span>
                                        </div>
                                        <div className="flex flex-wrap gap-2">
                                           {log.items.map(item => (
-                                             <div key={item.id} className="flex items-center gap-2 bg-background border-2 border-border-subtle px-3 py-1.5 rounded-xl">
+                                             <div key={item.id} className="flex items-center gap-2 bg-surface border-2 border-text-main shadow-[2px_2px_0_0_var(--color-text-main)] px-3 py-1.5 rounded-xl hover:-translate-y-0.5 transition-all">
                                                 {item.icon && (item.icon.startsWith('/') || item.icon.startsWith('http')) ? (
                                                 <img src={item.icon} alt={item.name} className="w-6 h-6 object-contain drop-shadow-sm scale-[1.8] transform-gpu origin-center shrink-0 mb-1 mx-2" />
                                              ) : (
                                                 <span className="text-lg">{item.icon}</span>
                                              )}
                                                 <span className="font-bold text-xs text-text-main">{item.name}</span>
-                                                <span className="text-[10px] font-bold text-text-secondary">{item.qty}</span>
+                                                <span className="text-[10px] font-black uppercase tracking-widest bg-[#fde047] border-2 border-text-main px-2 py-0.5 rounded-full ml-1 text-text-main">{item.qty}</span>
                                              </div>
                                           ))}
                                        </div>
@@ -235,14 +259,35 @@ export default function ShoppingView() {
          </div>
       )}
 
+      {/* Complete Modal */}
+      {showCompleteModal && (
+         <div className="fixed inset-0 bg-text-main/20 z-[100] flex items-center justify-center p-4 animate-in fade-in">
+            <div className="bg-surface border-2 border-text-main rounded-[32px] p-6 w-full max-w-sm neo-card shadow-[8px_8px_0_0_var(--color-text-main)] text-center relative">
+               <div className="w-16 h-16 bg-[#bef264] border-2 border-text-main rounded-full flex items-center justify-center mx-auto mb-4 shadow-[4px_4px_0_0_var(--color-text-main)]">
+                  <CheckCircle2 size={32} className="text-text-main" />
+               </div>
+               <h3 className="text-xl font-display font-black text-text-main uppercase tracking-tight mb-2">¡Lista Completada!</h3>
+               <p className="text-sm font-bold text-text-secondary mb-6">Has marcado todos los artículos de tu lista de compras. ¿Deseas finalizar las compras y guardarlas en el historial?</p>
+               <div className="flex gap-3">
+                  <button onClick={() => setShowCompleteModal(false)} className="flex-1 bg-surface border-2 border-text-main text-text-main font-black uppercase tracking-widest py-3 rounded-xl hover:-translate-y-1 transition-all shadow-[4px_4px_0_0_var(--color-text-main)] neo-btn">
+                     Cancelar
+                  </button>
+                  <button onClick={() => { handleFinishShopping(); setShowCompleteModal(false); setView('history'); }} className="flex-1 bg-accent-400 border-2 border-text-main text-text-main font-black uppercase tracking-widest py-3 rounded-xl hover:-translate-y-1 transition-all shadow-[4px_4px_0_0_var(--color-text-main)] neo-btn">
+                     Finalizar
+                  </button>
+               </div>
+            </div>
+         </div>
+      )}
+
       {/* Add Modal */}
       {showAddModal && (
          <div className="fixed inset-0 bg-text-main/20  z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in">
             <div className="bg-surface border-t-2 border-l-2 border-r-2 sm:border-b-2 border-text-main rounded-t-[32px] sm:rounded-[32px] p-6 w-full max-w-md neo-card shadow-[0_-8px_0_0_var(--color-text-main)] sm:shadow-[8px_8px_0_0_var(--color-text-main)] relative">
                <div className="flex justify-between items-center mb-6">
                   <h3 className="text-xl font-display font-black text-text-main uppercase tracking-tight">Agregar a Lista</h3>
-                  <button onClick={() => setShowAddModal(false)} className="w-8 h-8 bg-background border-2 border-border-subtle rounded-full flex items-center justify-center text-text-secondary hover:text-text-main hover:border-text-main">
-                     <X size={16} />
+                  <button onClick={() => setShowAddModal(false)} className="w-10 h-10 bg-[#ef4444] border-2 border-text-main rounded-full flex items-center justify-center text-white shadow-[2px_2px_0_0_var(--color-text-main)] hover:bg-red-600 hover:-translate-y-0.5 transition-all neo-btn">
+                     <X size={20} strokeWidth={3} />
                   </button>
                </div>
                
@@ -293,15 +338,9 @@ export default function ShoppingView() {
                            ← Volver al Inventario
                         </button>
                      )}
-                     <div className="grid grid-cols-4 gap-3">
-                        <div className="col-span-1">
-                           <label className="block text-[9px] font-black uppercase tracking-widest text-text-secondary mb-1">Icono</label>
-                           <input type="text" value={addIcon} onChange={e => setAddIcon(e.target.value)} className="w-full bg-background border-2 border-text-main rounded-xl p-3 font-bold text-center text-2xl focus:outline-none focus:border-primary-500 shadow-[4px_4px_0_0_var(--color-text-main)]" />
-                        </div>
-                        <div className="col-span-3">
+                     <div className="w-full">
                            <label className="block text-[9px] font-black uppercase tracking-widest text-text-secondary mb-1">Nombre</label>
                            <input type="text" placeholder="Ej: Manzanas" value={addName} onChange={e => setAddName(e.target.value)} className="w-full bg-background border-2 border-text-main rounded-xl p-3 font-bold text-sm focus:outline-none focus:border-primary-500 shadow-[4px_4px_0_0_var(--color-text-main)]" />
-                        </div>
                      </div>
                      
                      <div>

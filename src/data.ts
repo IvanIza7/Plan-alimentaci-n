@@ -1,75 +1,1134 @@
-export const mockInventory = [{"id":"new1","category":"Lácteos y Huevo","name":"Proteína en polvo","amount":0,"unit":"scoop","lowThreshold":1,"kcal":0,"icon":"🥤"},{"id":"new2","category":"Abarrotes y Despensa","name":"Crema de cacahuate","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🥜"},{"id":"new3","category":"Panadería y Cereales","name":"Avena o amaranto o granola","amount":0,"unit":"cucharada","lowThreshold":5,"kcal":0,"icon":"🥣"},{"id":"new4","category":"Abarrotes y Despensa","name":"Chocolate en polvo, azúcar o miel","amount":0,"unit":"cucharada","lowThreshold":5,"kcal":0,"icon":"🍫"},{"id":"new5","category":"Lácteos y Huevo","name":"Yogur para beber","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍶"},{"id":"new6","category":"Panadería y Cereales","name":"Barra de granola o pan dulce","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍫"},{"id":"new7","category":"Frutas y Verduras","name":"Papaya picada","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍈"},{"id":"new8","category":"Abarrotes y Despensa","name":"Salsa verde o roja","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🌶️"},{"id":"new9","category":"Bebidas e Infusiones","name":"Té sin azúcar","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍵"},{"id":"new10","category":"Frutas y Verduras","name":"Cilantro picado","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🌿"},{"id":"new11","category":"Frutas y Verduras","name":"Rajitas en vinagre","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🌶️"},{"id":"new12","category":"Frutas y Verduras","name":"Zanahoria rallada","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🥕"},{"id":"new13","category":"Abarrotes y Despensa","name":"Jugo Maggi y sal","amount":0,"unit":"cucharadita","lowThreshold":5,"kcal":0,"icon":"🧂"},{"id":"new14","category":"Bebidas e Infusiones","name":"Café sin azúcar","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"☕"},{"id":"new15","category":"Frutas y Verduras","name":"Melón picado","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍈"},{"id":"new16","category":"Frutas y Verduras","name":"Espinacas frescas","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🥬"},{"id":"new17","category":"Abarrotes y Despensa","name":"Caldillo de jitomate","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🍅"},{"id":"new18","category":"Panadería y Cereales","name":"Crema de zanahoria","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},{"id":"new19","category":"Frutas y Verduras","name":"Durazno","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍑"},{"id":"new20","category":"Lácteos y Huevo","name":"Queso cottage","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🧀"},{"id":"new21","category":"Abarrotes y Despensa","name":"Azúcar con canela","amount":0,"unit":"cucharadita","lowThreshold":2,"kcal":0,"icon":"🧂"},{"id":"new22","category":"Frutas y Verduras","name":"Manzana rebanada","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍎"},{"id":"new23","category":"Frutas y Verduras","name":"Cebolla morada picada","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🧅"},{"id":"new24","category":"Abarrotes y Despensa","name":"Limón y chile Tajín","amount":0,"unit":"cucharadita","lowThreshold":2,"kcal":0,"icon":"🍋"},{"id":"new25","category":"Panadería y Cereales","name":"Sopa de cebolla","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},{"id":"new26","category":"Frutas y Verduras","name":"Kiwi","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🥝"},{"id":"new27","category":"Carnes, Aves y Pescados","name":"Salchichas de pavo","amount":0,"unit":"pieza","lowThreshold":3,"kcal":0,"icon":"🌭"},{"id":"new28","category":"Frutas y Verduras","name":"Chile verde","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🌶️"},{"id":"new29","category":"Frutas y Verduras","name":"Piña picada","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍍"},{"id":"new30","category":"Frutas y Verduras","name":"Sandía picada","amount":0,"unit":"taza","lowThreshold":2,"kcal":0,"icon":"🍉"},{"id":"new31","category":"Abarrotes y Despensa","name":"Vinagre balsámico","amount":0,"unit":"cucharadita","lowThreshold":2,"kcal":0,"icon":"🍶"},{"id":"new32","category":"Panadería y Cereales","name":"Crema de calabacita","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},{"id":"new33","category":"Frutas y Verduras","name":"Mango","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🥭"},{"id":"new34","category":"Frutas y Verduras","name":"Tuna","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🌵"},{"id":"new35","category":"Frutas y Verduras","name":"Mandarina en gajos","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍊"},{"id":"new36","category":"Panadería y Cereales","name":"Sopa de rajas","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},{"id":"new37","category":"Panadería y Cereales","name":"Pan árabe","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🫓"},{"id":"new38","category":"Abarrotes y Despensa","name":"Puré de tomate con orégano","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🍅"},{"id":"new39","category":"Lácteos y Huevo","name":"Queso manchego rallado","amount":0,"unit":"g","lowThreshold":50,"kcal":0,"icon":"🧀"},{"id":"new40","category":"Frutas y Verduras","name":"Naranja en gajos","amount":0,"unit":"pieza","lowThreshold":2,"kcal":0,"icon":"🍊"},{"id":"new41","category":"Panadería y Cereales","name":"Tortilla de maíz dorada","amount":0,"unit":"pieza","lowThreshold":5,"kcal":0,"icon":"🫓"},{"id":"new42","category":"Carnes, Aves y Pescados","name":"Pechuga de pollo deshebrada","amount":0,"unit":"g","lowThreshold":100,"kcal":0,"icon":"🍗"},{"id":"new43","category":"Abarrotes y Despensa","name":"Salsa de soya con azúcar","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🍶"},{"id":"new44","category":"Abarrotes y Despensa","name":"Ajonjolí tostado","amount":0,"unit":"cucharada","lowThreshold":2,"kcal":0,"icon":"🥜"},{"id":"new45","category":"Frutas y Verduras","name":"Zanahoria, jícama, betabel, limón","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥗"},{"id":"new46","category":"Panadería y Cereales","name":"Crema de brócoli","amount":0,"unit":"taza","lowThreshold":1,"kcal":0,"icon":"🥣"},
-  // 1. Frutas y Verduras
-  { id: 'v1', category: 'Frutas y Verduras', name: 'Zanahoria rallada', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🥕' },
-  { id: 'v2', category: 'Frutas y Verduras', name: 'Melón', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🍈' },
-  { id: 'v3', category: 'Frutas y Verduras', name: 'Durazno', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍑' },
-  { id: 'v4', category: 'Frutas y Verduras', name: 'Kiwi', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🥝' },
-  { id: 'v5', category: 'Frutas y Verduras', name: 'Piña', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🍍' },
-  { id: 'v6', category: 'Frutas y Verduras', name: 'Sandía', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🍉' },
-  { id: 'v7', category: 'Frutas y Verduras', name: 'Mango', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🥭' },
-  { id: 'v8', category: 'Frutas y Verduras', name: 'Papaya', amount: 0, unit: 'taza', lowThreshold: 3, kcal: 0, icon: '🍈' },
-  { id: 'v9', category: 'Frutas y Verduras', name: 'Tuna', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🌵' },
-  { id: 'v10', category: 'Frutas y Verduras', name: 'Mandarina', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍊' },
-  { id: 'v11', category: 'Frutas y Verduras', name: 'Ciruela', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🫐' },
-  { id: 'v12', category: 'Frutas y Verduras', name: 'Chile poblano', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🌶️' },
-  { id: 'v13', category: 'Frutas y Verduras', name: 'Nopal', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🌵' },
-  { id: 'v14', category: 'Frutas y Verduras', name: 'Plátanos dominicos', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍌' },
-  { id: 'v15', category: 'Frutas y Verduras', name: 'Naranja', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍊' },
-  { id: 'v16', category: 'Frutas y Verduras', name: 'Plátano', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍌' },
-  { id: 'v17', category: 'Frutas y Verduras', name: 'Pera', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍐' },
-  { id: 'v18', category: 'Frutas y Verduras', name: 'Manzana', amount: 0, unit: 'pieza', lowThreshold: 3, kcal: 0, icon: '🍎' },
-
-  // 2. Carnes, Aves y Pescados
-  { id: 'c1', category: 'Carnes, Aves y Pescados', name: 'Puntas de res', amount: 0, unit: 'g', lowThreshold: 300, kcal: 0, icon: '🥩' },
-  { id: 'c2', category: 'Carnes, Aves y Pescados', name: 'Jamón de pavo', amount: 0, unit: 'rebanada', lowThreshold: 10, kcal: 0, icon: '🥓' },
-  { id: 'c3', category: 'Carnes, Aves y Pescados', name: 'Pechuga de pavo', amount: 0, unit: 'rebanada', lowThreshold: 10, kcal: 0, icon: '🥓' },
-  { id: 'c4', category: 'Carnes, Aves y Pescados', name: 'Pechuga de pollo', amount: 0, unit: 'g', lowThreshold: 300, kcal: 0, icon: '🍗' },
-  { id: 'c5', category: 'Carnes, Aves y Pescados', name: 'Surimi', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🦀' },
-  { id: 'c6', category: 'Carnes, Aves y Pescados', name: 'Salchichas', amount: 0, unit: 'pieza', lowThreshold: 4, kcal: 0, icon: '🌭' },
-  { id: 'c7', category: 'Carnes, Aves y Pescados', name: 'Carne deshebrada', amount: 0, unit: 'g', lowThreshold: 200, kcal: 0, icon: '🥩' },
-  { id: 'c8', category: 'Carnes, Aves y Pescados', name: 'Pescado', amount: 0, unit: 'g', lowThreshold: 200, kcal: 0, icon: '🐟' },
-  { id: 'c9', category: 'Carnes, Aves y Pescados', name: 'Bistec de res', amount: 0, unit: 'g', lowThreshold: 300, kcal: 0, icon: '🥩' },
-  { id: 'c10', category: 'Carnes, Aves y Pescados', name: 'Pollo deshebrado', amount: 0, unit: 'g', lowThreshold: 200, kcal: 0, icon: '🍗' },
-  { id: 'c11', category: 'Carnes, Aves y Pescados', name: 'Atún en agua', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🥫' },
-
-  // 3. Lácteos y Huevo
-  { id: 'l1', category: 'Lácteos y Huevo', name: 'Queso manchego', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🧀' },
-  { id: 'l2', category: 'Lácteos y Huevo', name: 'Leche descremada', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🥛' },
-  { id: 'l3', category: 'Lácteos y Huevo', name: 'Huevo', amount: 0, unit: 'pieza', lowThreshold: 6, kcal: 0, icon: '🥚' },
-  { id: 'l4', category: 'Lácteos y Huevo', name: 'Requesón', amount: 0, unit: 'cucharada', lowThreshold: 4, kcal: 0, icon: '🧀' },
-  { id: 'l5', category: 'Lácteos y Huevo', name: 'Queso panela', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🧀' },
-  { id: 'l6', category: 'Lácteos y Huevo', name: 'Queso cottage', amount: 0, unit: 'cucharada', lowThreshold: 4, kcal: 0, icon: '🧀' },
-  { id: 'l7', category: 'Lácteos y Huevo', name: 'Queso Oaxaca', amount: 0, unit: 'g', lowThreshold: 100, kcal: 0, icon: '🧀' },
-  { id: 'l8', category: 'Lácteos y Huevo', name: 'Crema', amount: 0, unit: 'cucharada', lowThreshold: 4, kcal: 0, icon: '🥛' },
-
-  // 4. Panadería y Cereales
-  { id: 'p1', category: 'Panadería y Cereales', name: 'Arroz blanco', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🍚' },
-  { id: 'p2', category: 'Panadería y Cereales', name: 'Pan integral', amount: 0, unit: 'rebanada', lowThreshold: 4, kcal: 0, icon: '🍞' },
-  { id: 'p3', category: 'Panadería y Cereales', name: 'Pan de caja', amount: 0, unit: 'rebanada', lowThreshold: 4, kcal: 0, icon: '🍞' },
-  { id: 'p4', category: 'Panadería y Cereales', name: 'Tortilla de maíz', amount: 0, unit: 'pieza', lowThreshold: 10, kcal: 0, icon: '🫓' },
-  { id: 'p5', category: 'Panadería y Cereales', name: 'Tortilla de nopal', amount: 0, unit: 'pieza', lowThreshold: 10, kcal: 0, icon: '🫓' },
-  { id: 'p6', category: 'Panadería y Cereales', name: 'Tortilla de harina', amount: 0, unit: 'pieza', lowThreshold: 10, kcal: 0, icon: '🫓' },
-  { id: 'p7', category: 'Panadería y Cereales', name: 'Bolillo', amount: 0, unit: 'pieza', lowThreshold: 4, kcal: 0, icon: '🥖' },
-  { id: 'p8', category: 'Panadería y Cereales', name: 'Tostadas', amount: 0, unit: 'pieza', lowThreshold: 10, kcal: 0, icon: '🫓' },
-  { id: 'p9', category: 'Panadería y Cereales', name: 'Bísquet', amount: 0, unit: 'pieza', lowThreshold: 2, kcal: 0, icon: '🥐' },
-  { id: 'p10', category: 'Panadería y Cereales', name: 'Sopa de fideo', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🥣' },
-  { id: 'p11', category: 'Panadería y Cereales', name: 'Galletas integrales', amount: 0, unit: 'pieza', lowThreshold: 5, kcal: 0, icon: '🍪' },
-  { id: 'p12', category: 'Panadería y Cereales', name: 'Cuernito', amount: 0, unit: 'pieza', lowThreshold: 2, kcal: 0, icon: '🥐' },
-  { id: 'p13', category: 'Panadería y Cereales', name: 'Pan árabe', amount: 0, unit: 'pieza', lowThreshold: 4, kcal: 0, icon: '🫓' },
-  { id: 'p14', category: 'Panadería y Cereales', name: 'Cereal integral', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🥣' },
-
-  // 5. Abarrotes y Despensa
-  { id: 'a1', category: 'Abarrotes y Despensa', name: 'Ate', amount: 0, unit: 'rebanada', lowThreshold: 2, kcal: 0, icon: '🍬' },
-  { id: 'a2', category: 'Abarrotes y Despensa', name: 'Mayonesa light', amount: 0, unit: 'cucharada', lowThreshold: 2, kcal: 0, icon: '🍯' },
-  { id: 'a3', category: 'Abarrotes y Despensa', name: 'Frijoles', amount: 0, unit: 'cucharada', lowThreshold: 2, kcal: 0, icon: '🫘' },
-  { id: 'a4', category: 'Abarrotes y Despensa', name: 'Margarina', amount: 0, unit: 'cucharadita', lowThreshold: 2, kcal: 0, icon: '🧈' },
-  { id: 'a5', category: 'Abarrotes y Despensa', name: 'Azúcar', amount: 0, unit: 'cucharadita', lowThreshold: 5, kcal: 0, icon: '🍚' },
-  { id: 'a6', category: 'Abarrotes y Despensa', name: 'Miel maple', amount: 0, unit: 'cucharadita', lowThreshold: 2, kcal: 0, icon: '🍯' },
-  { id: 'a7', category: 'Abarrotes y Despensa', name: 'Aceite', amount: 0, unit: 'cucharadita', lowThreshold: 5, kcal: 0, icon: '🍾' },
-  { id: 'a8', category: 'Abarrotes y Despensa', name: 'Mermelada baja en calorías', amount: 0, unit: 'cucharadita', lowThreshold: 2, kcal: 0, icon: '🍯' },
-
-  // 6. Bebidas e Infusiones
-  { id: 'b1', category: 'Bebidas e Infusiones', name: 'Jugo de naranja o mandarina', amount: 0, unit: 'taza', lowThreshold: 2, kcal: 0, icon: '🧃' }
+export const mockInventory = [
+  {
+    "id": "new1",
+    "category": "Lácteos y Huevo",
+    "name": "Proteína en polvo",
+    "amount": 0,
+    "unit": "scoop",
+    "lowThreshold": 1,
+    "kcal": 0,
+    "icon": "🥤"
+  },
+  {
+    "id": "new2",
+    "category": "Abarrotes y Despensa",
+    "name": "Crema de cacahuate",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥜"
+  },
+  {
+    "id": "new3",
+    "category": "Panadería y Cereales",
+    "name": "Avena",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "new4",
+    "category": "Abarrotes y Despensa",
+    "name": "Chocolate en polvo",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🍫"
+  },
+  {
+    "id": "new5",
+    "category": "Lácteos y Huevo",
+    "name": "Yogur para beber",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍶"
+  },
+  {
+    "id": "new6",
+    "category": "Panadería y Cereales",
+    "name": "Barra de granola",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍫"
+  },
+  {
+    "id": "new7",
+    "category": "Frutas y Verduras",
+    "name": "Papaya picada",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍈"
+  },
+  {
+    "id": "new8",
+    "category": "Abarrotes y Despensa",
+    "name": "Salsa verde",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🌶️"
+  },
+  {
+    "id": "new9",
+    "category": "Bebidas e Infusiones",
+    "name": "Té sin azúcar",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍵"
+  },
+  {
+    "id": "new10",
+    "category": "Frutas y Verduras",
+    "name": "Cilantro picado",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🌿"
+  },
+  {
+    "id": "new11",
+    "category": "Frutas y Verduras",
+    "name": "Rajitas en vinagre",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🌶️"
+  },
+  {
+    "id": "new12",
+    "category": "Frutas y Verduras",
+    "name": "Zanahoria rallada",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥕"
+  },
+  {
+    "id": "new13",
+    "category": "Abarrotes y Despensa",
+    "name": "Jugo Maggi y sal",
+    "amount": 0,
+    "unit": "cucharadita",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🧂"
+  },
+  {
+    "id": "new14",
+    "category": "Bebidas e Infusiones",
+    "name": "Café sin azúcar",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "☕"
+  },
+  {
+    "id": "new15",
+    "category": "Frutas y Verduras",
+    "name": "Melón picado",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍈"
+  },
+  {
+    "id": "new16",
+    "category": "Frutas y Verduras",
+    "name": "Espinacas frescas",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥬"
+  },
+  {
+    "id": "new17",
+    "category": "Abarrotes y Despensa",
+    "name": "Caldillo de jitomate",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 1,
+    "kcal": 0,
+    "icon": "🍅"
+  },
+  {
+    "id": "new18",
+    "category": "Panadería y Cereales",
+    "name": "Crema de zanahoria",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 1,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "new19",
+    "category": "Frutas y Verduras",
+    "name": "Durazno",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍑"
+  },
+  {
+    "id": "new20",
+    "category": "Lácteos y Huevo",
+    "name": "Queso cottage",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🧀"
+  },
+  {
+    "id": "new21",
+    "category": "Abarrotes y Despensa",
+    "name": "Azúcar con canela",
+    "amount": 0,
+    "unit": "cucharadita",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🧂"
+  },
+  {
+    "id": "new22",
+    "category": "Frutas y Verduras",
+    "name": "Manzana rebanada",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍎"
+  },
+  {
+    "id": "new23",
+    "category": "Frutas y Verduras",
+    "name": "Cebolla morada picada",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🧅"
+  },
+  {
+    "id": "new24",
+    "category": "Abarrotes y Despensa",
+    "name": "Limón y chile Tajín",
+    "amount": 0,
+    "unit": "cucharadita",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍋"
+  },
+  {
+    "id": "new25",
+    "category": "Panadería y Cereales",
+    "name": "Sopa de cebolla",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 1,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "new26",
+    "category": "Frutas y Verduras",
+    "name": "Kiwi",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥝"
+  },
+  {
+    "id": "new27",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Salchichas de pavo",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🌭"
+  },
+  {
+    "id": "new28",
+    "category": "Frutas y Verduras",
+    "name": "Chile verde",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🌶️"
+  },
+  {
+    "id": "new29",
+    "category": "Frutas y Verduras",
+    "name": "Piña picada",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍍"
+  },
+  {
+    "id": "new30",
+    "category": "Frutas y Verduras",
+    "name": "Sandía picada",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍉"
+  },
+  {
+    "id": "new31",
+    "category": "Abarrotes y Despensa",
+    "name": "Vinagre balsámico",
+    "amount": 0,
+    "unit": "cucharadita",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍶"
+  },
+  {
+    "id": "new32",
+    "category": "Panadería y Cereales",
+    "name": "Crema de calabacita",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 1,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "new33",
+    "category": "Frutas y Verduras",
+    "name": "Mango",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥭"
+  },
+  {
+    "id": "new34",
+    "category": "Frutas y Verduras",
+    "name": "Tuna",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🌵"
+  },
+  {
+    "id": "new35",
+    "category": "Frutas y Verduras",
+    "name": "Mandarina en gajos",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍊"
+  },
+  {
+    "id": "new36",
+    "category": "Panadería y Cereales",
+    "name": "Sopa de rajas",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 1,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "new37",
+    "category": "Panadería y Cereales",
+    "name": "Pan árabe",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🫓"
+  },
+  {
+    "id": "new38",
+    "category": "Abarrotes y Despensa",
+    "name": "Puré de tomate con orégano",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍅"
+  },
+  {
+    "id": "new39",
+    "category": "Lácteos y Huevo",
+    "name": "Queso manchego rallado",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 50,
+    "kcal": 0,
+    "icon": "🧀"
+  },
+  {
+    "id": "new40",
+    "category": "Frutas y Verduras",
+    "name": "Naranja en gajos",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍊"
+  },
+  {
+    "id": "new41",
+    "category": "Panadería y Cereales",
+    "name": "Tortilla de maíz dorada",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🫓"
+  },
+  {
+    "id": "new42",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Pechuga de pollo deshebrada",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 100,
+    "kcal": 0,
+    "icon": "🍗"
+  },
+  {
+    "id": "new43",
+    "category": "Abarrotes y Despensa",
+    "name": "Salsa de soya con azúcar",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍶"
+  },
+  {
+    "id": "new44",
+    "category": "Abarrotes y Despensa",
+    "name": "Ajonjolí tostado",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥜"
+  },
+  {
+    "id": "new45",
+    "category": "Frutas y Verduras",
+    "name": "Zanahoria, jícama, betabel, limón",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 1,
+    "kcal": 0,
+    "icon": "🥗"
+  },
+  {
+    "id": "new46",
+    "category": "Panadería y Cereales",
+    "name": "Crema de brócoli",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 1,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "v1",
+    "category": "Frutas y Verduras",
+    "name": "Zanahoria rallada",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🥕"
+  },
+  {
+    "id": "v2",
+    "category": "Frutas y Verduras",
+    "name": "Melón",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍈"
+  },
+  {
+    "id": "v3",
+    "category": "Frutas y Verduras",
+    "name": "Durazno",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍑"
+  },
+  {
+    "id": "v4",
+    "category": "Frutas y Verduras",
+    "name": "Kiwi",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🥝"
+  },
+  {
+    "id": "v5",
+    "category": "Frutas y Verduras",
+    "name": "Piña",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍍"
+  },
+  {
+    "id": "v6",
+    "category": "Frutas y Verduras",
+    "name": "Sandía",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍉"
+  },
+  {
+    "id": "v7",
+    "category": "Frutas y Verduras",
+    "name": "Mango",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🥭"
+  },
+  {
+    "id": "v8",
+    "category": "Frutas y Verduras",
+    "name": "Papaya",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍈"
+  },
+  {
+    "id": "v9",
+    "category": "Frutas y Verduras",
+    "name": "Tuna",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🌵"
+  },
+  {
+    "id": "v10",
+    "category": "Frutas y Verduras",
+    "name": "Mandarina",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍊"
+  },
+  {
+    "id": "v11",
+    "category": "Frutas y Verduras",
+    "name": "Ciruela",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🫐"
+  },
+  {
+    "id": "v12",
+    "category": "Frutas y Verduras",
+    "name": "Chile poblano",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🌶️"
+  },
+  {
+    "id": "v13",
+    "category": "Frutas y Verduras",
+    "name": "Nopal",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🌵"
+  },
+  {
+    "id": "v14",
+    "category": "Frutas y Verduras",
+    "name": "Plátanos dominicos",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍌"
+  },
+  {
+    "id": "v15",
+    "category": "Frutas y Verduras",
+    "name": "Naranja",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍊"
+  },
+  {
+    "id": "v16",
+    "category": "Frutas y Verduras",
+    "name": "Plátano",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍌"
+  },
+  {
+    "id": "v17",
+    "category": "Frutas y Verduras",
+    "name": "Pera",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍐"
+  },
+  {
+    "id": "v18",
+    "category": "Frutas y Verduras",
+    "name": "Manzana",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 3,
+    "kcal": 0,
+    "icon": "🍎"
+  },
+  {
+    "id": "c1",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Puntas de res",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 300,
+    "kcal": 0,
+    "icon": "🥩"
+  },
+  {
+    "id": "c2",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Jamón de pavo",
+    "amount": 0,
+    "unit": "rebanada",
+    "lowThreshold": 10,
+    "kcal": 0,
+    "icon": "🥓"
+  },
+  {
+    "id": "c3",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Pechuga de pavo",
+    "amount": 0,
+    "unit": "rebanada",
+    "lowThreshold": 10,
+    "kcal": 0,
+    "icon": "🥓"
+  },
+  {
+    "id": "c4",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Pechuga de pollo",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 300,
+    "kcal": 0,
+    "icon": "🍗"
+  },
+  {
+    "id": "c5",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Surimi",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 100,
+    "kcal": 0,
+    "icon": "🦀"
+  },
+  {
+    "id": "c6",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Salchichas",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 4,
+    "kcal": 0,
+    "icon": "🌭"
+  },
+  {
+    "id": "c7",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Carne deshebrada",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 200,
+    "kcal": 0,
+    "icon": "🥩"
+  },
+  {
+    "id": "c8",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Pescado",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 200,
+    "kcal": 0,
+    "icon": "🐟"
+  },
+  {
+    "id": "c9",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Bistec de res",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 300,
+    "kcal": 0,
+    "icon": "🥩"
+  },
+  {
+    "id": "c10",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Pollo deshebrado",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 200,
+    "kcal": 0,
+    "icon": "🍗"
+  },
+  {
+    "id": "c11",
+    "category": "Carnes, Aves y Pescados",
+    "name": "Atún en agua",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 100,
+    "kcal": 0,
+    "icon": "🥫"
+  },
+  {
+    "id": "l1",
+    "category": "Lácteos y Huevo",
+    "name": "Queso manchego",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 100,
+    "kcal": 0,
+    "icon": "🧀"
+  },
+  {
+    "id": "l2",
+    "category": "Lácteos y Huevo",
+    "name": "Leche descremada",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥛"
+  },
+  {
+    "id": "l3",
+    "category": "Lácteos y Huevo",
+    "name": "Huevo",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 6,
+    "kcal": 0,
+    "icon": "🥚"
+  },
+  {
+    "id": "l4",
+    "category": "Lácteos y Huevo",
+    "name": "Requesón",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 4,
+    "kcal": 0,
+    "icon": "🧀"
+  },
+  {
+    "id": "l5",
+    "category": "Lácteos y Huevo",
+    "name": "Queso panela",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 100,
+    "kcal": 0,
+    "icon": "🧀"
+  },
+  {
+    "id": "l6",
+    "category": "Lácteos y Huevo",
+    "name": "Queso cottage",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 4,
+    "kcal": 0,
+    "icon": "🧀"
+  },
+  {
+    "id": "l7",
+    "category": "Lácteos y Huevo",
+    "name": "Queso Oaxaca",
+    "amount": 0,
+    "unit": "g",
+    "lowThreshold": 100,
+    "kcal": 0,
+    "icon": "🧀"
+  },
+  {
+    "id": "l8",
+    "category": "Lácteos y Huevo",
+    "name": "Crema",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 4,
+    "kcal": 0,
+    "icon": "🥛"
+  },
+  {
+    "id": "p1",
+    "category": "Panadería y Cereales",
+    "name": "Arroz blanco",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍚"
+  },
+  {
+    "id": "p2",
+    "category": "Panadería y Cereales",
+    "name": "Pan integral",
+    "amount": 0,
+    "unit": "rebanada",
+    "lowThreshold": 4,
+    "kcal": 0,
+    "icon": "🍞"
+  },
+  {
+    "id": "p3",
+    "category": "Panadería y Cereales",
+    "name": "Pan de caja",
+    "amount": 0,
+    "unit": "rebanada",
+    "lowThreshold": 4,
+    "kcal": 0,
+    "icon": "🍞"
+  },
+  {
+    "id": "p4",
+    "category": "Panadería y Cereales",
+    "name": "Tortilla de maíz",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 10,
+    "kcal": 0,
+    "icon": "🫓"
+  },
+  {
+    "id": "p5",
+    "category": "Panadería y Cereales",
+    "name": "Tortilla de nopal",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 10,
+    "kcal": 0,
+    "icon": "🫓"
+  },
+  {
+    "id": "p6",
+    "category": "Panadería y Cereales",
+    "name": "Tortilla de harina",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 10,
+    "kcal": 0,
+    "icon": "🫓"
+  },
+  {
+    "id": "p7",
+    "category": "Panadería y Cereales",
+    "name": "Bolillo",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 4,
+    "kcal": 0,
+    "icon": "🥖"
+  },
+  {
+    "id": "p8",
+    "category": "Panadería y Cereales",
+    "name": "Tostadas",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 10,
+    "kcal": 0,
+    "icon": "🫓"
+  },
+  {
+    "id": "p9",
+    "category": "Panadería y Cereales",
+    "name": "Bísquet",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥐"
+  },
+  {
+    "id": "p10",
+    "category": "Panadería y Cereales",
+    "name": "Sopa de fideo",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "p11",
+    "category": "Panadería y Cereales",
+    "name": "Galletas integrales",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🍪"
+  },
+  {
+    "id": "p12",
+    "category": "Panadería y Cereales",
+    "name": "Cuernito",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥐"
+  },
+  {
+    "id": "p13",
+    "category": "Panadería y Cereales",
+    "name": "Pan árabe",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 4,
+    "kcal": 0,
+    "icon": "🫓"
+  },
+  {
+    "id": "p14",
+    "category": "Panadería y Cereales",
+    "name": "Cereal integral",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "a1",
+    "category": "Abarrotes y Despensa",
+    "name": "Ate",
+    "amount": 0,
+    "unit": "rebanada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍬"
+  },
+  {
+    "id": "a2",
+    "category": "Abarrotes y Despensa",
+    "name": "Mayonesa light",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍯"
+  },
+  {
+    "id": "a3",
+    "category": "Abarrotes y Despensa",
+    "name": "Frijoles",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🫘"
+  },
+  {
+    "id": "a4",
+    "category": "Abarrotes y Despensa",
+    "name": "Margarina",
+    "amount": 0,
+    "unit": "cucharadita",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🧈"
+  },
+  {
+    "id": "a5",
+    "category": "Abarrotes y Despensa",
+    "name": "Azúcar",
+    "amount": 0,
+    "unit": "cucharadita",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🍚"
+  },
+  {
+    "id": "a6",
+    "category": "Abarrotes y Despensa",
+    "name": "Miel maple",
+    "amount": 0,
+    "unit": "cucharadita",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍯"
+  },
+  {
+    "id": "a7",
+    "category": "Abarrotes y Despensa",
+    "name": "Aceite",
+    "amount": 0,
+    "unit": "cucharadita",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🍾"
+  },
+  {
+    "id": "a8",
+    "category": "Abarrotes y Despensa",
+    "name": "Mermelada baja en calorías",
+    "amount": 0,
+    "unit": "cucharadita",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍯"
+  },
+  {
+    "id": "b1",
+    "category": "Bebidas e Infusiones",
+    "name": "Jugo de naranja",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🧃"
+  },
+  {
+    "id": "new3-eq0",
+    "category": "Panadería y Cereales",
+    "name": "Amaranto",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "new3-eq1",
+    "category": "Panadería y Cereales",
+    "name": "Granola",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🥣"
+  },
+  {
+    "id": "new4-eq0",
+    "category": "Abarrotes y Despensa",
+    "name": "Azúcar",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🍫"
+  },
+  {
+    "id": "new4-eq1",
+    "category": "Abarrotes y Despensa",
+    "name": "Miel",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 5,
+    "kcal": 0,
+    "icon": "🍫"
+  },
+  {
+    "id": "new6-eq0",
+    "category": "Panadería y Cereales",
+    "name": "Pan dulce",
+    "amount": 0,
+    "unit": "pieza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🍫"
+  },
+  {
+    "id": "new8-eq0",
+    "category": "Abarrotes y Despensa",
+    "name": "Salsa roja",
+    "amount": 0,
+    "unit": "cucharada",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🌶️"
+  },
+  {
+    "id": "b1-eq0",
+    "category": "Bebidas e Infusiones",
+    "name": "Jugo de mandarina",
+    "amount": 0,
+    "unit": "taza",
+    "lowThreshold": 2,
+    "kcal": 0,
+    "icon": "🧃"
+  }
 ];
 
 export const mockMenus = [
@@ -133,22 +1192,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -162,16 +1263,32 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Salsa verde o roja",
+                "name": "Salsa verde",
                 "qty": "Al gusto",
                 "icon": "🌶️",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Salsa roja",
+                    "qty": "Al gusto",
+                    "icon": "🌶️",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Tortilla de maíz o nopal",
+                "name": "Tortilla de maíz",
                 "qty": "1-2 piezas",
                 "icon": "🫓",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Tortilla de nopal",
+                    "qty": "1-2 piezas",
+                    "icon": "🫓",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -209,10 +1326,18 @@ export const mockMenus = [
             "name": "Snack dulce",
             "ingredients": [
               {
-                "name": "Barra de granola o pan dulce",
+                "name": "Barra de granola",
                 "qty": "1 pieza",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Pan dulce",
+                    "qty": "1 pieza",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           }
@@ -304,16 +1429,56 @@ export const mockMenus = [
             "name": "Emparedado de la tarde",
             "ingredients": [
               {
-                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "name": "Pan (sándwich)",
                 "qty": "1 pieza",
                 "icon": "🥖",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Torta",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Cuernito",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Bagel",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Jamón, Queso, Pollo o Salchicha",
+                "name": "Jamón",
                 "qty": "1 porción",
                 "icon": "🥓",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Queso",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Pollo",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Salchicha",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  }
+                ]
               },
               {
                 "name": "Lechuga y jitomate",
@@ -351,22 +1516,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -500,22 +1707,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -535,10 +1784,18 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Salsa verde o roja",
+                "name": "Salsa verde",
                 "qty": "Al gusto",
                 "icon": "🌶️",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Salsa roja",
+                    "qty": "Al gusto",
+                    "icon": "🌶️",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -576,10 +1833,18 @@ export const mockMenus = [
             "name": "Snack dulce",
             "ingredients": [
               {
-                "name": "Barra de granola o pan dulce",
+                "name": "Barra de granola",
                 "qty": "1 pieza",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Pan dulce",
+                    "qty": "1 pieza",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           }
@@ -639,10 +1904,18 @@ export const mockMenus = [
         ],
         "ingredients": [
           {
-            "name": "Tortilla de maíz o nopal",
+            "name": "Tortilla de maíz",
             "qty": "2-4 piezas",
             "icon": "🫓",
-            "ready": true
+            "ready": true,
+            "customEquivalences": [
+              {
+                "name": "Tortilla de nopal",
+                "qty": "2-4 piezas",
+                "icon": "🫓",
+                "ready": true
+              }
+            ]
           },
           {
             "name": "Durazno",
@@ -665,16 +1938,56 @@ export const mockMenus = [
             "name": "Emparedado de la tarde",
             "ingredients": [
               {
-                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "name": "Pan (sándwich)",
                 "qty": "1 pieza",
                 "icon": "🥖",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Torta",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Cuernito",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Bagel",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Jamón, Queso, Pollo o Salchicha",
+                "name": "Jamón",
                 "qty": "1 porción",
                 "icon": "🥓",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Queso",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Pollo",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Salchicha",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  }
+                ]
               },
               {
                 "name": "Lechuga y jitomate",
@@ -712,22 +2025,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -855,22 +2210,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -938,10 +2335,18 @@ export const mockMenus = [
             "name": "Snack dulce",
             "ingredients": [
               {
-                "name": "Barra de granola o pan dulce",
+                "name": "Barra de granola",
                 "qty": "1 pieza",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Pan dulce",
+                    "qty": "1 pieza",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           }
@@ -1039,16 +2444,56 @@ export const mockMenus = [
             "name": "Emparedado de la tarde",
             "ingredients": [
               {
-                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "name": "Pan (sándwich)",
                 "qty": "1 pieza",
                 "icon": "🥖",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Torta",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Cuernito",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Bagel",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Jamón, Queso, Pollo o Salchicha",
+                "name": "Jamón",
                 "qty": "1 porción",
                 "icon": "🥓",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Queso",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Pollo",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Salchicha",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  }
+                ]
               },
               {
                 "name": "Lechuga y jitomate",
@@ -1086,22 +2531,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -1229,22 +2716,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -1299,10 +2828,18 @@ export const mockMenus = [
             "name": "Snack dulce",
             "ingredients": [
               {
-                "name": "Barra de granola o pan dulce",
+                "name": "Barra de granola",
                 "qty": "1 pieza",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Pan dulce",
+                    "qty": "1 pieza",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           }
@@ -1368,10 +2905,18 @@ export const mockMenus = [
         ],
         "ingredients": [
           {
-            "name": "Tortilla de maíz o nopal",
+            "name": "Tortilla de maíz",
             "qty": "2-4 piezas",
             "icon": "🫓",
-            "ready": true
+            "ready": true,
+            "customEquivalences": [
+              {
+                "name": "Tortilla de nopal",
+                "qty": "2-4 piezas",
+                "icon": "🫓",
+                "ready": true
+              }
+            ]
           },
           {
             "name": "Mango",
@@ -1394,16 +2939,56 @@ export const mockMenus = [
             "name": "Emparedado de la tarde",
             "ingredients": [
               {
-                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "name": "Pan (sándwich)",
                 "qty": "1 pieza",
                 "icon": "🥖",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Torta",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Cuernito",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Bagel",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Jamón, Queso, Pollo o Salchicha",
+                "name": "Jamón",
                 "qty": "1 porción",
                 "icon": "🥓",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Queso",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Pollo",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Salchicha",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  }
+                ]
               },
               {
                 "name": "Lechuga y jitomate",
@@ -1441,22 +3026,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -1584,22 +3211,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -1619,10 +3288,18 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Salsa verde o roja",
+                "name": "Salsa verde",
                 "qty": "Al gusto",
                 "icon": "🌶️",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Salsa roja",
+                    "qty": "Al gusto",
+                    "icon": "🌶️",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -1660,10 +3337,18 @@ export const mockMenus = [
             "name": "Snack dulce",
             "ingredients": [
               {
-                "name": "Barra de granola o pan dulce",
+                "name": "Barra de granola",
                 "qty": "1 pieza",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Pan dulce",
+                    "qty": "1 pieza",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           }
@@ -1713,10 +3398,18 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Bolillo o galletas integrales",
+                "name": "Bolillo",
                 "qty": "½ o 6 piezas",
                 "icon": "🥖",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Galletas integrales",
+                    "qty": "½ o 6 piezas",
+                    "icon": "🥖",
+                    "ready": true
+                  }
+                ]
               }
             ]
           }
@@ -1749,16 +3442,56 @@ export const mockMenus = [
             "name": "Emparedado de la tarde",
             "ingredients": [
               {
-                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "name": "Pan (sándwich)",
                 "qty": "1 pieza",
                 "icon": "🥖",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Torta",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Cuernito",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Bagel",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Jamón, Queso, Pollo o Salchicha",
+                "name": "Jamón",
                 "qty": "1 porción",
                 "icon": "🥓",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Queso",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Pollo",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Salchicha",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  }
+                ]
               },
               {
                 "name": "Lechuga y jitomate",
@@ -1796,22 +3529,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -1920,22 +3695,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -1996,10 +3813,18 @@ export const mockMenus = [
             "name": "Snack dulce",
             "ingredients": [
               {
-                "name": "Barra de granola o pan dulce",
+                "name": "Barra de granola",
                 "qty": "1 pieza",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Pan dulce",
+                    "qty": "1 pieza",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           }
@@ -2038,10 +3863,18 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Salsa verde o roja",
+                "name": "Salsa verde",
                 "qty": "Al gusto",
                 "icon": "🌶️",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Salsa roja",
+                    "qty": "Al gusto",
+                    "icon": "🌶️",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -2085,16 +3918,56 @@ export const mockMenus = [
             "name": "Emparedado de la tarde",
             "ingredients": [
               {
-                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "name": "Pan (sándwich)",
                 "qty": "1 pieza",
                 "icon": "🥖",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Torta",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Cuernito",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Bagel",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Jamón, Queso, Pollo o Salchicha",
+                "name": "Jamón",
                 "qty": "1 porción",
                 "icon": "🥓",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Queso",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Pollo",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Salchicha",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  }
+                ]
               },
               {
                 "name": "Lechuga y jitomate",
@@ -2132,22 +4005,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -2275,22 +4190,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },
@@ -2310,10 +4267,18 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Salsa verde o roja",
+                "name": "Salsa verde",
                 "qty": "Al gusto",
                 "icon": "🌶️",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Salsa roja",
+                    "qty": "Al gusto",
+                    "icon": "🌶️",
+                    "ready": true
+                  }
+                ]
               }
             ]
           }
@@ -2346,10 +4311,18 @@ export const mockMenus = [
             "name": "Snack dulce",
             "ingredients": [
               {
-                "name": "Barra de granola o pan dulce",
+                "name": "Barra de granola",
                 "qty": "1 pieza",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Pan dulce",
+                    "qty": "1 pieza",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           }
@@ -2433,16 +4406,56 @@ export const mockMenus = [
             "name": "Emparedado de la tarde",
             "ingredients": [
               {
-                "name": "Pan (sándwich, torta, cuernito o bagel)",
+                "name": "Pan (sándwich)",
                 "qty": "1 pieza",
                 "icon": "🥖",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Torta",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Cuernito",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  },
+                  {
+                    "name": "Bagel",
+                    "qty": "1 pieza",
+                    "icon": "🥖",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Jamón, Queso, Pollo o Salchicha",
+                "name": "Jamón",
                 "qty": "1 porción",
                 "icon": "🥓",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Queso",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Pollo",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  },
+                  {
+                    "name": "Salchicha",
+                    "qty": "1 porción",
+                    "icon": "🥓",
+                    "ready": true
+                  }
+                ]
               },
               {
                 "name": "Lechuga y jitomate",
@@ -2480,22 +4493,64 @@ export const mockMenus = [
                 "ready": true
               },
               {
-                "name": "Avena o amaranto o granola",
+                "name": "Avena",
                 "qty": "2 cucharadas",
                 "icon": "🥣",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Amaranto",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  },
+                  {
+                    "name": "Granola",
+                    "qty": "2 cucharadas",
+                    "icon": "🥣",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Plátano, fresas o mango",
+                "name": "Plátano",
                 "qty": "1 pieza",
                 "icon": "🍌",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Fresas",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  },
+                  {
+                    "name": "Mango",
+                    "qty": "1 pieza",
+                    "icon": "🍌",
+                    "ready": true
+                  }
+                ]
               },
               {
-                "name": "Chocolate en polvo, azúcar o miel",
+                "name": "Chocolate en polvo",
                 "qty": "1 cucharada",
                 "icon": "🍫",
-                "ready": true
+                "ready": true,
+                "customEquivalences": [
+                  {
+                    "name": "Azúcar",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  },
+                  {
+                    "name": "Miel",
+                    "qty": "1 cucharada",
+                    "icon": "🍫",
+                    "ready": true
+                  }
+                ]
               }
             ]
           },

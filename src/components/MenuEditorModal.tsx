@@ -155,8 +155,8 @@ export default function MenuEditorModal({ menu, onClose, onSave, onDelete }: Men
         
         <div className="flex justify-between items-center mb-6">
             <h3 className="font-display font-black text-2xl uppercase tracking-tighter text-text-main">Editar Menú</h3>
-            <button onClick={onClose} className="w-10 h-10 rounded-full border-2 border-text-main flex items-center justify-center neo-btn bg-surface hover:bg-slate-100 shrink-0">
-               <X size={20} />
+            <button onClick={onClose} className="w-10 h-10 bg-[#ef4444] border-2 border-text-main rounded-full flex items-center justify-center text-white shadow-[2px_2px_0_0_var(--color-text-main)] hover:bg-red-600 hover:-translate-y-0.5 transition-all neo-btn shrink-0">
+               <X size={20} strokeWidth={3} />
             </button>
           </div>
           
